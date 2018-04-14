@@ -1,0 +1,55 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<configuration>
+	<property name="logHome" value="/data/center/log"/>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!--<file>/home/ryan/logs/api.log</file>-->
+		<prudent>true</prudent>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${logHome}/center.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>60</maxHistory>
+			<totalSizeCap>20GB</totalSizeCap>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+			<!--<charset>UTF-8</charset>-->
+		</layout>
+	</appender>
+	
+	<!--<appender name="job-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	      <fileNamePattern>${logHome}/job-log-%d{yyyyMMdd}.log</fileNamePattern>
+	      <maxHistory>365</maxHistory>
+	    </rollingPolicy>
+	    <layout class="ch.qos.logback.classic.PatternLayout">
+	      <Pattern>%d{yyyy/MM/dd-HH:mm:ss} %level [%thread] - %msg%n</Pattern>
+	    </layout>
+	</appender>-->
+
+	<logger name="com.honeylovely" level="DEBUG">
+		<appender-ref ref="console" />
+		<appender-ref ref="rollingFile" />
+	</logger>
+	
+
+	<logger name="com.honeylovely" level="INFO">
+		<appender-ref ref="console" />
+		<appender-ref ref="rollingFile" />
+	</logger>
+	<!--log4jdbc -->
+	<logger name="jdbc.sqltiming" level="DEBUG"/>
+
+	<logger name="com.honeylovely.center.matter.mapper" level="DEBUG"></logger>
+
+	 <root level="DEBUG">
+		<appender-ref ref="console" />
+		<appender-ref ref="rollingFile" />
+	 </root>
+
+</configuration>
