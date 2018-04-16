@@ -32,7 +32,6 @@ abstract public class AbstractController<T, PK extends Serializable> {
 		return modelAndView;
 	}
 
-
 	public String getControllerMapping(String requestURI, String contextPath) {
 		String[] rs = requestURI.split("/");
 
