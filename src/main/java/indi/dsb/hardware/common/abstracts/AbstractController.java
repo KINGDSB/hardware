@@ -23,15 +23,21 @@ abstract public class AbstractController<T, PK extends Serializable> {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/inputPage")
-	public ModelAndView input(HttpServletRequest request) {
-		String action = ServletRequestUtils.getStringParameter(request, "action", null);
+    @RequestMapping(value = "/inputPage")
+    public ModelAndView input(HttpServletRequest request) {
+        String action = ServletRequestUtils.getStringParameter(request, "action", null);
 
-		ModelAndView modelAndView = new ModelAndView(getControllerMapping(request.getRequestURI(), request.getContextPath()) + "input");
-		modelAndView.addObject("action", action);
-		return modelAndView;
-	}
+        ModelAndView modelAndView = new ModelAndView(getControllerMapping(request.getRequestURI(), request.getContextPath()) + "input");
+        modelAndView.addObject("action", action);
+        return modelAndView;
+    }
 
+    @RequestMapping(value = "/")
+    public ModelAndView homepage(HttpServletRequest request) {
+        ModelAndView modelAndView = new ModelAndView(getControllerMapping(request.getRequestURI(), request.getContextPath()));
+        return modelAndView;
+    }
+    
 	public String getControllerMapping(String requestURI, String contextPath) {
 		String[] rs = requestURI.split("/");
 
