@@ -5,10 +5,14 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import indi.dsb.hardware.common.ApiContant;
 import indi.dsb.hardware.common.ResponseCode;
@@ -23,7 +27,6 @@ import indi.dsb.hardware.common.utils.Response;
  * @date 2018年3月21日 上午9:32:41
  */
 @Controller
-@RequestMapping(value = "common")
 public class CommonController {
 
     /**

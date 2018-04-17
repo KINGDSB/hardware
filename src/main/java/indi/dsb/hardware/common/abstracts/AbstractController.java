@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import indi.dsb.hardware.sys.service.SysResourceService;
 
-
 abstract public class AbstractController<T, PK extends Serializable> {
 
 	@RequestMapping(value = "/listPage")

@@ -254,4 +254,13 @@ public class SysUserController extends AbstractController<SysUser, Long> {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/login")
+    @Log(module = "用户管理", method = "登录")
+    public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
+
+        ModelAndView modelAndView = new ModelAndView("login");
+
+        return modelAndView;
+    }
+
 }
