@@ -8,6 +8,8 @@
 <title>错误页面</title>
 </head>
 <body>
-<h1>出错了</h1>
+<h1>出错啦！</h1>
+错误信息:
+${exception.message}
 </body>
 </html>
