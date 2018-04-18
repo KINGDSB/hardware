@@ -3,8 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-
-<c:set var="ctxPath" value="${pageContext.request.contextPath}" />
 <!-- 
 <div class="header-area">
     <div class="container">
@@ -58,9 +56,11 @@
             </div>
             
             <div class="col-sm-6">
+                <!-- 
                 <div class="shopping-item">
                     <a href="cart.html">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                 </div>
+                 -->
             </div>
         </div>
     </div>
@@ -78,14 +78,16 @@
             </div> 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.jsp">Home</a></li>
-                    <li><a href="shop.jsp">Shop page</a></li>
-                    <li><a href="single-product.jsp">Single product</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <li id="indexLi"><a href="index.jsp">Home</a></li>
+                    <li id="shopLi"><a href="shop.jsp">Shop page</a></li>
+                    <li id="singleProductLi"><a href="single-product.jsp">Single product</a></li>
+                    <li id="contactLi"><a href="contact.jsp">Contact</a></li>
+                    <!-- 
                     <li><a href="checkout.html">Checkout</a></li>
                     <li><a href="#">Category</a></li>
                     <li><a href="#">Others</a></li>
                     <li><a href="#">Contact</a></li>
+                     -->
                 </ul>
             </div>  
         </div>

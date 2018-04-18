@@ -7,14 +7,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.xstream.XStreamMarshaller;
 import org.springframework.web.servlet.View;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 import org.springframework.web.servlet.view.xml.MarshallingView;
-
-import indi.dsb.hardware.interceptor.LoginInterceptor;
 
 @Configuration
 public class HardwareConfiguration extends WebMvcConfigurerAdapter {
@@ -53,9 +50,4 @@ public class HardwareConfiguration extends WebMvcConfigurerAdapter {
         }
     }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/user/**", "/resource/**", "/role/**", "/product/**");
-    }
-    
 }

@@ -1,7 +1,10 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html lang="en">
   <head>
-    <%@include file="commonFront.jsp"%>
+    <%@include file="common/commonFront.jsp"%>
+    <script>
+     $(".navbar-nav li").addClass("active")
+    </script>
   </head>
   <body>
     <%@include file="header.jsp"%>
@@ -23,7 +26,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-2.jpg" alt="">
+                            <img src="images/product-2.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -38,7 +41,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-1.jpg" alt="">
+                            <img src="images/product-1.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -53,7 +56,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-3.jpg" alt="">
+                            <img src="images/product-3.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -68,7 +71,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-4.jpg" alt="">
+                            <img src="images/product-4.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -83,7 +86,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-2.jpg" alt="">
+                            <img src="images/product-2.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -98,7 +101,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-1.jpg" alt="">
+                            <img src="images/product-1.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -113,7 +116,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-3.jpg" alt="">
+                            <img src="images/product-3.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -128,7 +131,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-4.jpg" alt="">
+                            <img src="images/product-4.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -143,7 +146,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-2.jpg" alt="">
+                            <img src="images/product-2.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -158,7 +161,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-1.jpg" alt="">
+                            <img src="images/product-1.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -173,7 +176,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-3.jpg" alt="">
+                            <img src="images/product-3.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -188,7 +191,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="img/product-4.jpg" alt="">
+                            <img src="images/product-4.jpg" alt="">
                         </div>
                         <h2><a href="">Apple new mac book 2015 March :P</a></h2>
                         <div class="product-carousel-price">
@@ -230,5 +233,8 @@
         </div>
     </div>
     <%@include file="footer.jsp"%>
+    <script>
+        $("#shopLi").addClass("active");
+    </script>
   </body>
 </html>

@@ -78,7 +78,7 @@
           <div class="modal-content1">
             <div class="modal-header">
               <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                <img src="/center/images/logo.png" width="150px">
+                <img src="/hardware/images/logo.png" width="150px">
               <h5>可爱可亲服务中心</h5>
               <!-- <h3><span class="glyphicon glyphicon-lock"></span> 登陆</h3> -->
             </div>
