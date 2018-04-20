@@ -6,12 +6,11 @@
 package indi.dsb.hardware.sys.dao;
 
 import indi.dsb.hardware.common.abstracts.AbstractDAO;
-import indi.dsb.hardware.sys.entity.ProjectMember;
+import indi.dsb.hardware.sys.entity.SysStaticData;
 
 /**
  * @version 1.0
  * @author
  */
-public interface ProjectMemberDAO extends AbstractDAO<ProjectMember, Long> {
-
+public interface SysStaticDataDAO extends AbstractDAO<SysStaticData, Long> {
 }
