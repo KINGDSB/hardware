@@ -26,14 +26,6 @@ abstract public class AbstractDAOImpl<T, PK extends Serializable> extends BaseDA
 
 	@Override
 	public int insert(T t) {
-//		if (t instanceof AbstractEntity) {
-//			((AbstractEntity) t).setCreatedDate(new Date());
-//			((AbstractEntity) t).setCreatedBy(WebUtils.getLoginUser().getId()+"");
-//		}
-//		if (t instanceof AbstractEntity) {
-//			((AbstractEntity) t).setUpdatedDate(new Date());
-//			((AbstractEntity) t).setUpdatedBy(WebUtils.getLoginUser().getId()+"");
-//		}
 		return getMapper().insert(t);
 	}
 

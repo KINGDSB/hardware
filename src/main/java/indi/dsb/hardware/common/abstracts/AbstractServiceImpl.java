@@ -2,11 +2,17 @@ package indi.dsb.hardware.common.abstracts;
 
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.ibatis.session.RowBounds;
+import org.springframework.web.context.request.RequestContextHolder;
 
 import indi.dsb.hardware.common.Page;
+import indi.dsb.hardware.common.utils.SystemUtil;
+import indi.dsb.hardware.sys.entity.SysUser;
 import tk.mybatis.mapper.entity.Example;
 
 /**
@@ -20,27 +26,24 @@ abstract public class AbstractServiceImpl<T, PK extends Serializable> implements
 
 	@Override
 	public int insert(T entity) {
-//		if (entity instanceof AbstractEntity) {
-//			((AbstractEntity) entity).setCreatedDate(new Date());
-//			((AbstractEntity) entity).setCreatedBy(WebUtils.getLoginUser().getId()+"");
-//		}
-//		if (entity instanceof AbstractEntity) {
-//			((AbstractEntity) entity).setUpdatedDate(new Date());
-//			((AbstractEntity) entity).setUpdatedBy(WebUtils.getLoginUser().getId()+"");
-//		}
+
+		if (entity instanceof AbstractEntity) {
+			((AbstractEntity) entity).setCreatedDate(new Date());
+			((AbstractEntity) entity).setCreatedBy(SystemUtil.getUser().getId()+"");
+		}
+		if (entity instanceof AbstractEntity) {
+			((AbstractEntity) entity).setUpdatedDate(new Date());
+			((AbstractEntity) entity).setUpdatedBy(SystemUtil.getUser().getId()+"");
+		}
 		return getAbstractDAO().insert(entity);
 	}
 
 	@Override
 	public int update(T entity) {
-//		if (entity instanceof AbstractEntity) {
-//			((AbstractEntity) entity).setUpdatedDate(new Date());
-//			((AbstractEntity) entity).setUpdatedBy(WebUtils.getLoginUser().getId()+"");
-//		}
-//		if (entity instanceof AbstractEntity) {
-//			((AbstractEntity) entity).setUpdatedDate(new Date());
-//			((AbstractEntity) entity).setUpdatedBy(WebUtils.getLoginUser().getUsername());
-//		}
+		if (entity instanceof AbstractEntity) {
+			((AbstractEntity) entity).setUpdatedDate(new Date());
+			((AbstractEntity) entity).setUpdatedBy(SystemUtil.getUser().getId()+"");
+		}
 		return getAbstractDAO().updateByPrimaryKey(entity);
 	}
 

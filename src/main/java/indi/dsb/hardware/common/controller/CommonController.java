@@ -3,12 +3,16 @@ package indi.dsb.hardware.common.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.ServletRequestUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +21,13 @@ import org.springframework.web.servlet.ModelAndView;
 import indi.dsb.hardware.common.ApiContant;
 import indi.dsb.hardware.common.ResponseCode;
 import indi.dsb.hardware.common.utils.DateUtil;
+import indi.dsb.hardware.common.utils.PasswordHelper;
 import indi.dsb.hardware.common.utils.Response;
+import indi.dsb.hardware.sys.entity.SysResource;
+import indi.dsb.hardware.sys.entity.SysUser;
+import indi.dsb.hardware.sys.service.SysResourceService;
+import indi.dsb.hardware.sys.service.SysUserService;
+import tk.mybatis.mapper.entity.Example;
 
 /**
  * @Title: CommonController.java
@@ -28,6 +38,11 @@ import indi.dsb.hardware.common.utils.Response;
  */
 @Controller
 public class CommonController {
+
+    @Autowired
+    private SysResourceService sysResourceService;
+    @Autowired
+    private SysUserService sysUserService;
 
     /**
      * @Title uploadFiles
@@ -74,5 +89,39 @@ public class CommonController {
 
         return new Response(ResponseCode.MISS_REQUIRED);
     }
-    
+
+    @RequestMapping(value = "/back")
+    public ModelAndView homepage(HttpServletRequest request) {
+        ModelAndView modelAndView = new ModelAndView("/index");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/login")
+    public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
+        String username = ServletRequestUtils.getStringParameter(request, "username", null);
+        String password = ServletRequestUtils.getStringParameter(request, "password", null);
+        Example example = new Example(SysUser.class);
+        example.createCriteria().andEqualTo("username", username);
+        List<SysUser> users = sysUserService.selectByExample(example);
+        if (users.size() > 0) {
+        	SysUser user = users.get(0);
+        	String pass = PasswordHelper.entryptPassword(password, user.getCredentialsSalt());
+        	if (pass.equals(user.getPassword())) {
+        		List<SysResource> resources = sysResourceService.findResourcesByUserId(user.getId());
+        		
+        		request.getSession().setAttribute("user", user);
+        		
+    			ModelAndView modelAndView = new ModelAndView("/index");
+    			modelAndView.addObject("resources", resources);
+    			modelAndView.addObject("user", user);
+    	        return modelAndView;
+			} else {
+				ModelAndView modelAndView = new ModelAndView("/user/login");
+				return modelAndView;
+			}
+		} else {
+			ModelAndView modelAndView = new ModelAndView("/user/login");
+			return modelAndView;
+		}
+    }
 }

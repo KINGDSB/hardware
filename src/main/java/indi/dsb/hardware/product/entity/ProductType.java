@@ -2,6 +2,7 @@ package indi.dsb.hardware.product.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,24 +15,39 @@ import indi.dsb.hardware.common.abstracts.AbstractEntity;
  * Created by Administrator on 2017/12/7.
  */
 @Entity
-@Table(name = "f_matter_type")
-public class MatterType extends AbstractEntity implements Serializable {
+@Table(name = "f_product_type")
+public class ProductType extends AbstractEntity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;//问题类型名称
-	
+    @Column(name = "name_cn")
+	private String nameCn;// 产品类型名称
+    @Column(name = "name_en")
+	private String nameEn;// 产品类型名称
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+
+	public String getNameCn() {
+		return nameCn;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setNameCn(String nameCn) {
+		this.nameCn = nameCn;
 	}
+
+	public String getNameEn() {
+		return nameEn;
+	}
+
+	public void setNameEn(String nameEn) {
+		this.nameEn = nameEn;
+	}
+
 }

@@ -1,6 +1,7 @@
 package indi.dsb.hardware.common.abstracts;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,6 +9,8 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import indi.dsb.hardware.sys.entity.SysResource;
+import indi.dsb.hardware.sys.entity.SysUser;
 import indi.dsb.hardware.sys.service.SysResourceService;
 
 abstract public class AbstractController<T, PK extends Serializable> {
@@ -15,10 +18,12 @@ abstract public class AbstractController<T, PK extends Serializable> {
 	@RequestMapping(value = "/listPage")
 	public ModelAndView listPage(HttpServletRequest request) {
 		Long resId = ServletRequestUtils.getLongParameter(request, "resId", 0);
-//		Long userId = WebUtils.getLoginUser().getId();
-//		List<SysResource> btns = this.getSysResourceService().findByParentIdAndUserId(resId, userId);
+		
+		SysUser user = (SysUser) request.getSession().getAttribute("user");
+		Long userId = user.getId();
+		List<SysResource> btns = this.getSysResourceService().findByParentIdAndUserId(resId, userId);
 		ModelAndView modelAndView = new ModelAndView(getControllerMapping(request.getRequestURI(), request.getContextPath()) + "list");
-//		modelAndView.addObject("btns", btns);
+		modelAndView.addObject("btns", btns);
 		return modelAndView;
 	}
 
