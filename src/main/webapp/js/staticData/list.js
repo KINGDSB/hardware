@@ -48,7 +48,7 @@ $(function() {
             { data: "id" },
             { data: "dataKey" },
             { data: "dataValueEn" },
-            { data: "dataValueEn" },
+            { data: "dataValueCn" },
             { data: "description" },
 		    { data: "createdDate", render: function(data) {
 		          if (!data) return '';

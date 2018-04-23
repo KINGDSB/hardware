@@ -27,6 +27,8 @@ pageEncoding="UTF-8"%>
             <div class="form-group">
                 <input type="text" name="dataKey" class="form-control" placeholder="key">
             </div>
+        </div>
+        <div class="col-lg-3">
             <div class="form-group">
                 <input type="text" name=description class="form-control" placeholder="描述">
             </div>
