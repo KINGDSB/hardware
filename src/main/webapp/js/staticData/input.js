@@ -17,12 +17,12 @@ $(function(){
             name: 'id',
             value: data.id
         }).appendTo(inputForm);
-        inputForm.attr("action", "resource/edit");
+        inputForm.attr("action", "staticData/edit");
         inputForm.find(".form-control").each(function(e) {
             $(this).val(data[this.name] + "");
         });
     } else if (action == 'create'){
-        inputForm.attr("action", "resource/create");
+        inputForm.attr("action", "staticData/create");
     }
 
     inputForm.formValidation({
@@ -33,24 +33,31 @@ $(function(){
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            name: {
+        	dataKey: {
                 validators: {
                     notEmpty: {
-//                                message: '不能为空'
+                    	message: 'key不能为空'
                     }
                 }
             },
-            resKey: {
+            dataValueEn: {
                 validators: {
                     notEmpty: {
-                        message: 'key不能为空'
+                        message: '英文数据不能为空'
                     }
                 }
             },
-            resUrl: {
+            dataValueCn: {
                 validators: {
                     notEmpty: {
-                        message: 'url不能为空'
+                        message: '中文数据不能为空'
+                    }
+                }
+            },
+            description: {
+                validators: {
+                    notEmpty: {
+                        message: '描述不能为空'
                     }
                 }
             },
@@ -68,13 +75,7 @@ $(function(){
             ap.ajaxSubmit(inputForm, function(resp) {
                 l.stop();
                 var res = resp.code;
-                if (res == 1010){
-                    alertModal("菜单URL已经存在！", "提示");
-                } else if (res == 1011) {
-                    alertModal("菜单类型与上级菜单不匹配！", "提示");
-                } else if (res == 1012) {
-                    alertModal("菜单key已经存在！", "提示");
-                } else {
+                if (res == 200){
                     $('#formModal').modal("hide");
                     alertModal("保存成功！", null, function(){
                         table.ajax.reload();

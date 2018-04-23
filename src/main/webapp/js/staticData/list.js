@@ -25,7 +25,7 @@ $(function() {
         processing: true,
         serverSide: true,
         ajax: {
-            url: "resource/list.json",
+            url: "staticData/list.json",
             type: "POST",
             data: function(reqData) {
                 $("#search_div").find(".form-control").each(function() {
@@ -45,28 +45,15 @@ $(function() {
             { data: null, render: function() {
                 return '';
             } },
-            { data: "name" },
-            { data: "resKey" },
-            { data: "resUrl" },
-            { data: "level", render: function (data) {
-                return data == 0 ? "目录" : data == 1 ? "菜单" : "按钮";
-            } },
-            { data: "icon" },
-            { data: "isHidden", render: function (data) {
-                return data ? "是" : "否";
-            } },
+            { data: "id" },
+            { data: "dataKey" },
+            { data: "dataValueEn" },
+            { data: "dataValueEn" },
             { data: "description" },
-//            { data: "seq" },
-            { data: "createdDate", render: function(data) {
-                if (!data) return '';
-                return !data || new Date(data).Format("yyyy-MM-dd hh:mm:ss");
-            } },
-            { data: "createdBy" },
-            { data: "updatedDate", render: function(data) {
-                if (!data) return '';
-                return !data || new Date(data).Format("yyyy-MM-dd hh:mm:ss");
-            } },
-            { data: "updatedBy" }
+		    { data: "createdDate", render: function(data) {
+		          if (!data) return '';
+		          return !data || new Date(data).Format("yyyy-MM-dd");
+		    }}
         ],
         language: {
             url: contextPath + '/common/i18n/language_zh.json'
@@ -75,7 +62,7 @@ $(function() {
 
     // New record
     $('#editor_create').on('click', function (e) {
-        ap.ajaxGet("resource/inputPage", {action: "create"}, function(data) {
+        ap.ajaxGet("staticData/inputPage", {action: "create"}, function(data) {
             $("#formModalLabel").html("创建菜单");
             $("#formBody").html(data);
         });
@@ -90,7 +77,7 @@ $(function() {
             layer.msg('请选择编辑项！');
             return;
         }
-        ap.ajaxGet("resource/inputPage", {action: "edit"}, function(data) {
+        ap.ajaxGet("staticData/inputPage", {action: "edit"}, function(data) {
             $("#formModalLabel").html("编辑菜单");
             $("#formBody").html(data);
         });
@@ -99,7 +86,7 @@ $(function() {
     // Delete a record
     var delCallback = function() {
         var selected = table.rows({ selected: true }).data()[0];
-        ap.ajaxPost("resource/remove", "id=" + selected['id'], function(resp) {
+        ap.ajaxPost("staticData/remove", "id=" + selected['id'], function(resp) {
             var res = resp.code;
             if (res == 200) {
                 alertModal("删除成功！", null, function(){

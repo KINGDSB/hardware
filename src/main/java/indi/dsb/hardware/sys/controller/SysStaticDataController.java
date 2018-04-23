@@ -110,12 +110,12 @@ public class SysStaticDataController extends AbstractController<SysStaticData, L
     @RequestMapping(value = "edit")
     @Log(module = "数据管理", method = "编辑数据")
     public @ResponseBody String edit(@RequestBody SysStaticData sysStaticData) {
-        SysStaticData oResource = sysStaticDataService.get(sysStaticData.getId());
+        SysStaticData oData = sysStaticDataService.get(sysStaticData.getId());
         
-        oResource.setDataKey(sysStaticData.getDataKey());
-        oResource.setDataValueCn(sysStaticData.getDataValueCn());
-        oResource.setDataValueEn(sysStaticData.getDataValueEn());
-        sysStaticDataService.update(oResource);
+        oData.setDataKey(sysStaticData.getDataKey());
+        oData.setDataValueCn(sysStaticData.getDataValueCn());
+        oData.setDataValueEn(sysStaticData.getDataValueEn());
+        sysStaticDataService.update(oData);
         return new Response(ResponseCode.SUCCESS).toJson();
     }
     

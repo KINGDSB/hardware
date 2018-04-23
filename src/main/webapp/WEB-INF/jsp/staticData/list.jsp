@@ -20,7 +20,7 @@ pageEncoding="UTF-8"%>
 <script src="${ctxPath}/static/datatables/extensions/Select/js/dataTables.select.min.js"></script>
 <script src="${ctxPath}/static/layer/layer.js"></script>
 
-<script type="text/javascript" src="${ctxPath}/js/resource/list.js"></script>
+<script type="text/javascript" src="${ctxPath}/js/staticData/list.js"></script>
 <div id="search_div">
     <div class="col-lg-12">
         <div class="col-lg-3">
@@ -53,6 +53,7 @@ pageEncoding="UTF-8"%>
             <thead>
             <tr>
                 <th style="width: 10px"></th>
+                <th>id</th>
                 <th>key</th>
                 <th>英文值</th>
                 <th>中文值</th>

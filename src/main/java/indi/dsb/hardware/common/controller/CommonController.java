@@ -90,12 +90,6 @@ public class CommonController {
         return new Response(ResponseCode.MISS_REQUIRED);
     }
 
-    @RequestMapping(value = "/back")
-    public ModelAndView homepage(HttpServletRequest request) {
-        ModelAndView modelAndView = new ModelAndView("/index");
-        return modelAndView;
-    }
-
     @RequestMapping(value = "/login")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
         String username = ServletRequestUtils.getStringParameter(request, "username", null);
@@ -111,16 +105,16 @@ public class CommonController {
         		
         		request.getSession().setAttribute("user", user);
         		
-    			ModelAndView modelAndView = new ModelAndView("/index");
+    			ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/index");
     			modelAndView.addObject("resources", resources);
     			modelAndView.addObject("user", user);
     	        return modelAndView;
 			} else {
-				ModelAndView modelAndView = new ModelAndView("/user/login");
+				ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/user/login");
 				return modelAndView;
 			}
 		} else {
-			ModelAndView modelAndView = new ModelAndView("/user/login");
+			ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/user/login");
 			return modelAndView;
 		}
     }

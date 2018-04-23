@@ -182,7 +182,7 @@ public class SysUserController extends AbstractController<SysUser, Long> {
 	public ModelAndView password(HttpServletRequest request) {
 		String action = ServletRequestUtils.getStringParameter(request, "action", null);
 
-		ModelAndView modelAndView = new ModelAndView("user/password");
+		ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/user/password");
 		modelAndView.addObject("action", action);
 		return modelAndView;
 	}
@@ -258,7 +258,7 @@ public class SysUserController extends AbstractController<SysUser, Long> {
     @Log(module = "用户管理", method = "登录")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
 
-        ModelAndView modelAndView = new ModelAndView("login");
+        ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/login");
 
         return modelAndView;
     }

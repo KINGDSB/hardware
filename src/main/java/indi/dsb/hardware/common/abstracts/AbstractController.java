@@ -51,7 +51,8 @@ abstract public class AbstractController<T, PK extends Serializable> {
 			return "/index";
 		}
 
-		StringBuilder mapping = new StringBuilder();
+//		StringBuilder mapping = new StringBuilder();
+        StringBuilder mapping = new StringBuilder("/WEB-INF/jsp/");
 		for (int i = 2; i < rs.length - 1; i++) {
 			mapping.append(rs[i]);
 			mapping.append("/");
