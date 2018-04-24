@@ -64,7 +64,7 @@ $(function() {
 
 	// New record
     $('#editor_create').on('click', function (e) {
-        ap.ajaxGet("productType/inputPage", {action: "create"}, function(data) {
+        ap.ajaxGet("product/inputPage", {action: "create"}, function(data) {
             $("#formModalLabel").html("添加类型");
             $("#formBody").html(data);
         });
@@ -80,7 +80,7 @@ $(function() {
             return;
         }
 
-        ap.ajaxGet("productType/inputPage", {action: "edit"}, function(data) {
+        ap.ajaxGet("product/inputPage", {action: "edit"}, function(data) {
             $("#formModalLabel").html("编辑类型");
             $("#formBody").html(data);
             console.log(data);
@@ -90,7 +90,7 @@ $(function() {
     // Delete a record
     var delCallback = function() {
         var selected = table.rows({ selected: true }).data()[0];
-        ap.ajaxPost("productType/remove", "id=" + selected['id'], function(resp) {
+        ap.ajaxPost("product/remove", "id=" + selected['id'], function(resp) {
             var res = resp.code;
             if (res == 200) {
                 alertModal("删除成功！", null, function(){

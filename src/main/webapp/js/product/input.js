@@ -55,16 +55,16 @@ $(function(){
     if (action == 'edit' && data) {
         $('<input/>').attr({
             type: 'hidden',
-            id: 'category_id',
+            id: 'id',
             name: 'id',
             value: data.id
         }).appendTo(inputForm);
-        inputForm.attr("action", "matter/edit");
+        inputForm.attr("action", "product/edit");
         inputForm.find(".form-control").each(function(e) {
             $(this).val(data[this.name]);
         });
     } else if (action == 'create'){
-        inputForm.attr("action", "matter/create");
+        inputForm.attr("action", "product/create");
     }
 
     inputForm.formValidation({

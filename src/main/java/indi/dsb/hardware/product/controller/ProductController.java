@@ -118,10 +118,6 @@ public class ProductController extends AbstractController {
     @Log(module = "产品模块", method = "添加产品")
     public @ResponseBody String create(@RequestBody Product product) {
         try {
-//            product.setProcessStatus(ProductStatus.WAIT_HANDLE.getCode());
-//            Calendar calendar = Calendar.getInstance();
-//            calendar.add(Calendar.HOUR_OF_DAY, ProductGrade.getByCode(product.getGrade()).getProcessingTime());
-//            product.setExpectTime(calendar.getTime());
             productService.insert(product);
         } catch (Exception e) {
             logger.error("添加产品出错", e);
@@ -131,29 +127,15 @@ public class ProductController extends AbstractController {
         return new Response(ResponseCode.SUCCESS).toJson();
     }
 
-    @RequestMapping(value = "/getProductTypeSelect")
-    @Log(module = "问题模块", method = "获取问题类型下拉列表")
-    public ModelAndView getProductTypeSelect(HttpServletRequest request, HttpServletResponse response) {
-
-        Example example = new Example(ProductType.class);
-        example.createCriteria().andEqualTo("isDeleted", false);
-        List<ProductType> options = productTypeService.selectByExample(example);
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("options", options);
-
-        return modelAndView;
-    }
-
     @RequestMapping(value = "/auditProduct")
     @Log(module = "问题模块", method = "审核产品")
     public Response auditProduct(HttpServletRequest request, HttpServletResponse response) {
 
         long id = ServletRequestUtils.getLongParameter(request, "id", 0);
-        int processStatus = ServletRequestUtils.getIntParameter(request, "processStatus", 0);
+        int status = ServletRequestUtils.getIntParameter(request, "status", 0);
 
         Product product = productService.get(id);
-//        product.setProcessStatus(processStatus);
+        product.setStatus(status);
         productService.update(product);
         return new Response(ResponseCode.SUCCESS);
     }
