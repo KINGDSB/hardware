@@ -1,18 +1,20 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <div class="footer-top-area">
     <div class="zigzag-bottom"></div>
-    <div class="container">
+    <%-- <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6">
                 <div class="footer-about-us">
                     <h2>e<span>Electronics</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
+                    <p>${staticData["companyIntroduction"].dataValueEn }</p>
                     <div class="footer-social">
-                        <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="${staticData["facebookHomepage"].dataValueEn }" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="${staticData["twitterHomepage"].dataValueEn }" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <!-- 
                         <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
                         <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
                         <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                         -->
                     </div>
                 </div>
             </div>
@@ -57,8 +59,8 @@
             </div>
         </div>
     </div>
-</div> <!-- End footer top area -->
-
+</div> --%> <!-- End footer top area -->
+<!-- 
 <div class="footer-bottom-area">
     <div class="container">
         <div class="row">
@@ -78,4 +80,8 @@
             </div>
         </div>
     </div>
-</div> <!-- End footer bottom area -->
+</div> --> 
+    <div class="footer" style="width: 100%;text-align: center;font-size: 12px;bottom: 0;">
+         <p class="cr">Copyright © 2015-2018 广州XXX有限公司  <img src="http://ehr.honey-lovely.cn/Public/images/2017-02-16/bottom_itlogo.png" style="vertical-align:middle;"><br><a href="http://www.miitbeian.gov.cn/" title="备案号" target="_blank">粤ICP备XXXX号 </a><br>纳税人识别号：XXX</p>
+    </div>
+<!-- End footer bottom area -->

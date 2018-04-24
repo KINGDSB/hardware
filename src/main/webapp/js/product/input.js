@@ -8,7 +8,7 @@ function initData(){
 	$.post("productType/getSelect.json",function(result){
         $("#typeSelectSub").append("<option value=''>请选择</option>");
 		for (var int = 0; int < result.length; int++) {
-			$("#typeSelectSub").append("<option value='"+result[int].id+"'>"+result[int].name+"</option>");
+			$("#typeSelectSub").append("<option value='"+result[int].id+"'>"+result[int].nameCn+"</option>");
 		}
 	});
 }
@@ -21,7 +21,7 @@ $(function(){
 
     $('#uploadfile').fileinput({
     	language: 'zh',
-        uploadUrl: 'common/uploadFiles', //上传的地址
+        uploadUrl: 'uploadFiles', //上传的地址
         allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
         uploadAsync: true, //默认异步上传
 //        uploadExtraData:{"id": 1, "fileName":'123.mp3'},

@@ -4,6 +4,16 @@
 <html>
 <head>
     <%@include file="common/commonFront.jsp"%>
+    <script>
+	function countDown(secs,surl){     
+	    //alert(surl);     
+	    if(--secs>0){     
+	        setTimeout("countDown("+secs+",'"+surl+"')",1000);     
+	    } else {       
+	        location.href=surl;     
+	    }     
+	}     
+	</script>
 </head>
 <body>
     <%@include file="header.jsp"%>
@@ -19,6 +29,8 @@
                     <p style="font-size: 25px;text-align: left;">
                         ${exception.message}
                     </p>
+					<span id="jumpTo">3秒后自动回到首页</span>
+					<script type="text/javascript">countDown(3,'/hardware');</script>  
                     </div>
                 </div>
             </div>

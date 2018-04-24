@@ -95,30 +95,6 @@
             overflow: hidden;
         }
     </style>
-    <script type="text/javascript">
-        function jumpMatterList(projectId, processStatus, grade){
-            console.log(projectId);
-            console.log(processStatus);
-            $.ajaxSettings.async = false;
-            ap.ajaxGet(contextPath + "/matter/listPage", {"resId": 18}, function(data) {
-                $("#content").html(data);
-                if (0 != projectId) {
-                    $("#projectSelect").val(projectId);
-                }
-                if (0 != processStatus) {
-                    $("#processStatus").val(processStatus);
-                }
-                if (0 != grade) {
-                    $("#grade").val(grade);
-                }
-                if(table != undefined && table != null && table.ajax != null){
-                    table.ajax.reload();
-                }
-            });
-            $.ajaxSettings.async = true;
-            $(".page-header").html("问题列表");
-        };
-    </script>
 </head>
 
 <body>
@@ -134,7 +110,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${ctxPath}/backindex">可爱可亲服务中心</a>
+            <a class="navbar-brand" href="/hardware/backindex">商城数据管理</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -187,6 +163,8 @@
     <!-- Page Content -->
     <div id="page-wrapper">
         <div id="content" class="row">
+        <h1>欢迎登录商城后台管理系统</h1>
+        <%-- 
             <div class="col-lg-3 col-md-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -253,6 +231,7 @@
                     </a>
                 </div>
             </div>
+            --%>
             <!-- 勿删！ -->
             <div class="col-lg-12" style="display: none;">
                 <div class="panel panel-default">
@@ -293,6 +272,7 @@
                 </div>
             </div>
             <!-- /.col-lg-4 -->
+            <%-- 
             <div class="col-lg-12">
                 <div class="panel panel-danger">
                     <div class="panel-heading">
@@ -316,7 +296,7 @@
                         </thead>
                         <c:forEach items="${dangerList}" var="item">
                             <tr>
-                                    <%-- <td>${item.id}</td> --%>
+                                    <td>${item.id}</td>
                                 <td>
                                     <a href="javascript:void(0);" onclick="jumpMatterList(${item.project.id}, 0, 0)">${item.project.name}</a>
                                 </td>
@@ -373,7 +353,7 @@
                         </thead>
                         <c:forEach items="${warningList}" var="item">
                             <tr>
-                                    <%-- <td>${item.id}</td> --%>
+                                    <td>${item.id}</td>
                                 <td>
                                     <a href="javascript:void(0);" onclick="jumpMatterList(${item.project.id}, 0, 0)">${item.project.name}</a>
                                 </td>
@@ -430,7 +410,7 @@
                         </thead>
                         <c:forEach items="${defaultList}" var="item">
                             <tr>
-                                    <%-- <td>${item.id}</td> --%>
+                                    <td>${item.id}</td>
                                 <td>
                                     <a href="javascript:void(0);" onclick="jumpMatterList(${item.project.id}, 0, 0)">${item.project.name}</a>
                                 </td>
@@ -467,7 +447,8 @@
                 </div>
             </div>
             <!-- /.col-lg-4 -->
-        </div>
+        --%>
+        </div> 
     </div>
 </div>
 <!-- /#page-wrapper -->

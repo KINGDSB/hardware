@@ -23,27 +23,27 @@
 <script type="text/javascript" src="${ctxPath}/js/product/list.js"></script>
 <div id="search_div">
 	<div class="col-lg-12">
-		<div class="col-lg-3">
+		<div class="col-lg-2">
 			<div class="form-group">
-		        <input type="text" name="nameCn" class="form-control queryClass" placeholder="产品名称中文">
+		        <input type="text" name="nameCn" class="form-control queryClass" placeholder="中文名称">
 		    </div>
 	    </div>
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <div class="form-group">
-                <input type="text" name="nameEn" class="form-control queryClass" placeholder="产品名称英文">
+                <input type="text" name="nameEn" class="form-control queryClass" placeholder="英文名称">
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <div class="form-group">
                 <select id="typeSelect" name="type" class="form-control queryClass"></select>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <div class="form-group">
                 <input type="text" name="keyWord" class="form-control queryClass" placeholder="关键字">
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-1">
             <div class="form-group">
                 <select id="statusSelect" name="status" class="form-control queryClass">
                     <option>请选择</option>
@@ -52,7 +52,7 @@
                 </select>
             </div>
         </div>
-	    <div class="col-lg-3">
+	    <div class="col-lg-1">
 			<button id="search" class="btn btn-success">查询</button>
 			<!-- <button id="reset" class="btn btn-primary">重设</button> -->
 	    </div>

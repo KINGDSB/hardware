@@ -124,10 +124,11 @@ public class CommonController {
         		List<SysResource> resources = sysResourceService.findResourcesByUserId(user.getId());
         		
         		request.getSession().setAttribute("user", user);
+        		request.getSession().setAttribute("resources", resources);
         		
     			ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/index");
-    			modelAndView.addObject("resources", resources);
-    			modelAndView.addObject("user", user);
+//    			modelAndView.addObject("resources", resources);
+//    			modelAndView.addObject("user", user);
     	        return modelAndView;
 			} else {
 				ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/user/login");

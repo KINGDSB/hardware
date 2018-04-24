@@ -1,6 +1,15 @@
 var table;
 
 $(function() {
+	
+	// 产品类型
+	$.post("productType/getSelect.json",function(result){
+        $("#typeSelect").append("<option value=''>产品类型</option>");
+		for (var int = 0; int < result.length; int++) {
+			$("#typeSelect").append("<option value='"+result[int].id+"'>"+result[int].nameCn+"</option>");
+		}
+	});
+	
     // table created
     table = $('#listTable').DataTable({
         responsive: true,
@@ -15,7 +24,7 @@ $(function() {
 			style:    'os',
 			selector: 'td:first-child'
 		},
-		order: [[ 1, 'asc' ]],
+		order: [[ 1, 'DESC' ]],
 //		bSort: false,
 		dom: "Bfrtip",
         processing: true,
@@ -24,8 +33,10 @@ $(function() {
             url: "product/list.json",
             type: "POST",
             data: function( reqData) {
-            	$("#search_div").find("input").each(function() {
-            		reqData[$(this).attr('name')] = $(this).val();
+            	$("#search_div").find(".queryClass").each(function() {
+            		if ($(this).val() != null && $(this).val() != "") {
+                		reqData[$(this).attr('name')] = $(this).val();
+					}
     			});
             },
             dataSrc: function(resp) {

@@ -101,12 +101,12 @@ $(function() {
     
     if (window.history && window.history.pushState) {
         $(window).on('popstate', function () {
-        	window.history.pushState('forward', null, '${ctxPath}/backindex');
+        	window.history.pushState('forward', null, '/hardware/backindex');
         	window.history.forward(1);
             location.reload();
         });
     }
-	window.history.pushState('forward', null, '${ctxPath}/backindex'); //在IE中必须得有这两行
+	window.history.pushState('forward', null, '/hardware/backindex'); //在IE中必须得有这两行
 	window.history.forward(1);
 });
 function back(){

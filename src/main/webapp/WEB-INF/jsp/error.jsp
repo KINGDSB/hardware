@@ -5,10 +5,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function countDown(secs,surl){     
+	//alert(surl);     
+	if(--secs>0){     
+	    setTimeout("countDown("+secs+",'"+surl+"')",1000);     
+	} else {       
+	    location.href=surl;     
+	}     
+}     
+</script>
 <title>错误页面</title>
 </head>
 <body>
 <h1>出错了</h1>
+<span id="jumpTo">3秒后自动回到首页</span>
+<script type="text/javascript">countDown(3,'/');</script>  
 ${exception.message}
 </body>
 </html>
