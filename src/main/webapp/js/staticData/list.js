@@ -63,7 +63,7 @@ $(function() {
     // New record
     $('#editor_create').on('click', function (e) {
         ap.ajaxGet("staticData/inputPage", {action: "create"}, function(data) {
-            $("#formModalLabel").html("创建菜单");
+            $("#formModalLabel").html("新增数据");
             $("#formBody").html(data);
         });
     } );
@@ -78,7 +78,7 @@ $(function() {
             return;
         }
         ap.ajaxGet("staticData/inputPage", {action: "edit"}, function(data) {
-            $("#formModalLabel").html("编辑菜单");
+            $("#formModalLabel").html("编辑数据");
             $("#formBody").html(data);
         });
     } );

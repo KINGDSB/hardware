@@ -134,7 +134,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${ctxPath}/index">可爱可亲服务中心</a>
+            <a class="navbar-brand" href="${ctxPath}/backindex">可爱可亲服务中心</a>
         </div>
         <!-- /.navbar-header -->
 

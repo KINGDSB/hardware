@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestUtils;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,8 +24,10 @@ import indi.dsb.hardware.common.utils.DateUtil;
 import indi.dsb.hardware.common.utils.PasswordHelper;
 import indi.dsb.hardware.common.utils.Response;
 import indi.dsb.hardware.sys.entity.SysResource;
+import indi.dsb.hardware.sys.entity.SysStaticData;
 import indi.dsb.hardware.sys.entity.SysUser;
 import indi.dsb.hardware.sys.service.SysResourceService;
+import indi.dsb.hardware.sys.service.SysStaticDataService;
 import indi.dsb.hardware.sys.service.SysUserService;
 import tk.mybatis.mapper.entity.Example;
 
@@ -41,6 +43,8 @@ public class CommonController {
 
     @Autowired
     private SysResourceService sysResourceService;
+    @Autowired
+    private SysStaticDataService sysStaticDataService;
     @Autowired
     private SysUserService sysUserService;
 
@@ -90,6 +94,22 @@ public class CommonController {
         return new Response(ResponseCode.MISS_REQUIRED);
     }
 
+    @RequestMapping(value = "/index")
+    public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
+        //
+        Map<String, SysStaticData> staticData = sysStaticDataService.getStaticData();
+        request.getSession().setAttribute("staticData", staticData);
+        
+        ModelAndView modelAndView = new ModelAndView("/index");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/backindex")
+    public ModelAndView backindex(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/index");
+        return modelAndView;
+    }
+    
     @RequestMapping(value = "/login")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
         String username = ServletRequestUtils.getStringParameter(request, "username", null);

@@ -66,27 +66,35 @@ public class ProductController extends AbstractController {
         return sysResourceService;
     }
 
-    @ApiOperation(value = "查询问题列表")
+    @ApiOperation(value = "查询产品列表")
     @ApiImplicitParam(name = "product", value = "实体类", required = true, dataType = "Product")
-    @Log(method = "问题列表", module = "问题管理")
+    @Log(method = "产品列表", module = "产品管理")
     @RequestMapping(value = "/list")
     public ModelAndView find(HttpServletRequest request, HttpServletResponse response) {
         int start = ServletRequestUtils.getIntParameter(request, "start", 0);
         int length = ServletRequestUtils.getIntParameter(request, "length", 10);
         int draw = ServletRequestUtils.getIntParameter(request, "draw", 1);
-        long projectId = ServletRequestUtils.getLongParameter(request, "projectId", 0);
+
+        int status = ServletRequestUtils.getIntParameter(request, "status", 0);
+        int type = ServletRequestUtils.getIntParameter(request, "type", 0);
+        String keyWord = ServletRequestUtils.getStringParameter(request, "keyWord", null);
         Date createdDate = null;
         String strCreatedDate = ServletRequestUtils.getStringParameter(request, "createdDate", null);
         if (StringUtils.isNotBlank(strCreatedDate)) {
             createdDate = DateUtil.stringToDate(strCreatedDate);
         }
-        int processStatus = ServletRequestUtils.getIntParameter(request, "processStatus", 0);
-        int type = ServletRequestUtils.getIntParameter(request, "type", 0);
-        int grade = ServletRequestUtils.getIntParameter(request, "grade", 0);
-        String keyWord = ServletRequestUtils.getStringParameter(request, "keyWord", null);
 
         Product product = new Product();
         product.setIsDeleted(false);
+        if (status > 0) {
+            product.setStatus(status);
+        }
+        if (type > 0) {
+            product.setType(type);
+        }
+        if (StringUtils.isNotBlank(keyWord)) {
+            product.setKeyWord(keyWord);
+        }
         if (StringUtils.isNotBlank(keyWord)) {
             product.setKeyWord(keyWord);
         }
@@ -104,10 +112,10 @@ public class ProductController extends AbstractController {
         return modelAndView;
     }
 
-    @ApiOperation(value = "添加问题")
+    @ApiOperation(value = "添加产品")
     @ApiImplicitParam(name = "product", required = true, dataType = "Product")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    @Log(module = "问题模块", method = "添加问题")
+    @Log(module = "产品模块", method = "添加产品")
     public @ResponseBody String create(@RequestBody Product product) {
         try {
 //            product.setProcessStatus(ProductStatus.WAIT_HANDLE.getCode());
@@ -116,7 +124,7 @@ public class ProductController extends AbstractController {
 //            product.setExpectTime(calendar.getTime());
             productService.insert(product);
         } catch (Exception e) {
-            logger.error("添加问题出错", e);
+            logger.error("添加产品出错", e);
             e.printStackTrace();
             return new Response(ResponseCode.SERVER_ERROR).toJson();
         }

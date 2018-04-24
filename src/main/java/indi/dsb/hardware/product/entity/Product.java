@@ -1,6 +1,7 @@
 package indi.dsb.hardware.product.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,6 +28,9 @@ public class Product extends AbstractEntity implements Serializable {
     @Column(name = "name_en")
     private String nameEn;// 英文名称
 	private Integer type;// 类型 关联产品类型表
+    @Column(name = "amount_old")
+    private BigDecimal amountOld;// 促销前金额
+    private BigDecimal amount;// 金额
     private String description;// 产品描述
     @Column(name = "pic_urls")
 	private String picUrls;// 图片
@@ -90,5 +94,17 @@ public class Product extends AbstractEntity implements Serializable {
 	public void setProductType(ProductType productType) {
 		this.productType = productType;
 	}
+    public BigDecimal getAmountOld() {
+        return amountOld;
+    }
+    public void setAmountOld(BigDecimal amountOld) {
+        this.amountOld = amountOld;
+    }
+    public BigDecimal getAmount() {
+        return amount;
+    }
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
 
 }
