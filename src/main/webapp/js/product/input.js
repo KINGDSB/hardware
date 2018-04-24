@@ -39,10 +39,10 @@ $(function(){
         console.log("fileuploaded");
         console.log(data);
         if (200 == data.response.code) {
-        	if ($("#attachment").val() != null && $("#attachment").val() != '') {
-	    		$("#attachment").val($("#attachment").val() + "," + data.response.desc);
+        	if ($("#picUrls").val() != null && $("#picUrls").val() != '') {
+	    		$("#picUrls").val($("#picUrls").val() + "," + data.response.desc);
 			} else {
-	    		$("#attachment").val(data.response.desc);
+	    		$("#picUrls").val(data.response.desc);
 			}
 		}
     });

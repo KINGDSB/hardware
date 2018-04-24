@@ -111,7 +111,7 @@
         <%--右边--%>
         <div class="col-md-6 form_me">
             <div class="col-md-12 form-horizontal border">
-	            <label class="col-md-2 form-label" for="uploadfile" style="text-align: right;">附件</label>
+	            <label class="col-md-2 form-label" for="uploadfile" style="text-align: right;">商品图片</label>
 	            <input id="uploadfile" name="files" class="file" type="file" multiple data-min-file-count="1">
 	            <input type="hidden" id="picUrls" name="picUrls">
             </div>
@@ -120,7 +120,7 @@
 
     <div class="col-md-12 form_me">
         <div style="padding: 0 15px;">
-            <label class="form-label col-md-2" style="text-align: right;">问题描述</label>
+            <label class="form-label col-md-2" style="text-align: right;">商品描述</label>
             <textarea id="description" name="description" class="form-control1 col-md-10" rows="3" style="height: 80px;"></textarea>
         </div>
     </div>
