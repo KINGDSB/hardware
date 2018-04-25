@@ -82,7 +82,8 @@
     }
 </style>
 <form role="form" class="form-horizontal" id="inputForm" method="post">
-
+    <!-- 默认是上线中 -->
+    <input type="hidden" name="status" value="2"/>
     <div class="col-md-12">
         <%--左边--%>
         <div class="col-md-6 form_me" >
@@ -110,7 +111,7 @@
 
         <%--右边--%>
         <div class="col-md-6 form_me">
-            <div class="col-md-12 form-horizontal border">
+            <div id="picUrlsDiv" class="col-md-12 form-horizontal border">
 	            <label class="col-md-2 form-label" for="uploadfile" style="text-align: right;">图片</label>
 	            <input id="uploadfile" name="files" class="file" type="file" multiple data-min-file-count="1">
 	            <input type="hidden" id="picUrls" name="picUrls">

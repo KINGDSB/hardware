@@ -2,7 +2,6 @@ package indi.dsb.hardware.product.controller;
 
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,13 +30,11 @@ import indi.dsb.hardware.common.abstracts.AbstractService;
 import indi.dsb.hardware.common.utils.DateUtil;
 import indi.dsb.hardware.common.utils.Response;
 import indi.dsb.hardware.product.entity.Product;
-import indi.dsb.hardware.product.entity.ProductType;
 import indi.dsb.hardware.product.service.ProductService;
 import indi.dsb.hardware.product.service.ProductTypeService;
 import indi.dsb.hardware.sys.service.SysResourceService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import tk.mybatis.mapper.entity.Example;
 
 /**
  * Created by Administrator on 2017/12/7.
@@ -53,8 +50,6 @@ public class ProductController extends AbstractController {
     private ProductService productService;
     @Autowired
     private SysResourceService sysResourceService;
-    @Autowired
-    private ProductTypeService productTypeService;
 
     @Override
     public AbstractService getService() {

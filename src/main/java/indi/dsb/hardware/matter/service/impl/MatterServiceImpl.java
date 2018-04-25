@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import indi.dsb.hardware.common.Page;
 import indi.dsb.hardware.common.abstracts.AbstractDAO;
 import indi.dsb.hardware.common.abstracts.AbstractServiceImpl;
+import indi.dsb.hardware.common.utils.FileUtils;
 import indi.dsb.hardware.common.utils.SQLUtils;
 import indi.dsb.hardware.matter.dao.MatterDao;
 import indi.dsb.hardware.matter.entity.Matter;
@@ -80,6 +81,11 @@ public class MatterServiceImpl extends AbstractServiceImpl<Matter,Long> implemen
 		if (pageRequest.getPageNumber() > total) {
 			return new Page<Matter>(0, total, total, Collections.<Matter>emptyList());
 		}
+        //列表返回前数据处理
+        for(Matter res : list){
+            // 图片地址加上前缀
+            res.setAttachment(FileUtils.getFileUrls(res.getAttachment()));
+        }
 		return new Page<Matter>(0, total, total, list);
 	}
 
