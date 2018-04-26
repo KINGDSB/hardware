@@ -38,17 +38,6 @@ $(function() {
         $(".modal-lg").removeClass("modal-lg");
     });
 
-    /*
-    $('#alertModal').on('shown.bs.modal', function() {
-        $(".modal-backdrop:last").css({
-            'z-index': function () {
-                //console.log($(this).css("z-index"));
-                return 1061;
-            }
-        });
-    });
-    */
-
     $("[nav-n]").each(function () {
         $(this).bind("click",function(){
             var nav = $(this).attr("nav-n");
@@ -59,33 +48,26 @@ $(function() {
                 if(table != undefined && table != null && table.ajax != null){
                 	table.ajax.reload();
                 }
-                // console.log(data);
             });
-            /* var pageContent = $("#content");
-            pageContent.load(contextPath + "/" + vals[0], function(response) {
-                if (toJson(response).result == 303) {
-                    //console.log(toJson(response).result);
-                    //$("#loginDialog").modal();
-                    window.location.href = contextPath + "/login";
-                }
-            }); */
             $(".page-header").html(vals[1]);
         });
     });
     var logoutCallback = function() {
        ap.ajaxPost("logout", null, function(resp) {
-            var code = resp.code;
-            if (code == 200) {
-                toLoginPage();
-            } else {
-                alertModal("退出失败！", "提示");
-            }
+           var code = resp.code;
+           if (code == 200) {
+               alertModal("退出成功！", "提示");
+//               for(var t = Date.now();Date.now() - t <= 3000;);
+               toLoginPage();
+           } else {
+               alertModal("退出失败！", "提示");
+           	   window.location.href='www.baidu.com';
+           }
        });
     }
 
     $("#logout").on("click", function(e) {
         e.preventDefault();
-
         confirmModal("确认退出？", "提示", logoutCallback);
     });
     

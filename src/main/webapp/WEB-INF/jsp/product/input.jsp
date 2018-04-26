@@ -83,7 +83,6 @@
 </style>
 <form role="form" class="form-horizontal" id="inputForm" method="post">
     <!-- 默认是上线中 -->
-    <input type="hidden" name="status" value="2"/>
     <div class="col-md-12">
         <%--左边--%>
         <div class="col-md-6 form_me" >
@@ -98,6 +97,13 @@
             <div>
                 <label class="form-label col-lg-3">产品类型</label>
                 <select id="typeSelectSub" name="type" class="form-control1 col-lg-8"></select>
+            </div>
+            <div>
+                <label class="form-label col-lg-3">产品状态</label>
+                <select id="statusSelectSub" name="status" class="form-control1 col-lg-8">
+                    <option value="1">未上线</option>
+                    <option value="2" selected="selected">已上线</option>
+                </select>
             </div>
             <div>
                 <label class="form-label col-lg-3">促销前金额</label>

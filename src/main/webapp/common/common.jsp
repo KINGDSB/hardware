@@ -14,7 +14,7 @@
 <meta name="author" content="">
 <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
 
-<title>可爱可亲服务中心</title>
+<title>商城管理后台</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="${ctxPath}/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

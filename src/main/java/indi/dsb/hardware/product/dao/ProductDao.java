@@ -3,19 +3,14 @@ package indi.dsb.hardware.product.dao;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.data.domain.PageRequest;
-
-import indi.dsb.hardware.common.Page;
 import indi.dsb.hardware.common.abstracts.AbstractDAO;
 import indi.dsb.hardware.product.entity.Product;
-import tk.mybatis.mapper.entity.Example;
 
 /**
  * Created by Administrator on 2017/12/8.
  */
 
 public interface ProductDao extends AbstractDAO<Product,Long> {
-    Page<Product> listPage(PageRequest pageRequest, Example example);
 	
 	/**
 	 * <p>Title: findList</p> 

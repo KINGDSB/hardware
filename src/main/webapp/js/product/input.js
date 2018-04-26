@@ -4,6 +4,7 @@
 
 // 初始化数据方法
 function initData(){
+	$.ajaxSettings.async = false;
 	// 获取project下拉列表框
 	$.post("productType/getSelect.json",function(result){
         $("#typeSelectSub").append("<option value=''>请选择</option>");
@@ -11,6 +12,7 @@ function initData(){
 			$("#typeSelectSub").append("<option value='"+result[int].id+"'>"+result[int].nameCn+"</option>");
 		}
 	});
+	$.ajaxSettings.async = true;
 }
 
 $(function(){
@@ -61,9 +63,11 @@ $(function(){
             value: data.id
         }).appendTo(inputForm);
         inputForm.attr("action", "product/edit");
-        inputForm.find(".form-control").each(function(e) {
+        inputForm.find(".form-control1").each(function(e) {
             $(this).val(data[this.name]);
         });
+
+//        $("#typeSelectSub").val(data.type);
         
         $("#picUrlsDiv").empty();
         //img 
@@ -72,9 +76,9 @@ $(function(){
             var imgs = data.picUrls.split("\|");
         	console.log(imgs)
             if (imgs.length > 0) {
-                for (var i = imgs.length; i > 0; i--) {
-                	$("#picUrlsDiv").append('<a class="attachment" href="'+imgs[i]+'" target="_blank"><img src="'+imgs[i]+'" width="150" height="100"></a>');
-                }
+            	for (var i = 0; i < imgs.length; i++) {
+                	$("#picUrlsDiv").append('<a class="attachment" href="'+imgs[i]+'" target="_blank"><img src="'+imgs[i]+'" style="max-width: 100%;max-height: 100%;"></a>');
+				}
             }
 		}
         // 鼠标悬浮大图

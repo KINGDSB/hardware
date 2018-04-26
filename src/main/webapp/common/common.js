@@ -208,7 +208,7 @@ function toJson(text) {
 };
 
 function toLoginPage() {
-    window.location.href = contextPath + "/login";
+    window.location.href = contextPath + "/user/login";
 };
 
 function alertModal (msg, header, fn) {

@@ -6,22 +6,12 @@ import org.springframework.data.domain.PageRequest;
 import indi.dsb.hardware.common.Page;
 import indi.dsb.hardware.common.abstracts.AbstractService;
 import indi.dsb.hardware.product.entity.Product;
-import tk.mybatis.mapper.entity.Example;
 
 /**
  * Created by Administrator on 2017/12/7.
  */
 
 public interface ProductService extends AbstractService<Product,Long> {
-
-	/**
-	 * @Title listPage 
-	 * @Description 分页查询方法
-	 * @param pageRequest
-	 * @param example
-	 * @return
-	 */
-    Page<Product> listPage(PageRequest pageRequest, Example example);
 
 	/**
 	 * @Title findList 

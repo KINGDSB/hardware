@@ -30,11 +30,13 @@ import indi.dsb.hardware.common.abstracts.AbstractService;
 import indi.dsb.hardware.common.utils.DateUtil;
 import indi.dsb.hardware.common.utils.Response;
 import indi.dsb.hardware.product.entity.Product;
+import indi.dsb.hardware.product.entity.ProductType;
 import indi.dsb.hardware.product.service.ProductService;
 import indi.dsb.hardware.product.service.ProductTypeService;
 import indi.dsb.hardware.sys.service.SysResourceService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import tk.mybatis.mapper.entity.Example;
 
 /**
  * Created by Administrator on 2017/12/7.
@@ -67,6 +69,7 @@ public class ProductController extends AbstractController {
     @RequestMapping(value = "/list")
     public ModelAndView find(HttpServletRequest request, HttpServletResponse response) {
         int start = ServletRequestUtils.getIntParameter(request, "start", 0);
+        int index = ServletRequestUtils.getIntParameter(request, "index", 0);
         int length = ServletRequestUtils.getIntParameter(request, "length", 10);
         int draw = ServletRequestUtils.getIntParameter(request, "draw", 1);
 
@@ -98,10 +101,15 @@ public class ProductController extends AbstractController {
         }
 
         Sort sort = new Sort(Direction.DESC, Arrays.asList(new String[] { "t1.created_date" }));
-        PageRequest pageRequest = new PageRequest(start, length, sort);
+        PageRequest pageRequest = null;
+        if (index > 0) {
+        	pageRequest = new PageRequest((index - 1) * length, length, sort);
+		} else {
+			pageRequest = new PageRequest(start, length, sort);
+		}
         Page<Product> list = productService.findList(product, pageRequest);
         list.setDraw(draw);
-
+        list.setIndex(index);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("list", list);
         return modelAndView;
@@ -121,6 +129,27 @@ public class ProductController extends AbstractController {
         }
         return new Response(ResponseCode.SUCCESS).toJson();
     }
+
+	@RequestMapping(value = "edit")
+	@Log(module = "产品管理", method = "编辑产品")
+	public @ResponseBody
+    String edit(@RequestBody Product product) {
+		Long id = product.getId();
+		Example example = new Example(Product.class);
+		example.createCriteria().andEqualTo("id", id);
+		Product oProduct = productService.selectByExample(example).get(0);
+
+		oProduct.setNameCn(product.getNameCn());
+		oProduct.setNameEn(product.getNameEn());
+		oProduct.setType(product.getType());
+		oProduct.setStatus(product.getStatus());
+		oProduct.setAmount(product.getAmount());
+		oProduct.setAmountOld(product.getAmountOld());
+		oProduct.setDescription(product.getDescription());
+
+		productService.update(oProduct);
+		return new Response(ResponseCode.SUCCESS).toJson();
+	}
 
     @RequestMapping(value = "/auditProduct")
     @Log(module = "问题模块", method = "审核产品")

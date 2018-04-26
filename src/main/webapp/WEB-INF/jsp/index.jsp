@@ -110,7 +110,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/hardware/backindex">商城数据管理</a>
+            <a class="navbar-brand" href="/hardware/backindex">商城后台管理</a>
         </div>
         <!-- /.navbar-header -->
 

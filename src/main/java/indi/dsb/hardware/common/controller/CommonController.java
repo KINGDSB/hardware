@@ -10,6 +10,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestUtils;
@@ -106,14 +107,25 @@ public class CommonController {
 
     @RequestMapping(value = "/backindex")
     public ModelAndView backindex(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/index");
-        return modelAndView;
+    	if (null != request.getSession().getAttribute("user")) {
+            return new ModelAndView("/WEB-INF/jsp/index");
+		}
+        return new ModelAndView("/WEB-INF/jsp/login");
     }
+    
+	@RequestMapping(value = "/logout")
+	public @ResponseBody String logout(HttpServletRequest request, HttpServletResponse response) {
+		request.getSession().removeAttribute("user");
+		return new Response(ResponseCode.SUCCESS).toJson();
+	}
     
     @RequestMapping(value = "/login")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
         String username = ServletRequestUtils.getStringParameter(request, "username", null);
         String password = ServletRequestUtils.getStringParameter(request, "password", null);
+        if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
+			return new ModelAndView("/WEB-INF/jsp/login");
+		}
         Example example = new Example(SysUser.class);
         example.createCriteria().andEqualTo("username", username);
         List<SysUser> users = sysUserService.selectByExample(example);
@@ -127,16 +139,12 @@ public class CommonController {
         		request.getSession().setAttribute("resources", resources);
         		
     			ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/index");
-//    			modelAndView.addObject("resources", resources);
-//    			modelAndView.addObject("user", user);
     	        return modelAndView;
 			} else {
-				ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/user/login");
-				return modelAndView;
+				return new ModelAndView("/WEB-INF/jsp/login");
 			}
 		} else {
-			ModelAndView modelAndView = new ModelAndView("/WEB-INF/jsp/user/login");
-			return modelAndView;
+			return new ModelAndView("/WEB-INF/jsp/login");
 		}
     }
 }

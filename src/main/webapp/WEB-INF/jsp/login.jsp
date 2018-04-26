@@ -79,7 +79,7 @@
             <div class="modal-header">
               <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                 <img src="/hardware/images/logo.png" width="150px">
-              <h5>可爱可亲服务中心</h5>
+              <h5>商城后台管理</h5>
               <!-- <h3><span class="glyphicon glyphicon-lock"></span> 登陆</h3> -->
             </div>
             <div class="modal-body" style="padding:10px 35px;">
@@ -111,18 +111,8 @@
           
         </div>
     </div>
-
-
     <div class="footer" style="width: 100%;text-align: center;font-size: 12px;position: fixed;bottom: 0;">
-         <p class="btnav"><!--底部导航-->
-             <a href="http://www.honey-lovely.com/about/brief/" target="_blank">公司简介</a>丨
-             <a href="http://ehr.honey-lovely.cn/" target="_blank">EHR</a>丨
-             <a href="http://data.lexinvip.cn/phone.php/" target="_blank">店长宝</a>丨
-             <a href="http://data.lexinvip.cn/index.php/login" target="_blank">欣管家</a>丨
-             <a href="http://crm.honey-lovely.com/" target="_blank">CRM</a>丨
-             <a href="http://oa.honey-lovely.com/" target="_blank">OA</a>
-         </p>
-         <p class="cr">Copyright © 2015-2018 广州乐欣母婴用品有限公司  <img src="http://ehr.honey-lovely.cn/Public/images/2017-02-16/bottom_itlogo.png" style="vertical-align:middle;"><br><a href="http://www.miitbeian.gov.cn/" title="备案号" target="_blank">粤ICP备11054753号 </a><br>纳税人识别号：91440106677799096D</p>
+         <p class="cr">Copyright © 2015-2018 广州XXX有限公司  <img src="http://ehr.honey-lovely.cn/Public/images/2017-02-16/bottom_itlogo.png" style="vertical-align:middle;"><br><a href="http://www.miitbeian.gov.cn/" title="备案号" target="_blank">粤ICP备XXXX号 </a><br>纳税人识别号：XXX</p>
     </div>
 </body>
 

@@ -51,3 +51,7 @@
 
 <!-- Main Script -->
 <script src="js/main.js"></script>
+
+<script type="text/javascript">
+var contextPath = "${ctxPath}";
+</script>

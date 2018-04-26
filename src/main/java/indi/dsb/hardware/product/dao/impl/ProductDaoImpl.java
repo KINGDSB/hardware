@@ -4,18 +4,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 
-import com.github.pagehelper.PageHelper;
-
-import indi.dsb.hardware.common.Page;
 import indi.dsb.hardware.common.abstracts.AbstractDAOImpl;
 import indi.dsb.hardware.product.dao.ProductDao;
 import indi.dsb.hardware.product.entity.Product;
 import indi.dsb.hardware.product.mapper.ProductMapper;
 import tk.mybatis.mapper.common.Mapper;
-import tk.mybatis.mapper.entity.Example;
 
 
 /**
@@ -30,16 +25,6 @@ public class ProductDaoImpl extends AbstractDAOImpl<Product,Long> implements Pro
     @Override
     public Mapper<Product> getMapper() {
         return productMapper;
-    }
-
-    @Override
-    public Page<Product> listPage(PageRequest pageRequest, Example example) {
-        PageHelper.startPage(pageRequest.getPageNumber() + 1, pageRequest.getPageSize());
-        PageHelper.orderBy("id desc");
-        List<Product> list = productMapper.selectByExample(example);
-        int count = productMapper.selectCountByExample(example);
-        Page<Product> pageList = new Page<Product>(0, count, count, list);
-        return pageList;
     }
 
 	@Override

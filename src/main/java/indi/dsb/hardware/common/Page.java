@@ -7,6 +7,7 @@ public class Page<T> {
     private int draw;
     private long recordsTotal;
     private long recordsFiltered;
+    private int index;
 
     private List<T> data = Collections.EMPTY_LIST;
 
@@ -52,6 +53,14 @@ public class Page<T> {
     public void setData(List<T> data) {
         this.data = data;
     }
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
 
 }
 
