@@ -30,4 +30,12 @@ public interface ProductService extends AbstractService<Product,Long> {
      */
     int updateBySystem(Product product);
     
+    /**
+     * @Title getById 
+     * @Description 根据id获取
+     * @param id
+     * @return
+     */
+    Product getById(Integer id);
+    
 }

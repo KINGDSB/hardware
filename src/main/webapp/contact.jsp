@@ -10,7 +10,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="product-bit-title text-center">
-						<h2>Shopping Cart</h2>
+						<h2>Contact us</h2>
 					</div>
 				</div>
 			</div>

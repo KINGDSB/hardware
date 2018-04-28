@@ -82,6 +82,6 @@
     </div>
 </div> --> 
     <div class="footer" style="width: 100%;text-align: center;font-size: 12px;bottom: 0;">
-         <p class="cr">Copyright © 2015-2018 广州XXX有限公司  <img src="http://ehr.honey-lovely.cn/Public/images/2017-02-16/bottom_itlogo.png" style="vertical-align:middle;"><br><a href="http://www.miitbeian.gov.cn/" title="备案号" target="_blank">粤ICP备XXXX号 </a><br>纳税人识别号：XXX</p>
+         <p class="cr">${staticData["copyright"].dataValueEn } <br><a href="http://www.miitbeian.gov.cn/" title="备案号" target="_blank">${staticData["recordNo"].dataValueEn } </a><br>纳税人识别号：${staticData["taxpayersName"].dataValueEn }</p>
     </div>
 <!-- End footer bottom area -->

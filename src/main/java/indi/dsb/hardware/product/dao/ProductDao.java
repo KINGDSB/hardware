@@ -53,5 +53,12 @@ public interface ProductDao extends AbstractDAO<Product,Long> {
 		Date createdDate,
 		String keyword
 	);
-	
+    
+    /**
+     * @Title getById 
+     * @Description 根据id获取
+     * @param id
+     * @return
+     */
+    Product getById(Integer id);
 }

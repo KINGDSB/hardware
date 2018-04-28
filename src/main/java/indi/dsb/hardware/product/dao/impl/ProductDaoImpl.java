@@ -44,4 +44,9 @@ public class ProductDaoImpl extends AbstractDAOImpl<Product,Long> implements Pro
 		return productMapper.findListCount(status, type, createdDate, keyword	);
 	}
 
+    @Override
+    public Product getById(Integer id) {
+        return productMapper.getById(id);
+    }
+
 }

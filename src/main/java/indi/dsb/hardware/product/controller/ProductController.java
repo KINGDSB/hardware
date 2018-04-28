@@ -30,9 +30,7 @@ import indi.dsb.hardware.common.abstracts.AbstractService;
 import indi.dsb.hardware.common.utils.DateUtil;
 import indi.dsb.hardware.common.utils.Response;
 import indi.dsb.hardware.product.entity.Product;
-import indi.dsb.hardware.product.entity.ProductType;
 import indi.dsb.hardware.product.service.ProductService;
-import indi.dsb.hardware.product.service.ProductTypeService;
 import indi.dsb.hardware.sys.service.SysResourceService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -165,7 +163,7 @@ public class ProductController extends AbstractController {
     }
 
     @RequestMapping(value = "remove")
-    @Log(module = "问题管理", method = "删除问题")
+    @Log(module = "问题管理", method = "删除产品")
     public @ResponseBody
     String remove(@RequestParam("id") Long id) {
         if (id == null)
@@ -190,5 +188,15 @@ public class ProductController extends AbstractController {
         return modelAndView;
     }
     
+    @RequestMapping(value = "/frontDetail")
+    public ModelAndView frontDetail(HttpServletRequest request) {
+        int id = ServletRequestUtils.getIntParameter(request, "id", 0);
+        
+        Product product = productService.getById(id);
+
+        ModelAndView modelAndView = new ModelAndView("single-product");
+        modelAndView.addObject("product", product);
+        return modelAndView;
+    }
 
 }

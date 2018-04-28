@@ -70,4 +70,9 @@ public class ProductServiceImpl extends AbstractServiceImpl<Product,Long> implem
         return getAbstractDAO().updateByPrimaryKey(product);
     }
 
+    @Override
+    public Product getById(Integer id) {
+        return productDao.getById(id);
+    }
+
 }
