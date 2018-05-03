@@ -80,7 +80,7 @@
                 <ul class="nav navbar-nav">
                     <li id="indexLi"><a href="index.jsp">Home</a></li>
                     <li id="shopLi"><a href="shop.jsp">Shop page</a></li>
-                    <li id="singleProductLi"><a href="single-product.jsp">Single product</a></li>
+                    <li id="singleProductLi"><a href="single-product.jsp" style="cursor: not-allowed;">Single product</a></li>
                     <li id="contactLi"><a href="contact.jsp">Contact us</a></li>
                     <!-- 
                     <li><a href="checkout.html">Checkout</a></li>

@@ -1,6 +1,8 @@
 package indi.dsb.hardware.product.service;
 
 
+import java.util.List;
+
 import org.springframework.data.domain.PageRequest;
 
 import indi.dsb.hardware.common.Page;
@@ -24,7 +26,7 @@ public interface ProductService extends AbstractService<Product,Long> {
 
     /**
      * @Title updateBySystem 
-     * @Description 系统更新数据 为了解决定时任务中没有用户登录 因此获取修改人 报错
+     * @Description 系统更新数据 
      * @param product
      * @return
      */
@@ -37,5 +39,14 @@ public interface ProductService extends AbstractService<Product,Long> {
      * @return
      */
     Product getById(Integer id);
+
+	/**
+	 * @Title randList 
+	 * @Description 随机获取列表
+	 * @param product
+	 * @param pageRequest
+	 * @return
+	 */
+    List<Product> randList(String keyword,int size);
     
 }

@@ -56,7 +56,7 @@ public class ProductServiceImpl extends AbstractServiceImpl<Product,Long> implem
 			return new Page<Product>(0, total, total, Collections.<Product>emptyList());
 		}
 
-		//处理
+		// 处理图片地址
 		for(Product res : list){
             res.setPicUrls(FileUtils.getFileUrls(res.getPicUrls()));
         }
@@ -74,5 +74,15 @@ public class ProductServiceImpl extends AbstractServiceImpl<Product,Long> implem
     public Product getById(Integer id) {
         return productDao.getById(id);
     }
+
+	@Override
+	public List<Product> randList(String keyword, int size) {
+		List<Product> list = productDao.randList(keyword, size);
+		// 处理图片地址
+		for(Product res : list){
+            res.setPicUrls(FileUtils.getFileUrls(res.getPicUrls()));
+        }
+		return list;
+	}
 
 }

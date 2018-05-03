@@ -61,4 +61,14 @@ public interface ProductDao extends AbstractDAO<Product,Long> {
      * @return
      */
     Product getById(Integer id);
+
+	/**
+	 * @Title randList 
+	 * @Description 随机获取列表
+	 * @param product
+	 * @param pageRequest
+	 * @return
+	 */
+    List<Product> randList(String keyword,int size);
+    
 }

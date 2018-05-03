@@ -50,19 +50,18 @@
        			{status:2,index:start,length:length},
        			function(result){
        			    var html = '';
-       			    var url = contextPath+'/product/frontDetail';
        			    for (var i = 0; i < result.data.length; i++) {
                         html += '<div class="col-md-3 col-sm-6">';
                         html += '<div class="single-shop-product">';
                         html += '<div class="product-upper">';
                         html += '<img src="'+result.data[i].picUrls+'" alt="'+result.data[i].picUrls+'" width="150" height="150">';
                         html += '</div>';
-                        html += '<h2><a href="'+url+result.data[i].id+'">'+result.data[i].nameEn+'</a></h2>';
+                        html += '<h2><a href="single-product.jsp?id='+result.data[i].id+'">'+result.data[i].nameEn+'</a></h2>';
                         html += '<div class="product-carousel-price">';
                         html += '<ins>$'+result.data[i].amount+'</ins> <del>$'+result.data[i].amountOld+'</del>';
                         html += '</div>';
                         html += '<div class="product-option-shop">';
-                        html += '<a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="'+url+result.data[i].id+'">show detail</a>';
+                        html += '<a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="single-product.jsp?id='+result.data[i].id+'">show detail</a>';
                         html += '</div>';
                         html += '</div>';
                         html += '</div>';
@@ -70,9 +69,6 @@
                     $("#productList").empty();
        			    $("#productList").append(html);
 
-                    console.log(result.recordsTotal)
-                    console.log(length)
-                    console.log(result.index)
        		        $('.pagination').pagination({
        		            totalData: result.recordsTotal,
        		            showData: length,
@@ -89,7 +85,7 @@
        		        });
        			},
        			'json'
-       		)
+       		);
         }
         
         getList(0,12);

@@ -49,4 +49,9 @@ public class ProductDaoImpl extends AbstractDAOImpl<Product,Long> implements Pro
         return productMapper.getById(id);
     }
 
+	@Override
+	public List<Product> randList(String keyword, int size) {
+		return productMapper.randList(keyword, size);
+	}
+
 }

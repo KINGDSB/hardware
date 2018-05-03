@@ -2,6 +2,7 @@ package indi.dsb.hardware.product.controller;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +29,7 @@ import indi.dsb.hardware.common.ResponseCode;
 import indi.dsb.hardware.common.abstracts.AbstractController;
 import indi.dsb.hardware.common.abstracts.AbstractService;
 import indi.dsb.hardware.common.utils.DateUtil;
+import indi.dsb.hardware.common.utils.FileUtils;
 import indi.dsb.hardware.common.utils.Response;
 import indi.dsb.hardware.product.entity.Product;
 import indi.dsb.hardware.product.service.ProductService;
@@ -188,15 +190,26 @@ public class ProductController extends AbstractController {
         return modelAndView;
     }
     
-    @RequestMapping(value = "/frontDetail")
+    @RequestMapping(value = "/getDetail")
     public ModelAndView frontDetail(HttpServletRequest request) {
         int id = ServletRequestUtils.getIntParameter(request, "id", 0);
         
         Product product = productService.getById(id);
-
-        ModelAndView modelAndView = new ModelAndView("single-product");
+        product.setPicUrls(FileUtils.getFileUrls(product.getPicUrls()));
+        
+        ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("product", product);
         return modelAndView;
     }
 
+    @RequestMapping(value = "/randList")
+    public ModelAndView randList(HttpServletRequest request, HttpServletResponse response) {
+        String keyWord = ServletRequestUtils.getStringParameter(request, "keyWord", null);
+        int size = ServletRequestUtils.getIntParameter(request, "size", 0);
+
+        List<Product> list = productService.randList(keyWord, size);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("list", list);
+        return modelAndView;
+    }
 }
