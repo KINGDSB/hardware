@@ -25,14 +25,12 @@
                 <div class="col-md-4">
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">Search Products</h2>
-                        <form action="">
-                            <input type="text" placeholder="Search products...">
-                            <input type="submit" value="Search">
-                        </form>
+                        <input id="keywordInput" type="text" placeholder="Search products...">
+                        <input id="formSub" type="submit" value="Search">
                     </div>
                     
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Products</h2>
+                    <div id="searchList" class="single-sidebar">
+                        <h2 id="H2Products" class="sidebar-title">Products</h2>
                         <div class="thubmnail-recent">
                             <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Sony Smart TV - 2015</a></h2>
@@ -83,43 +81,16 @@
                             </div>                             
                         </div>
                     </div>
-                    <!-- 
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Recent Posts</h2>
-                        <ul>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                            <li><a href="">Sony Smart TV - 2015</a></li>
-                        </ul>
-                    </div> 
-                    -->
                 </div>
                 
                 <div class="col-md-8">
                     <div class="product-content-right">
-                        <!-- 
-                        <div class="product-breadcroumb">
-                            <a href="">Home</a>
-                            <a href="">Category Name</a>
-                            <a href="">Sony Smart TV - 2015</a>
-                        </div>
-                         -->
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div id="picUrl" class="product-main-img" style="border:2px solid #fc894e">
                                         <img src="images/product-2.jpg" alt="">
                                     </div>
-                                    <!-- 
-                                    <div class="product-gallery">
-                                        <img src="images/product-thumb-1.jpg" alt="">
-                                        <img src="images/product-thumb-2.jpg" alt="">
-                                        <img src="images/product-thumb-3.jpg" alt="">
-                                        <img src="images/product-thumb-4.jpg" alt="">
-                                    </div>
-                                     -->
                                 </div>
                             </div>
                             
@@ -129,23 +100,11 @@
                                     <div class="product-inner-price">
                                         <ins id="amount">$700.00</ins> <del id="amountOld">$800.00</del>
                                     </div>    
-                                    <!-- 
-                                    <form action="" class="cart">
-                                        <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                                        </div>
-                                        <button class="add_to_cart_button" type="submit">Add to cart</button>
-                                    </form>   
-                                     -->
                                     <div class="product-inner-category">
                                         <p id="productType">Category: <!-- <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>.  --></p>
                                     </div> 
                                     
                                     <div role="tabpanel">
-                                        <!-- <ul class="product-tab" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
-                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Reviews</a></li>
-                                        </ul> -->
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
                                                 <h2>Product Description</h2>  
@@ -182,17 +141,16 @@
                         <div class="related-products-wrapper">
                             <h2 class="related-products-title">Related Products</h2>
                             <div id="relatedList" class="related-products-carousel">
-                            <!-- 
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="images/product-1.jpg" alt="">
+                                        <img class="photoUrlC" src="images/product-1.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="">Sony Smart TV - 2015</a></h2>
+                                    <h2><a class="nameC" href="">Sony Smart TV - 2015</a></h2>
 
                                     <div class="product-carousel-price">
                                         <ins>$700.00</ins> <del>$800.00</del>
@@ -200,28 +158,28 @@
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="images/product-2.jpg" alt="">
+                                        <img class="photoUrlC" src="images/product-2.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
+                                    <h2><a class="nameC" href="">Apple new mac book 2015 March :P</a></h2>
                                     <div class="product-carousel-price">
                                         <ins>$899.00</ins> <del>$999.00</del>
                                     </div> 
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="images/product-3.jpg" alt="">
+                                        <img class="photoUrlC" src="images/product-3.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="">Apple new i phone 6</a></h2>
+                                    <h2><a class="nameC" href="">Apple new i phone 6</a></h2>
 
                                     <div class="product-carousel-price">
                                         <ins>$400.00</ins> <del>$425.00</del>
@@ -229,14 +187,14 @@
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="images/product-4.jpg" alt="">
+                                        <img class="photoUrlC" src="images/product-4.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="">Sony playstation microsoft</a></h2>
+                                    <h2><a class="nameC" href="">Sony playstation microsoft</a></h2>
 
                                     <div class="product-carousel-price">
                                         <ins>$200.00</ins> <del>$225.00</del>
@@ -244,14 +202,14 @@
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="images/product-5.jpg" alt="">
+                                        <img class="photoUrlC" src="images/product-5.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="">Sony Smart Air Condtion</a></h2>
+                                    <h2><a class="nameC" href="">Sony Smart Air Condtion</a></h2>
 
                                     <div class="product-carousel-price">
                                         <ins>$1200.00</ins> <del>$1355.00</del>
@@ -259,20 +217,19 @@
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="images/product-6.jpg" alt="">
+                                        <img class="photoUrlC" src="images/product-6.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="">Samsung gallaxy note 4</a></h2>
+                                    <h2><a class="nameC" href="">Samsung gallaxy note 4</a></h2>
 
                                     <div class="product-carousel-price">
                                         <ins>$400.00</ins>
                                     </div>                            
                                 </div>    
-                                 -->                                
                             </div>
                         </div>
                     </div>                    
@@ -282,7 +239,8 @@
     </div>
     <%@include file="footer.jsp"%>
     <script>
-        $("#singleProductLi").addClass("active");
+        // $("#singleProductLi").addClass("active");
+        $("#shopLi").addClass("active");
         
         // 获取商品信息
         var url = location.search;
@@ -307,60 +265,49 @@
         
         // 关联产品
         $.post(contextPath+'/product/randList.json',
-            {size: 6},
+            {size: 12},
             function(data){
-            	console.log(data);
-                var html = '';
-                for (var i = 0; i < data.length; i++) {
-                    html += '<div class="single-product" style="width:236px;height:372px;">';
-                    html += '<div class="product-f-image">';
-                    html += '<img src="'+data[i].picUrls+'" alt="" style="width:236px;height:302px;">';
-                    html += '<div class="product-hover">';
-                    html += '<a href="single-product.jsp?id='+data[i].id+'" class="view-details-link"><i class="fa fa-link"></i> See details</a>';
-                    html += '</div></div>';
-                    html += '<h2><a href="single-product.jsp?id='+data[i].id+'">'+data[i].nameEn+'</a></h2>';
-                    html += '<div class="product-carousel-price">';
-                    html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';
-                    html += '</div></div>';
-                }
-                $("#relatedList").empty();
-                $("#relatedList").append(html);
+            	// console.log(data);
+            	var relatedList = $(".single-product");
+            	// console.log(relatedList.length);
+                for (var i = 0; i < relatedList.length; i++) {
+                    $(relatedList[i]).find(".photoUrlC").attr("src", data[i].picUrls);
+                    $(relatedList[i]).find(".view-details-link").attr("href", "single-product.jsp?id="+data[i].id);
+                    $(relatedList[i]).find(".nameC").attr("href", "single-product.jsp?id="+data[i].id).text(data[i].nameEn);
+                    $(relatedList[i]).find("ins").text("$"+data[i].amount);
+                    $(relatedList[i]).find("del").text("$"+data[i].amountOld);
+				}
             },
             'json'
         );
-
         
         // 左侧查询方法
-        function getLeftList(keyword, size){
+        function getLeftList(keyword){
             $.post(contextPath+'/product/randList.json',
-                {keyword: keyword, size: size},
-                function(result){
-                    var html = '';
-                    var url = contextPath+'/product/frontDetail';
-                    for (var i = 0; i < result.data.length; i++) {
-                        html += '<div class="col-md-3 col-sm-6">';
-                        html += '<div class="single-shop-product">';
-                        html += '<div class="product-upper">';
-                        html += '<img src="'+result.data[i].picUrls+'" alt="">';
-                        html += '</div>';
-                        html += '<h2><a href="single-product.jsp?id='+result.data[i].id+'">'+result.data[i].nameEn+'</a></h2>';
-                        html += '<div class="product-carousel-price">';
-                        html += '<ins>$'+result.data[i].amount+'</ins> <del>$'+result.data[i].amountOld+'</del>';
-                        html += '</div>';
-                        html += '<div class="product-option-shop">';
-                        html += '<a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="single-product.jsp?id='+result.data[i].id+'">show detail</a>';
-                        html += '</div>';
-                        html += '</div>';
-                        html += '</div>';
+                {keyWord: keyword, size: 6},
+                function(data){
+                    var html = '<h2 id="H2Products" class="sidebar-title">Products</h2>';
+                    for (var i = 0; i < data.length; i++) {
+                        html += '<div class="thubmnail-recent">';
+                        html += '<img src="'+data[i].picUrls+'" class="recent-thumb" alt="" style="width:64px;height:55px;">';
+                       	html += '<h2><a href="single-product.jsp?id='+data[i].id+'">'+data[i].nameEn+'</a></h2>';
+                   		html += '<div class="product-sidebar-price">';
+               			html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';
+           				html += '</div>';
+           				html += '</div>';
                     }
-                    $("#productList").empty();
-                    $("#productList").append(html);
-
+                    $("#searchList").empty();
+                    $("#searchList").append(html);
                 },
                 'json'
             );
         }
         
-    </script>
+        getLeftList('');
+        
+        $("#formSub").click(function(){
+        	getLeftList($("#keywordInput").val());
+        })
+        </script>
   </body>
 </html>
