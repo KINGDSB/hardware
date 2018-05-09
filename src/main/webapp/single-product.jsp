@@ -280,8 +280,8 @@
             },
             'json'
         );
-        
-        // 左侧查询方法
+
+        // 关键词随机查询方法
         function getLeftList(keyword){
             $.post(contextPath+'/product/randList.json',
                 {keyWord: keyword, size: 6},
