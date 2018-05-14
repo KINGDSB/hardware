@@ -3,14 +3,14 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.honey-lovely</groupId>
-	<artifactId>center</artifactId>
+	<groupId>indi.dsb.hardware</groupId>
+	<artifactId>hardware</artifactId>
 	<version>0.0.1</version>
 	<packaging>war</packaging>
 
-	<name>center</name>
+	<name>hardware</name>
 
-	<description>center</description>
+	<description>hardware</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -302,7 +302,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>center</finalName>
+		<finalName>hardware</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
