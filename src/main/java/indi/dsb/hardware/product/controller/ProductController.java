@@ -1,6 +1,8 @@
 package indi.dsb.hardware.product.controller;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -32,6 +34,9 @@ import indi.dsb.hardware.common.utils.DateUtil;
 import indi.dsb.hardware.common.utils.FileUtils;
 import indi.dsb.hardware.common.utils.Response;
 import indi.dsb.hardware.product.entity.Product;
+import indi.dsb.hardware.product.entity.ProductSeries;
+import indi.dsb.hardware.product.entity.ProductSeriesTreeView;
+import indi.dsb.hardware.product.service.ProductSeriesService;
 import indi.dsb.hardware.product.service.ProductService;
 import indi.dsb.hardware.sys.service.SysResourceService;
 import io.swagger.annotations.ApiImplicitParam;
@@ -44,12 +49,14 @@ import tk.mybatis.mapper.entity.Example;
 
 @RestController
 @RequestMapping("/product")
-public class ProductController extends AbstractController {
+public class ProductController extends AbstractController<Product, Long> {
 
     private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
     private ProductService productService;
+    @Autowired
+    private ProductSeriesService productSeriesService;
     @Autowired
     private SysResourceService sysResourceService;
 
@@ -210,6 +217,32 @@ public class ProductController extends AbstractController {
         List<Product> list = productService.randList(keyWord, size);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("list", list);
+        return modelAndView;
+    }
+    
+    /**
+     * @Title productSeriesTree 
+     * @Description 产品系列树形
+     * @return
+     */
+    @RequestMapping(value = "/productSeriesTree")
+    public ModelAndView productSeriesTree() {
+
+        List<ProductSeries> list = productSeriesService.selectAll();
+        // 排序
+        Collections.sort(list, new Comparator<ProductSeries>(){
+            @Override
+            public int compare(ProductSeries o1, ProductSeries o2) {
+                int id1 = o1.getParentId().intValue();
+                int id2 = o2.getParentId().intValue();
+                return id1 - id2;
+            }
+        });
+        
+        ModelAndView modelAndView = new ModelAndView();
+        ProductSeriesTreeView treeView = ProductSeriesTreeView.buildResourceTree(list, Collections.emptyList());
+        modelAndView.addObject(treeView);
+        
         return modelAndView;
     }
 }
