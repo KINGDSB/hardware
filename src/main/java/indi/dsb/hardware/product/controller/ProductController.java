@@ -241,7 +241,7 @@ public class ProductController extends AbstractController<Product, Long> {
         
         ModelAndView modelAndView = new ModelAndView();
         ProductSeriesTreeView treeView = ProductSeriesTreeView.buildResourceTree(list, Collections.emptyList());
-        modelAndView.addObject(treeView);
+        modelAndView.addObject(treeView.getNodes());
         
         return modelAndView;
     }

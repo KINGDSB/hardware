@@ -35,49 +35,49 @@
                             <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Sony Smart TV - 2015</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
+                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
                             </div>                             
                         </div>
                         <div class="thubmnail-recent">
                             <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Sony Smart TV - 2015</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
+                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
                             </div>                             
                         </div>
                         <div class="thubmnail-recent">
                             <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Sony Smart TV - 2015</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
+                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
                             </div>                             
                         </div>
                         <div class="thubmnail-recent">
                             <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Sony Smart TV - 2015</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
+                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
                             </div>                             
                         </div>
                         <div class="thubmnail-recent">
                             <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Sony Smart TV - 2015</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
+                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
                             </div>                             
                         </div>
                         <div class="thubmnail-recent">
                             <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Sony Smart TV - 2015</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
+                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
                             </div>                             
                         </div>
                         <div class="thubmnail-recent">
                             <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Sony Smart TV - 2015</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
+                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
                             </div>                             
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                                 <div class="product-inner">
                                     <h2 id="productName" class="product-name" style="background-color: #fc894e">Sony Smart TV - 2015</h2>
                                     <div class="product-inner-price">
-                                        <ins id="amount">$700.00</ins> <del id="amountOld">$800.00</del>
+                                        <!-- <ins id="amount">$700.00</ins> <del id="amountOld">$800.00</del> -->
                                     </div>    
                                     <div class="product-inner-category">
                                         <p id="productType">Category: <!-- <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>.  --></p>
@@ -153,7 +153,7 @@
                                     <h2><a class="nameC" href="">Sony Smart TV - 2015</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$800.00</del>
+                                        <!-- <ins>$700.00</ins> <del>$800.00</del> -->
                                     </div> 
                                 </div>
                                 <div class="single-product">
@@ -167,7 +167,7 @@
 
                                     <h2><a class="nameC" href="">Apple new mac book 2015 March :P</a></h2>
                                     <div class="product-carousel-price">
-                                        <ins>$899.00</ins> <del>$999.00</del>
+                                        <!-- <ins>$899.00</ins> <del>$999.00</del> -->
                                     </div> 
                                 </div>
                                 <div class="single-product">
@@ -182,7 +182,7 @@
                                     <h2><a class="nameC" href="">Apple new i phone 6</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins>$400.00</ins> <del>$425.00</del>
+                                        <!-- <ins>$400.00</ins> <del>$425.00</del> -->
                                     </div>                                 
                                 </div>
                                 <div class="single-product">
@@ -197,7 +197,7 @@
                                     <h2><a class="nameC" href="">Sony playstation microsoft</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins>$200.00</ins> <del>$225.00</del>
+                                        <!-- <ins>$200.00</ins> <del>$225.00</del> -->
                                     </div>                            
                                 </div>
                                 <div class="single-product">
@@ -212,7 +212,7 @@
                                     <h2><a class="nameC" href="">Sony Smart Air Condtion</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins>$1200.00</ins> <del>$1355.00</del>
+                                        <!-- <ins>$1200.00</ins> <del>$1355.00</del> -->
                                     </div>                                 
                                 </div>
                                 <div class="single-product">
@@ -227,7 +227,7 @@
                                     <h2><a class="nameC" href="">Samsung gallaxy note 4</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins>$400.00</ins>
+                                        <!-- <ins>$400.00</ins> -->
                                     </div>                            
                                 </div>    
                             </div>
@@ -292,7 +292,7 @@
                         html += '<img src="'+data[i].picUrls+'" class="recent-thumb" alt="" style="width:64px;height:55px;">';
                        	html += '<h2><a href="single-product.jsp?id='+data[i].id+'">'+data[i].nameEn+'</a></h2>';
                    		html += '<div class="product-sidebar-price">';
-               			html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';
+               			// html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';
            				html += '</div>';
            				html += '</div>';
                     }

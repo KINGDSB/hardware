@@ -4,15 +4,19 @@
     <%@include file="common/commonFront.jsp"%>
     <script src="static/jquery.pagination.js"></script>
     <link rel="stylesheet" href="css/pagination.css">
+    <script src="static/tree/js/bootstrap-treeview.js"></script>
+    <link rel="stylesheet" href="static/tree/css/bootstrap-treeview.css">
     <style type="text/css">
         .product-upper{
             width:200px;
             height:200px;
         }
-        
         .product-upper img{
             width:100%;
             height:100%;
+        }
+        .container {
+            width:80%;
         }
     </style>
   </head>
@@ -31,23 +35,48 @@
     </div>
     <div class="single-product-area">
         <div class="container">
-            <div id="productList" class="row">
-            </div>
-            
             <div class="row">
-                <div class="col-md-12">
-                    <div class="m-style pagination" style="width: 100%;text-align: center;"></div>
-                </div>
+	            <div class="col-md-3">
+                    <h2 class="sidebar-title">Product Series</h2>
+                    <div id="treeview2" class=""></div>
+	            </div>
+	            <div class="col-md-9">
+	                <div id="productList"></div>
+		            <div id="paginationId" class="m-style pagination" style="width: 100%;text-align: center;"></div>
+	            </div>
             </div>
         </div>
     </div>
     <%@include file="footer.jsp"%>
     <script>
         $("#shopLi").addClass("active");
+
+        $.ajax({
+            type: "Post",
+            url: contextPath+'/product/productSeriesTree.json',
+            dataType: "json",
+            success: function (result) {
+                $('#treeview2').treeview({
+                    levels: 1,
+                    highlightSelected: true,    //是否高亮选中
+                    data: result,         // 数据源
+                    //nodeIcon: 'glyphicon glyphicon-user',    //节点上的图标
+                    //nodeIcon: 'glyphicon glyphicon-globe',
+                    //emptyIcon: '',    //没有子节点的节点图标
+                    onNodeSelected: function (event, data) {
+                        // alert(data.id);
+                        getList(data.id, 0, 8);
+                    }
+                });
+            },
+            error: function () {
+                alert("树形结构加载失败！");
+            }
+        });
         
-        function getList(start, length){
+        function getList(type, start, length){
         	$.post(contextPath+'/product/list.json',
-       			{status:2,index:start,length:length},
+       			{type:type,status:2,index:start,length:length},
        			function(result){
        			    var html = '';
        			    for (var i = 0; i < result.data.length; i++) {
@@ -57,9 +86,9 @@
                         html += '<img src="'+result.data[i].picUrls+'" alt="'+result.data[i].picUrls+'" width="150" height="150">';
                         html += '</div>';
                         html += '<h2><a href="single-product.jsp?id='+result.data[i].id+'">'+result.data[i].nameEn+'</a></h2>';
-                        html += '<div class="product-carousel-price">';
-                        html += '<ins>$'+result.data[i].amount+'</ins> <del>$'+result.data[i].amountOld+'</del>';
-                        html += '</div>';
+                        // html += '<div class="product-carousel-price">';
+                        // html += '<ins>$'+result.data[i].amount+'</ins> <del>$'+result.data[i].amountOld+'</del>';
+                        // html += '</div>';
                         html += '<div class="product-option-shop">';
                         html += '<a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="single-product.jsp?id='+result.data[i].id+'">show detail</a>';
                         html += '</div>';
@@ -69,26 +98,31 @@
                     $("#productList").empty();
        			    $("#productList").append(html);
 
-       		        $('.pagination').pagination({
-       		            totalData: result.recordsTotal,
-       		            showData: length,
-       		            current: result.index==0?1:result.index,
-       		           // mode: 'fixed',
-       		            coping: true,
-       		            homePage: '首页',
-       		            endPage: '末页',
-       		            prevContent: '上页',
-       		            nextContent: '下页',
-       		            callback: function (api) {
-       		                getList(api.getCurrent(), length)
-       		            }
-       		        });
+                    $("#paginationId").empty();
+                    if (result.data.length > length) {
+                        $('#paginationId').pagination({
+                            totalData: result.recordsTotal,
+                            showData: length,
+                            current: result.index==0?1:result.index,
+                           // mode: 'fixed',
+                            coping: true,
+                            homePage: '首页',
+                            endPage: '末页',
+                            prevContent: '上页',
+                            nextContent: '下页',
+                            callback: function (api) {
+                                getList(type, api.getCurrent(), length)
+                            }
+                        });
+					} else if (result.data.length == 0) {
+                        $("#paginationId").append("<h2>Currently the series no goods</h2>");
+					}
        			},
        			'json'
        		);
         }
         
-        getList(0,12);
+        getList(0, 0, 8);
     </script>
   </body>
 </html>

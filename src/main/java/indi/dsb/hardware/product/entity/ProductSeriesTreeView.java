@@ -43,7 +43,11 @@ public class ProductSeriesTreeView {
 					cTNode.setState(state);
 				}
                 cTNode.setNodes(getTreeNodes(cTNode, resources, selectedResourceIds, true));
-                cTNode.setTags(new String[]{ cTNode.getNodes().size() + "" });
+                if (null != cTNode.getNodes()) {
+                    cTNode.setTags(new String[]{ cTNode.getNodes().size() + "" });
+				} else {
+	                cTNode.setTags(new String[]{ "0" });
+				}
 				nodes.add(cTNode);
 				continue;
 			}
@@ -73,10 +77,17 @@ public class ProductSeriesTreeView {
 						cTNode.setState(state);
 					}
 					cTNode.setNodes(getTreeNodes(cTNode, resources, selectedResourceIds, false));
-	                cTNode.setTags(new String[]{ cTNode.getNodes().size() + "" });
+	                if (null != cTNode.getNodes()) {
+	                    cTNode.setTags(new String[]{ cTNode.getNodes().size() + "" });
+					} else {
+		                cTNode.setTags(new String[]{ "0" });
+					}
 					nodes.add(cTNode);
 				}
 			}
+		}
+		if (nodes.isEmpty()) {
+			return null;
 		}
 		return nodes;
 	}
