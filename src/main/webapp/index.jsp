@@ -3,10 +3,10 @@
   <head>
     <%@include file="common/commonFront.jsp"%>
   </head>
-  <body>
+  <body style="margin:0 auto;width: 80%">
     <%@include file="header.jsp"%>
     <div class="slider-area">
-        <div class="zigzag-bottom"></div>
+        <!-- <div class="zigzag-bottom"></div> -->
         <div id="slide-list" class="carousel carousel-fade slide" data-ride="carousel">
             <div class="slide-bulletz">
                 <div class="container">
@@ -28,7 +28,7 @@
                         <div class="slide-bg" style="background-image: url(${staticData["indexInfoImg1"].dataValueEn })"></div>
                         <div class="slide-text-wrapper">
                             <div class="slide-text">
-                                <div class="container">
+                                <%-- <div class="container">
                                     <div class="row">
                                         <div class="col-md-6 col-md-offset-6">
                                             <div class="slide-content">
@@ -40,7 +40,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --%>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         <div class="slide-bg" style="background-image: url(${staticData["indexInfoImg2"].dataValueEn })"></div>
                         <div class="slide-text-wrapper">
                             <div class="slide-text">
-                                <div class="container">
+                                <%-- <div class="container">
                                     <div class="row">
                                         <div class="col-md-6 col-md-offset-6">
                                             <div class="slide-content">
@@ -60,7 +60,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --%>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         <div class="slide-bg" style="background-image: url(${staticData["indexInfoImg3"].dataValueEn })"></div>
                         <div class="slide-text-wrapper">
                             <div class="slide-text">
-                                <div class="container">
+                                <%-- <div class="container">
                                     <div class="row">
                                         <div class="col-md-6 col-md-offset-6">
                                             <div class="slide-content">
@@ -80,7 +80,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --%>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
     </div> <!-- End slider area -->
     <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
     <div class="promo-area">
-        <div class="zigzag-bottom"></div>
+        <!-- <div class="zigzag-bottom"></div> -->
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">

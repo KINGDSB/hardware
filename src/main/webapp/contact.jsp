@@ -17,7 +17,6 @@
 		</div>
 	</div>
 	<div class="single-product-area">
-		<div class="zigzag-bottom"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
