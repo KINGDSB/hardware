@@ -39,7 +39,8 @@
           if (s.currentTop !== null) {
             s.stickyElement
               .css('position', '')
-              .css('top', '');
+              .css('top', '')
+              .css('width', '100%');
             s.stickyElement.trigger('sticky-end', [s]).parent().removeClass(s.className);
             s.currentTop = null;
           }

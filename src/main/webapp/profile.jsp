@@ -3,7 +3,7 @@
 <head>
 <%@include file="common/commonFront.jsp"%>
 </head>
-<body>
+<body style="margin:0 auto;width: 80%">
 	<%@include file="header.jsp"%>
 	<div class="product-big-title-area">
 		<div class="container">

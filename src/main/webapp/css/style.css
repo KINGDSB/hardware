@@ -235,7 +235,7 @@ z-index: 9;
 .promo-area {
   background: none repeat scroll 0 0 #fc894e;
   color: #fff;
-  padding: 77px 0 200px;
+  padding: 20px 0 20px;
 }
 
 .brands-area {
@@ -433,7 +433,7 @@ z-index: 9;
 .footer-top-area .zigzag-bottom{background: #000}
 .footer-top-area {background: none repeat scroll 0 0 #333;
 color: #999;
-padding: 35px 0 180px;}
+padding: 35px 0 10px;}
 
 
 .footer-bottom-area {background: #000;color: #fff}

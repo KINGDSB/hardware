@@ -21,7 +21,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <div class="single-slide">
@@ -89,9 +88,55 @@
 
         </div>        
     </div> <!-- End slider area -->
-    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
+    <div class="row"style="margin-top: 1%;margin-bottom: 1%;">
+        <div class="col-sm-6">
+            <div class="product-images">
+                <div id="picUrl" class="product-main-img" style="margin-right: 10%">
+                    <img src="http://47.254.38.242:8082/files/hardware/20180426/company.png" alt="" style="float: right;">
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-5"style="margin-top: 1%;>
+            <div class="product-inner">
+                <h2 class="product-name" style="background-color: #fc894e">Company Name XXX</h2>
+                <div class="product-inner-category">
+                    <p id="productType">Company Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
+                </div> 
+                
+                <div role="tabpanel">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home">
+                            <h2>Company Description</h2>
+                            <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="profile">
+                            <h2>Reviews</h2>
+                            <div class="submit-review">
+                                <p><label for="name">Name</label> <input name="name" type="text"></p>
+                                <p><label for="email">Email</label> <input name="email" type="email"></p>
+                                <div class="rating-chooser">
+                                    <p>Your rating</p>
+
+                                    <div class="rating-wrap-post">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                                <p><input type="submit" value="Submit"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
     <div class="promo-area">
-        <!-- <div class="zigzag-bottom"></div> -->
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -121,285 +166,6 @@
             </div>
         </div>
     </div> <!-- End promo area -->
-<!--     
-    <div class="maincontent-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="latest-product">
-                        <h2 class="section-title">Latest Products</h2>
-                        <div class="product-carousel">
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="images/product-1.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.jsp">Sony Smart TV - 2015</a></h2>
-                                
-                                <div class="product-carousel-price">
-                                    <ins>$700.00</ins> <del>$800.00</del>
-                                </div> 
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="images/product-2.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.jsp">Apple new mac book 2015 March :P</a></h2>
-                                <div class="product-carousel-price">
-                                    <ins>$899.00</ins> <del>$999.00</del>
-                                </div> 
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="images/product-3.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.jsp">Apple new i phone 6</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$400.00</ins> <del>$425.00</del>
-                                </div>                                 
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="images/product-4.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.jsp">Sony playstation microsoft</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$200.00</ins> <del>$225.00</del>
-                                </div>                            
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="images/product-5.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.jsp">Sony Smart Air Condtion</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$1200.00</ins> <del>$1355.00</del>
-                                </div>                                 
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="images/product-6.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.jsp">Samsung gallaxy note 4</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$400.00</ins>
-                                </div>                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  --><!-- End main content area -->
-    <!-- 
-    <div class="brands-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="brand-wrapper">
-                        <h2 class="section-title">Brands</h2>
-                        <div class="brand-list">
-                            <img src="images/services_logo__1.jpg" alt="">
-                            <img src="images/services_logo__2.jpg" alt="">
-                            <img src="images/services_logo__3.jpg" alt="">
-                            <img src="images/services_logo__4.jpg" alt="">
-                            <img src="images/services_logo__1.jpg" alt="">
-                            <img src="images/services_logo__2.jpg" alt="">
-                            <img src="images/services_logo__3.jpg" alt="">
-                            <img src="images/services_logo__4.jpg" alt="">                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --> <!-- End brands area -->
-    <!-- 
-    <div class="product-widget-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="single-product-widget">
-                        <h2 class="product-wid-title">Top Sellers</h2>
-                        <a href="" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single-product.jsp"><img src="images/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.jsp">Sony Smart TV - 2015</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.jsp"><img src="images/product-thumb-2.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.jsp">Apple new mac book 2015</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.jsp"><img src="images/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.jsp">Apple new i phone 6</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-product-widget">
-                        <h2 class="product-wid-title">Recently Viewed</h2>
-                        <a href="#" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single-product.jsp"><img src="images/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.jsp">Sony playstation microsoft</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.jsp"><img src="images/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.jsp">Sony Smart Air Condtion</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.jsp"><img src="images/product-thumb-2.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.jsp">Samsung gallaxy note 4</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-product-widget">
-                        <h2 class="product-wid-title">Top New</h2>
-                        <a href="#" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single-product.jsp"><img src="images/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.jsp">Apple new i phone 6</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.jsp"><img src="images/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.jsp">Samsung gallaxy note 4</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.jsp"><img src="images/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.jsp">Sony playstation microsoft</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  --><!-- End product widget area -->
     <%@include file="footer.jsp"%>
     <script>
 	    $("#indexLi").addClass("active");

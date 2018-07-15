@@ -3,7 +3,7 @@
 <head>
 <%@include file="common/commonFront.jsp"%>
 </head>
-<body>
+<body style="margin:0 auto;width: 80%">
 	<%@include file="header.jsp"%>
 	<div class="product-big-title-area">
 		<div class="container">
@@ -19,58 +19,6 @@
 	<div class="single-product-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
-					<div class="single-sidebar">
-						<h2 class="sidebar-title">Search Products</h2>
-                        <input id="keywordInput" type="text" placeholder="Search products...">
-                        <input id="formSub" type="submit" value="Search">
-					</div>
-
-					<div id="searchList" class="single-sidebar">
-						<h2 class="sidebar-title">Products</h2>
-						<div class="thubmnail-recent">
-							<img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-							<h2>
-								<a href="single-product.jsp">Sony Smart TV - 2015</a>
-							</h2>
-							<div class="product-sidebar-price">
-								<ins>$700.00</ins>
-								<del>$800.00</del>
-							</div>
-						</div>
-						<div class="thubmnail-recent">
-							<img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-							<h2>
-								<a href="single-product.jsp">Sony Smart TV - 2015</a>
-							</h2>
-							<div class="product-sidebar-price">
-								<ins>$700.00</ins>
-								<del>$800.00</del>
-							</div>
-						</div>
-						<div class="thubmnail-recent">
-							<img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-							<h2>
-								<a href="single-product.jsp">Sony Smart TV - 2015</a>
-							</h2>
-							<div class="product-sidebar-price">
-								<ins>$700.00</ins>
-								<del>$800.00</del>
-							</div>
-						</div>
-						<div class="thubmnail-recent">
-							<img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-							<h2>
-								<a href="single-product.jsp">Sony Smart TV - 2015</a>
-							</h2>
-							<div class="product-sidebar-price">
-								<ins>$700.00</ins>
-								<del>$800.00</del>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<div class="col-md-8">
 					<div class="product-content-right">
 						<div class="woocommerce">
