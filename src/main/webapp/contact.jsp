@@ -23,27 +23,18 @@
 					<div class="product-content-right">
 						<div class="woocommerce">
 							<div class="woocommerce-info">
-								Company Profile:  
+								Company Address:  
 								<a class="showlogin" data-toggle="collapse" href="#companyProfile" aria-expanded="false" aria-controls="companyProfile">Show Details</a>
 							</div>
 							<div id="companyProfile" class="login collapse" method="post">
 								<p>${staticData["companyProfile"].dataValueEn }</p>
 							</div>
-
                             <div class="woocommerce-info">
-                                Company Values:  
+                                Company telephone Number:  
                                 <a class="showcoupon" data-toggle="collapse" href="#companyValues" aria-expanded="false" aria-controls="companyValues">Show Details</a>
                             </div>
                             <div id="companyValues" class="checkout_coupon collapse">
                                 <p>${staticData["companyValues"].dataValueEn }</p>
-                            </div>
-                            
-                            <div class="woocommerce-info">
-                                Global Cooperation:  
-                                <a class="showcoupon" data-toggle="collapse" href="#globalCooperation" aria-expanded="false" aria-controls="globalCooperation">Show Details</a>
-                            </div>
-                            <div id="globalCooperation" class="checkout_coupon collapse">
-                                <p>${staticData["globalCooperation"].dataValueEn }</p>
                             </div>
 						</div>
 					</div>

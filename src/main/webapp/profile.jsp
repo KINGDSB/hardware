@@ -18,66 +18,55 @@
 	</div>
 	<div class="single-product-area">
 		<div class="container" style="width:50%">
-			<div class="row">
-                <div class="woocommerce " >
-                    <div class="woocommerce-info">
-                        Company Profile:  
-                        <a class="showlogin" data-toggle="collapse" href="#companyProfile" aria-expanded="false" aria-controls="companyProfile">Show Details</a>
-                    </div>
-                    <div id="companyProfile" class="login collapse" method="post">
-                        <p>${staticData["companyProfile"].dataValueEn }</p>
-                    </div>
-
-                    <div class="woocommerce-info">
-                        Company Values:  
-                        <a class="showcoupon" data-toggle="collapse" href="#companyValues" aria-expanded="false" aria-controls="companyValues">Show Details</a>
-                    </div>
-                    <div id="companyValues" class="checkout_coupon collapse">
-                        <p>${staticData["companyValues"].dataValueEn }</p>
-                    </div>
-                    
-                    <div class="woocommerce-info">
-                        Global Cooperation:  
-                        <a class="showcoupon" data-toggle="collapse" href="#globalCooperation" aria-expanded="false" aria-controls="globalCooperation">Show Details</a>
-                    </div>
-                    <div id="globalCooperation" class="checkout_coupon collapse">
-                        <p>${staticData["globalCooperation"].dataValueEn }</p>
-                    </div>
-                </div>
-			</div>
+            <div class="row"style="margin-top: 1%;margin-bottom: 1%;">
+		        <div class="col-sm-4">
+		            <div class="product-images">
+		                <div id="picUrl" class="product-main-img" style="margin-right: 10%">
+		                    <img src="http://47.254.38.242:8082/files/hardware/20180426/company.png" alt="" style="float: right;">
+		                </div>
+		            </div>
+		        </div>
+		        
+		        <div class="col-sm-8"style="margin-top: 1%;>
+		            <div class="product-inner">
+		                <h2 class="product-name" style="background-color: #fc894e">Company Name XXX</h2>
+		                <div class="product-inner-category">
+		                    <p id="productType">Company Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
+		                </div> 
+		                
+		                <div role="tabpanel">
+		                    <div class="tab-content">
+		                        <div role="tabpanel" class="tab-pane fade in active" id="home">
+		                            <h2>Company Description</h2>
+		                            <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+		                        </div>
+		                        <div role="tabpanel" class="tab-pane fade" id="profile">
+		                            <h2>Reviews</h2>
+		                            <div class="submit-review">
+		                                <p><label for="name">Name</label> <input name="name" type="text"></p>
+		                                <p><label for="email">Email</label> <input name="email" type="email"></p>
+		                                <div class="rating-chooser">
+		                                    <p>Your rating</p>
+		
+		                                    <div class="rating-wrap-post">
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                        <i class="fa fa-star"></i>
+		                                    </div>
+		                                </div>
+		                                <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+		                                <p><input type="submit" value="Submit"></p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
 		</div>
 	</div>
 	<%@include file="footer.jsp"%>
-    <script>
-        $("#profileLi").addClass("active");
-
-        // 关键词随机查询方法
-        function getLeftList(keyword){
-            $.post(contextPath+'/product/randList.json',
-                {keyWord: keyword, size: 4},
-                function(data){
-                    var html = '<h2 id="H2Products" class="sidebar-title">Products</h2>';
-                    for (var i = 0; i < data.length; i++) {
-                        html += '<div class="thubmnail-recent">';
-                        html += '<img src="'+data[i].picUrls+'" class="recent-thumb" alt="" style="width:64px;height:55px;">';
-                        html += '<h2><a href="single-product.jsp?id='+data[i].id+'">'+data[i].nameEn+'</a></h2>';
-                        html += '<div class="product-sidebar-price">';
-                        html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';
-                        html += '</div>';
-                        html += '</div>';
-                    }
-                    $("#searchList").empty();
-                    $("#searchList").append(html);
-                },
-                'json'
-            );
-        }
-        
-        getLeftList('');
-        
-        $("#formSub").click(function(){
-            getLeftList($("#keywordInput").val());
-        })
-    </script>
 </body>
 </html>
