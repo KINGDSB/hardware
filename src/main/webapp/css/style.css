@@ -246,8 +246,7 @@ z-index: 9;
 
 .promo-area .zigzag-bottom, .brands-area .zigzag-bottom{background: #fff}
 .single-promo {
-    border: 1px solid #17a78b;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 200;
     padding: 20px 10px;
     text-align: center;
@@ -256,6 +255,7 @@ z-index: 9;
   font-size: 50px;
 }
 
+#contactP {color: transparent;}
 .single-promo:hover {color: #fff;background: #222;border-color: #222}
 
 .section-title {

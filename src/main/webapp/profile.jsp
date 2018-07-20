@@ -16,13 +16,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="single-product-area">
+	<div style="padding: 40px 0 40px;">
 		<div class="container" style="width:50%">
             <div class="row"style="margin-top: 1%;margin-bottom: 1%;">
 		        <div class="col-sm-4">
 		            <div class="product-images">
 		                <div id="picUrl" class="product-main-img" style="margin-right: 10%">
-		                    <img src="http://47.254.38.242:8082/files/hardware/20180426/company.png" alt="" style="float: right;">
+		                    <img src="http://47.254.38.242:8082/files/hardware/20180426/company.png" alt="" style="float: right; max-width: 432px;">
 		                </div>
 		            </div>
 		        </div>
@@ -40,26 +40,6 @@
 		                            <h2>Company Description</h2>
 		                            <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
 		                        </div>
-		                        <div role="tabpanel" class="tab-pane fade" id="profile">
-		                            <h2>Reviews</h2>
-		                            <div class="submit-review">
-		                                <p><label for="name">Name</label> <input name="name" type="text"></p>
-		                                <p><label for="email">Email</label> <input name="email" type="email"></p>
-		                                <div class="rating-chooser">
-		                                    <p>Your rating</p>
-		
-		                                    <div class="rating-wrap-post">
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                    </div>
-		                                </div>
-		                                <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
-		                                <p><input type="submit" value="Submit"></p>
-		                            </div>
-		                        </div>
 		                    </div>
 		                </div>
 		            </div>
@@ -68,5 +48,8 @@
 		</div>
 	</div>
 	<%@include file="footer.jsp"%>
+    <script>
+        $("#profileLi").addClass("active");
+    </script>
 </body>
 </html>

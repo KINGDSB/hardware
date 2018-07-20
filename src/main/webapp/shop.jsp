@@ -90,7 +90,7 @@
                         // html += '<ins>$'+result.data[i].amount+'</ins> <del>$'+result.data[i].amountOld+'</del>';
                         // html += '</div>';
                         html += '<div class="product-option-shop">';
-                        html += '<a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="single-product.jsp?id='+result.data[i].id+'">show detail</a>';
+                        html += '<a class="add_to_cart_button" href="single-product.jsp?id='+result.data[i].id+'">show detail</a>';
                         html += '</div>';
                         html += '</div>';
                         html += '</div>';

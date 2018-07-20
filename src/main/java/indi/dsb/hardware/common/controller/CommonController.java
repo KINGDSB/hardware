@@ -97,7 +97,9 @@ public class CommonController {
 
     @RequestMapping(value = "/index")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        //
+       	
+    	// 设置 session 失效时间为 五个小时
+    	request.getSession().setMaxInactiveInterval(18000);
         Map<String, SysStaticData> staticData = sysStaticDataService.getStaticData();
         request.getSession().setAttribute("staticData", staticData);
         

@@ -1,6 +1,5 @@
 package indi.dsb.hardware.sys.controller;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,8 +10,6 @@ import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,7 +24,6 @@ import indi.dsb.hardware.common.ResponseCode;
 import indi.dsb.hardware.common.abstracts.AbstractController;
 import indi.dsb.hardware.common.abstracts.AbstractService;
 import indi.dsb.hardware.common.utils.Response;
-import indi.dsb.hardware.sys.entity.SysResource;
 import indi.dsb.hardware.sys.entity.SysStaticData;
 import indi.dsb.hardware.sys.service.SysResourceService;
 import indi.dsb.hardware.sys.service.SysStaticDataService;

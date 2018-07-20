@@ -16,63 +16,43 @@
 			</div>
 		</div>
 	</div>
-	<div class="single-product-area">
+	<div style="padding: 80px 0 100px;">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
-					<div class="product-content-right">
-						<div class="woocommerce">
-							<div class="woocommerce-info">
-								Company Address:  
-								<a class="showlogin" data-toggle="collapse" href="#companyProfile" aria-expanded="false" aria-controls="companyProfile">Show Details</a>
-							</div>
-							<div id="companyProfile" class="login collapse" method="post">
-								<p>${staticData["companyProfile"].dataValueEn }</p>
-							</div>
-                            <div class="woocommerce-info">
-                                Company telephone Number:  
-                                <a class="showcoupon" data-toggle="collapse" href="#companyValues" aria-expanded="false" aria-controls="companyValues">Show Details</a>
-                            </div>
-                            <div id="companyValues" class="checkout_coupon collapse">
-                                <p>${staticData["companyValues"].dataValueEn }</p>
-                            </div>
-						</div>
-					</div>
-				</div>
-			</div>
+            <div class="row" id="contactP">
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo" style="background-image: url('images/icon1.png'); width:200px; height:200px">
+                        <p>Phone Number:</p>
+                        <p>135XXXXXXXX</p>
+                        <p>135XXXXXXXX</p>
+                        <p>020-xxxxxxxx</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo" style="background-image: url('images/icon2.png'); width:200px; height:200px">
+                        <p>Maintain Address:</p>
+                        <p>中国广东省广州市XXXXXXXX</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo" style="background-image: url('images/FAQ.png'); width:200px; height:200px">
+                        <p>FQA:</p>
+                        <p>........</p>
+                        <p>........</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-promo" style="background-image: url('images/icon4.png'); width:200px; height:200px">
+                        <p>Other Question:</p>
+                        <p>........</p>
+                        <p>........</p>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</div>
 	<%@include file="footer.jsp"%>
     <script>
         $("#contactLi").addClass("active");
-
-        // 关键词随机查询方法
-        function getLeftList(keyword){
-            $.post(contextPath+'/product/randList.json',
-                {keyWord: keyword, size: 4},
-                function(data){
-                    var html = '<h2 id="H2Products" class="sidebar-title">Products</h2>';
-                    for (var i = 0; i < data.length; i++) {
-                        html += '<div class="thubmnail-recent">';
-                        html += '<img src="'+data[i].picUrls+'" class="recent-thumb" alt="" style="width:64px;height:55px;">';
-                        html += '<h2><a href="single-product.jsp?id='+data[i].id+'">'+data[i].nameEn+'</a></h2>';
-                        html += '<div class="product-sidebar-price">';
-                        html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';
-                        html += '</div>';
-                        html += '</div>';
-                    }
-                    $("#searchList").empty();
-                    $("#searchList").append(html);
-                },
-                'json'
-            );
-        }
-        
-        getLeftList('');
-        
-        $("#formSub").click(function(){
-            getLeftList($("#keywordInput").val());
-        })
     </script>
 </body>
 </html>
