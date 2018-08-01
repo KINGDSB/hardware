@@ -81,6 +81,7 @@ public class ProductController extends AbstractController<Product, Long> {
         int draw = ServletRequestUtils.getIntParameter(request, "draw", 1);
 
         int status = ServletRequestUtils.getIntParameter(request, "status", 0);
+        int newProduct = ServletRequestUtils.getIntParameter(request, "newProduct", 0);
         int type = ServletRequestUtils.getIntParameter(request, "type", 0);
         String keyWord = ServletRequestUtils.getStringParameter(request, "keyWord", null);
         Date createdDate = null;
@@ -96,6 +97,9 @@ public class ProductController extends AbstractController<Product, Long> {
         }
         if (type > 0) {
             product.setType(type);
+        }
+        if (newProduct > 0) {
+            product.setNewProduct(newProduct);
         }
         if (StringUtils.isNotBlank(keyWord)) {
             product.setKeyWord(keyWord);
@@ -243,6 +247,25 @@ public class ProductController extends AbstractController<Product, Long> {
         ProductSeriesTreeView treeView = ProductSeriesTreeView.buildResourceTree(list, Collections.emptyList());
         modelAndView.addObject(treeView.getNodes());
         
+        return modelAndView;
+    }
+    
+    /**
+     * <p>Title: getProductSeriesList</p> 
+     * <p>Description: 获取产品系列列表</p> 
+     * @date 2018-08-01 20:55:56 
+     * @author dsb
+     * @return
+     */
+    @RequestMapping(value = "/getProductSeriesList")
+    public ModelAndView getProductSeriesList() {
+        List<ProductSeries> list = productSeriesService.selectAll();
+		// 处理图片地址
+		for(ProductSeries res : list){
+            res.setPhoto(FileUtils.getFileUrls(res.getPhoto()));
+        }
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject(list);
         return modelAndView;
     }
 }

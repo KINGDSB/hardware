@@ -16,6 +16,7 @@ import indi.dsb.hardware.common.abstracts.AbstractEntity;
 /**
  * Created by Administrator on 2017/12/7.
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "f_product")
 public class Product extends AbstractEntity implements Serializable {
@@ -34,8 +35,17 @@ public class Product extends AbstractEntity implements Serializable {
     private String description;// 产品描述
     @Column(name = "pic_urls")
 	private String picUrls;// 图片
+    @Column(name = "new_product")
+	private Integer newProduct;// 是否是新产品 1:是 2:否
 	private Integer status;// 状态 1:未上架 2：上架中
 	private String remark;// 备注
+	private String specification;// 规格
+    @Column(name = "packing_quantity")
+	private String packingQuantity;// 包装量
+	private String material;// 材质
+	private String accessories;// 附件
+	private String fitting;// 配件
+	private String other;// 其他
 
 	@Transient
 	private ProductType productType;
@@ -70,7 +80,13 @@ public class Product extends AbstractEntity implements Serializable {
     public void setStatus(Integer status) {
         this.status = status;
     }
-    public String getRemark() {
+	public Integer getNewProduct() {
+		return newProduct;
+	}
+	public void setNewProduct(Integer newProduct) {
+		this.newProduct = newProduct;
+	}
+	public String getRemark() {
         return remark;
     }
     public void setRemark(String remark) {
@@ -106,5 +122,41 @@ public class Product extends AbstractEntity implements Serializable {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
+	public String getSpecification() {
+		return specification;
+	}
+	public void setSpecification(String specification) {
+		this.specification = specification;
+	}
+	public String getPackingQuantity() {
+		return packingQuantity;
+	}
+	public void setPackingQuantity(String packingQuantity) {
+		this.packingQuantity = packingQuantity;
+	}
+	public String getMaterial() {
+		return material;
+	}
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+	public String getAccessories() {
+		return accessories;
+	}
+	public void setAccessories(String accessories) {
+		this.accessories = accessories;
+	}
+	public String getFitting() {
+		return fitting;
+	}
+	public void setFitting(String fitting) {
+		this.fitting = fitting;
+	}
+	public String getOther() {
+		return other;
+	}
+	public void setOther(String other) {
+		this.other = other;
+	}
 
 }

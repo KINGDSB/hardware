@@ -36,16 +36,7 @@
     <div class="single-product-area">
         <div class="container">
             <div class="row">
-            <!-- 
-	            <div class="col-md-3">
-                    <h2 class="sidebar-title">Product Series</h2>
-                    <div id="treeview2" class=""></div>
-	            </div>
-	             -->
-                <div id="productSeriesDiv" class="col-md-12">
-                    <div id="productSeriesList"></div>
-                </div>
-	            <div id="productDiv" class="col-md-12" style="display: none;">
+	            <div class="col-md-12">
 	                <div id="productList"></div>
 		            <div id="paginationId" class="m-style pagination" style="width: 100%;text-align: center;"></div>
 	            </div>
@@ -54,34 +45,10 @@
     </div>
     <%@include file="footer.jsp"%>
     <script>
-        $("#shopLi").addClass("active");
-        /* 
-        $.ajax({
-            type: "Post",
-            url: contextPath+'/product/productSeriesTree.json',
-            dataType: "json",
-            success: function (result) {
-                $('#treeview2').treeview({
-                    levels: 1,
-                    highlightSelected: true,    //是否高亮选中
-                    data: result,         // 数据源
-                    //nodeIcon: 'glyphicon glyphicon-user',    //节点上的图标
-                    //nodeIcon: 'glyphicon glyphicon-globe',
-                    //emptyIcon: '',    //没有子节点的节点图标
-                    onNodeSelected: function (event, data) {
-                        // alert(data.id);
-                        getList(data.id, 0, 8);
-                    }
-                });
-            },
-            error: function () {
-                alert("树形结构加载失败！");
-            }
-        });
-         */
+        $("#newProductLi").addClass("active");
         function getList(type, start, length){
         	$.post(contextPath+'/product/list.json',
-       			{type:type,status:2,index:start,length:length},
+       			{type:type,status:2,newProduct:1,index:start,length:length},
        			function(result){
        			    var html = '';
        			    for (var i = 0; i < result.data.length; i++) {
@@ -104,7 +71,8 @@
        			    $("#productList").append(html);
 
                     $("#paginationId").empty();
-                    if (result.data.length > length) {
+                    console.log(result.recordsTotal)
+                    if (result.recordsTotal > length) {
                         $('#paginationId').pagination({
                             totalData: result.recordsTotal,
                             showData: length,
@@ -119,7 +87,7 @@
                                 getList(type, api.getCurrent(), length)
                             }
                         });
-					} else if (result.data.length == 0) {
+					} else if (result.recordsTotal == 0) {
                         $("#paginationId").append("<h2>Currently the series no goods</h2>");
 					}
        			},
@@ -127,37 +95,7 @@
        		);
         }
         
-        // getList(0, 0, 8);
-        
-        // 获取系列列表
-        function getProductSeriesList(){
-            $.post(contextPath+'/product/getProductSeriesList.json',
-                function(result){
-            	   console.log(result);
-                    var html = '';
-                    for (var i = 0; i < result.length; i++) {
-                        html += '<div class="col-md-2 col-sm-6">';
-                        html += '<div class="single-shop-product">';
-                        html += '<div class="product-upper">';
-                        html += '<img src="'+result[i].photo+'" alt="'+result[i].photo+'" width="150" height="150">';
-                        html += '</div>';
-                        html += '<h2><a href="javascript:;" onclick="showSeries('+result[i].id+')">'+result[i].nameEn+'</a></h2>';
-                        html += '</div>';
-                        html += '</div>';
-                    }
-                    $("#productSeriesList").empty();
-                    $("#productSeriesList").append(html);
-                },
-                'json'
-            );
-        }
-        getProductSeriesList();
-
-        function showSeries(id){
-            $("#productSeriesDiv").hide();
-            $("#productDiv").show();
-            getList(id, 0, 8);
-        }
+        getList(0, 0, 8);
     </script>
   </body>
 </html>

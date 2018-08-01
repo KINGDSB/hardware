@@ -29,6 +29,7 @@ public class ProductSeries extends AbstractEntity implements Serializable {
 	private String nameCn;// 产品类型名称
     @Column(name = "name_en")
     private String nameEn;// 产品类型名称
+    private String photo;// 系列图片
     @Column(name = "parent_id")
     private Long parentId;// 父级id
     private Integer level;// 级别
@@ -58,7 +59,15 @@ public class ProductSeries extends AbstractEntity implements Serializable {
 		this.nameEn = nameEn;
 	}
 
-    public Long getParentId() {
+    public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public Long getParentId() {
         return parentId;
     }
 
