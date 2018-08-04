@@ -19,6 +19,7 @@ public interface ProductDao extends AbstractDAO<Product,Long> {
 	 * @author dsb
 	 * @param status
 	 * @param type
+	 * @param newProduct
 	 * @param createdDate
 	 * @param keyword
 	 * @param sort
@@ -29,6 +30,7 @@ public interface ProductDao extends AbstractDAO<Product,Long> {
 	List<Product> findList(
 		Integer status,
 		Integer type,
+		Integer newProduct,
 		Date createdDate,
 		String keyword,
 		String sort,
@@ -50,6 +52,7 @@ public interface ProductDao extends AbstractDAO<Product,Long> {
 	int findListCount(
 		Integer status,
 		Integer type,
+		Integer newProduct,
 		Date createdDate,
 		String keyword
 	);

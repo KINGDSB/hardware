@@ -40,6 +40,7 @@ public class ProductServiceImpl extends AbstractServiceImpl<Product,Long> implem
 		List<Product> list = productDao.findList(
 			product.getStatus(), 
 			product.getType(), 
+			product.getNewProduct(), 
 			product.getCreatedDate(), 
 			product.getKeyWord(), 
 			SQLUtils.getSortString(pageRequest.getSort()),
@@ -49,6 +50,7 @@ public class ProductServiceImpl extends AbstractServiceImpl<Product,Long> implem
 		int total = productDao.findListCount(
 			product.getStatus(), 
 			product.getType(), 
+			product.getNewProduct(), 
 			product.getCreatedDate(), 
 			product.getKeyWord());
 

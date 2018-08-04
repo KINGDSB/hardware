@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
-<link rel="Shortcut Icon" href="/center/images/favicon_48X48.ico" type="image/x-icon" /> 
+<link rel="Shortcut Icon" href="/hardware/images/logo.ico" type="image/x-icon" /> 
 <c:set var="ctxPath" value="${pageContext.request.contextPath}" />
 <!-- <meta charset="utf-8"> -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="hardware website">
 <meta name="author" content="dsb">
-<title>eElectronics - HTML eCommerce Template</title>
+<title>artesano</title>
 
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>

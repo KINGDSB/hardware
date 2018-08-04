@@ -3,14 +3,14 @@
   <head>
     <%@include file="common/commonFront.jsp"%>
   </head>
-  <body>
+  <body style="margin:0 auto;width: 80%">
     <%@include file="header.jsp"%>
     <div class="product-big-title-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">
-                        <h2>Shop</h2>
+                        <h2>Product Detail</h2>
                     </div>
                 </div>
             </div>
@@ -103,12 +103,14 @@
                                     <div class="product-inner-category">
                                         <p id="productType">Category: <!-- <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>.  --></p>
                                     </div> 
-                                    
                                     <div role="tabpanel">
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <p id="productInfoP"></p>
+                                                <!-- 
                                                 <h2>Product Description</h2>  
                                                 <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                                                 -->
                                             </div>
                                             <div role="tabpanel" class="tab-pane fade" id="profile">
                                                 <h2>Reviews</h2>
@@ -254,7 +256,18 @@
                     $("#amount").text("$"+data.amount);
                     $("#amountOld").text("$"+data.amountOld);
                     $("#productType").text('Category: ').append('<a href="#">'+data.productType.nameEn+'</a>')
-                    $("#description").text(data.description);
+                    // $("#description").text(data.description);
+                    var productInfo = "<p>";
+                    productInfo += "Specification:　"+data.specification+"<br />";
+                    productInfo += "Packing Quantity:　"+data.packingQuantity+"<br />";
+                    productInfo += "Material:　"+data.material+"<br />";
+                    productInfo += "Accessories:　"+data.accessories+"<br />";
+                    productInfo += "Fitting:　"+data.fitting+"<br />";
+                    productInfo += "Description:　"+data.description+"<br />";
+                    productInfo += "Other:　"+data.other+"<br />";
+                    productInfo += "</p>";
+                    $("#productInfoP").html(productInfo);
+                    
                 },
                 'json'
             );

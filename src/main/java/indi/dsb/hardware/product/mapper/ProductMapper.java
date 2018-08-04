@@ -46,6 +46,9 @@ public interface ProductMapper extends Mapper<Product> {
 			+ "<if test='type != null and type > 0'>" 
 			+ " AND t1.type = #{type}" 
 			+ "</if>"
+			+ "<if test='newProduct != null and newProduct > 0'>" 
+			+ " AND t1.new_product = #{newProduct}" 
+			+ "</if>"
 			+ "<if test='createdDate != null'>"
 			+ "	AND DATE_FORMAT(t1.created_date, '%Y-%m-%d') = DATE_FORMAT(#{createdDate}, '%Y-%m-%d')" 
 			+ "</if>"
@@ -61,7 +64,7 @@ public interface ProductMapper extends Mapper<Product> {
 			+ "	LIMIT #{startNo},#{pageSize}" 
 			+ "</if>" 
 			+ "</script>")
-	List<Product> findList(@Param("status") Integer status, @Param("type") Integer type,
+	List<Product> findList(@Param("status") Integer status, @Param("type") Integer type, @Param("newProduct") Integer newProduct,
 			@Param("createdDate") Date createdDate, @Param("keyword") String keyword, @Param("sort") String sort,
 			@Param("startNo") Integer startNo, @Param("pageSize") Integer pageSize);
 
@@ -87,6 +90,9 @@ public interface ProductMapper extends Mapper<Product> {
 			+ "<if test='type != null and type > 0'>" 
 			+ " AND t1.type = #{type}" 
 			+ "</if>"
+			+ "<if test='newProduct != null and newProduct > 0'>" 
+			+ " AND t1.new_product = #{newProduct}" 
+			+ "</if>"
 			+ "<if test='createdDate != null'>"
 			+ "	AND DATE_FORMAT(t1.created_date, '%Y-%m-%d') = DATE_FORMAT(#{createdDate}, '%Y-%m-%d')" 
 			+ "</if>"
@@ -94,13 +100,14 @@ public interface ProductMapper extends Mapper<Product> {
 			+ "	AND t1.description LIKE concat('%', #{keyword}, '%')" 
 			+ "</if>"
 			+ "</script>")
-	int findListCount(@Param("status") Integer status, @Param("type") Integer type,
+	int findListCount(@Param("status") Integer status, @Param("type") Integer type, @Param("newProduct") Integer newProduct,
 			@Param("createdDate") Date createdDate, @Param("keyword") String keyword);
 	
     @Select(" SELECT "
         + " t1.id, t1.name_cn AS 'nameCn', t1.name_en AS 'nameEn', "
-        + " t1.pic_urls AS 'picUrls', t1.description, "
-        + " t1.amount_old AS 'amountOld', t1.amount, t1.type, "
+        + " t1.pic_urls AS 'picUrls', t1.description, t1.specification, "
+        + " t1.packing_quantity AS 'packingQuantity', t1.material, t1.accessories, "
+        + " t1.fitting, t1.other, t1.amount_old AS 'amountOld', t1.amount, t1.type, "
         + " t2.id AS 'productType.id', t2.name_cn AS 'productType.nameCn', t2.name_en AS 'productType.nameEn', "
         + " t1.status, t1.remark, t3.name AS 'createdUser.name', t1.created_date AS 'createdDate' " 
         + " FROM f_product t1 "

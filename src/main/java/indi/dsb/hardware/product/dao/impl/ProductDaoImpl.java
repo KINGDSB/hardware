@@ -31,17 +31,18 @@ public class ProductDaoImpl extends AbstractDAOImpl<Product,Long> implements Pro
 	public List<Product> findList(		
 			Integer status,
 			Integer type,
+			Integer newProduct,
 			Date createdDate,
 			String keyword,
 			String sort,
 			Integer startNo,
 			Integer pageSize) {
-		return productMapper.findList(status, type, createdDate, keyword, sort, startNo, pageSize);
+		return productMapper.findList(status, type, newProduct, createdDate, keyword, sort, startNo, pageSize);
 	}
 
 	@Override
-	public int findListCount(Integer status, Integer type, Date createdDate, String keyword) {
-		return productMapper.findListCount(status, type, createdDate, keyword	);
+	public int findListCount(Integer status, Integer type, Integer newProduct, Date createdDate, String keyword) {
+		return productMapper.findListCount(status, type, newProduct, createdDate, keyword	);
 	}
 
     @Override
