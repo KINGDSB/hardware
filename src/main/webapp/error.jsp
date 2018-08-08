@@ -15,7 +15,7 @@
 	}     
 	</script>
 </head>
-<body>
+<body style="margin:0 auto;width: 60%">
     <%@include file="header.jsp"%>
     <div class="product-big-title-area" style="height: 500px">
         <div class="container" style="">

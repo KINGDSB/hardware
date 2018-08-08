@@ -15,12 +15,9 @@
             width:100%;
             height:100%;
         }
-        .container {
-            width:80%;
-        }
     </style>
   </head>
-  <body style="margin:0 auto;width: 80%">
+  <body style="margin:0 auto;width: 60%">
     <%@include file="header.jsp"%>
     <div class="product-big-title-area">
         <div class="container">
@@ -55,7 +52,7 @@
                         html += '<div class="col-md-3 col-sm-6">';
                         html += '<div class="single-shop-product">';
                         html += '<div class="product-upper">';
-                        html += '<img src="'+result.data[i].picUrls+'" alt="'+result.data[i].picUrls+'" width="150" height="150">';
+                        html += '<img src="'+result.data[i].picture+'" alt="'+result.data[i].picture+'" width="150" height="150">';
                         html += '</div>';
                         html += '<h2><a href="single-product.jsp?id='+result.data[i].id+'">'+result.data[i].nameEn+'</a></h2>';
                         // html += '<div class="product-carousel-price">';

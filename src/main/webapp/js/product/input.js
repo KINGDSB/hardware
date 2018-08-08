@@ -42,10 +42,10 @@ $(function(){
         console.log("fileuploaded");
         console.log(data);
         if (200 == data.response.code) {
-        	if ($("#picUrls").val() != null && $("#picUrls").val() != '') {
-	    		$("#picUrls").val($("#picUrls").val() + "|" + data.response.desc);
+        	if ($("#picture").val() != null && $("#picture").val() != '') {
+	    		$("#picture").val($("#picture").val() + "|" + data.response.desc);
 			} else {
-	    		$("#picUrls").val(data.response.desc);
+	    		$("#picture").val(data.response.desc);
 			}
 		}
     });
@@ -71,9 +71,9 @@ $(function(){
         
         $("#picUrlsDiv").empty();
         //img 
-        if (null != data.picUrls) {
-        	console.log(data.picUrls)
-            var imgs = data.picUrls.split("\|");
+        if (null != data.picture) {
+        	console.log(data.picture)
+            var imgs = data.picture.split("\|");
         	console.log(imgs)
             if (imgs.length > 0) {
             	for (var i = 0; i < imgs.length; i++) {

@@ -2,8 +2,10 @@
 <!DOCTYPE html lang="en">
   <head>
     <%@include file="common/commonFront.jsp"%>
+  <link href="css/css.css" rel="stylesheet" type="text/css" />
+  <script src="js/slider.js" type="text/javascript"></script> 
   </head>
-  <body style="margin:0 auto;width: 80%">
+  <body style="margin:0 auto;width: 60%">
     <%@include file="header.jsp"%>
     <div class="product-big-title-area">
         <div class="container">
@@ -19,39 +21,18 @@
     
     
     <div class="single-product-area">
-        <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
+                    <!-- 
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">Search Products</h2>
                         <input id="keywordInput" type="text" placeholder="Search products...">
                         <input id="formSub" type="submit" value="Search">
                     </div>
-                    
+                     -->
                     <div id="searchList" class="single-sidebar">
-                        <h2 id="H2Products" class="sidebar-title">Products</h2>
-                        <div class="thubmnail-recent">
-                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
-                            </div>                             
-                        </div>
+                        <h2 id="H2Products" class="sidebar-title">Related Products</h2>
                         <div class="thubmnail-recent">
                             <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="">Sony Smart TV - 2015</a></h2>
@@ -100,9 +81,9 @@
                                     <div class="product-inner-price">
                                         <!-- <ins id="amount">$700.00</ins> <del id="amountOld">$800.00</del> -->
                                     </div>    
-                                    <div class="product-inner-category">
-                                        <p id="productType">Category: <!-- <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>.  --></p>
-                                    </div> 
+                                    <!-- <div class="product-inner-category">
+                                        <p id="productType">Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
+                                    </div>  -->
                                     <div role="tabpanel">
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
@@ -138,16 +119,20 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        
+                        <h3>Other Pictures:</h3>
+                        <!-- 
+                        <div id="productPictures" class="related-products-wrapper"></div>
+                         -->
+						<div id="slider">
+						</div>  
+                        <!-- 
                         <div class="related-products-wrapper">
-                            <h2 class="related-products-title">Related Products</h2>
                             <div id="relatedList" class="related-products-carousel">
                                 <div class="single-product">
                                     <div class="product-f-image">
                                         <img class="photoUrlC" src="images/product-1.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
+                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
@@ -155,28 +140,28 @@
                                     <h2><a class="nameC" href="">Sony Smart TV - 2015</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <!-- <ins>$700.00</ins> <del>$800.00</del> -->
+                                        <ins>$700.00</ins> <del>$800.00</del>
                                     </div> 
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
                                         <img class="photoUrlC" src="images/product-2.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
+                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
                                     <h2><a class="nameC" href="">Apple new mac book 2015 March :P</a></h2>
                                     <div class="product-carousel-price">
-                                        <!-- <ins>$899.00</ins> <del>$999.00</del> -->
+                                        <ins>$899.00</ins> <del>$999.00</del>
                                     </div> 
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
                                         <img class="photoUrlC" src="images/product-3.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
+                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
@@ -184,14 +169,14 @@
                                     <h2><a class="nameC" href="">Apple new i phone 6</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <!-- <ins>$400.00</ins> <del>$425.00</del> -->
+                                        <ins>$400.00</ins> <del>$425.00</del>
                                     </div>                                 
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
                                         <img class="photoUrlC" src="images/product-4.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
+                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
@@ -199,14 +184,14 @@
                                     <h2><a class="nameC" href="">Sony playstation microsoft</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <!-- <ins>$200.00</ins> <del>$225.00</del> -->
+                                        <ins>$200.00</ins> <del>$225.00</del>
                                     </div>                            
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
                                         <img class="photoUrlC" src="images/product-5.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
+                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
@@ -214,14 +199,14 @@
                                     <h2><a class="nameC" href="">Sony Smart Air Condtion</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <!-- <ins>$1200.00</ins> <del>$1355.00</del> -->
+                                        <ins>$1200.00</ins> <del>$1355.00</del>
                                     </div>                                 
                                 </div>
                                 <div class="single-product">
                                     <div class="product-f-image">
                                         <img class="photoUrlC" src="images/product-6.jpg" alt="" style="width: 236px;height:302px;">
                                         <div class="product-hover">
-                                            <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
+                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
@@ -229,11 +214,12 @@
                                     <h2><a class="nameC" href="">Samsung gallaxy note 4</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <!-- <ins>$400.00</ins> -->
+                                        <ins>$400.00</ins>
                                     </div>                            
                                 </div>    
                             </div>
                         </div>
+                         -->
                     </div>                    
                 </div>
             </div>
@@ -251,11 +237,11 @@
                 function(data){
                     // alert(data);
                     console.log(data);
-                    $("#picUrl").empty().append('<img src="'+data.picUrls+'" alt="">');
+                    $("#picUrl").empty().append('<img src="'+data.picture+'" alt="">');
                     $("#productName").text(data.nameEn);
                     $("#amount").text("$"+data.amount);
                     $("#amountOld").text("$"+data.amountOld);
-                    $("#productType").text('Category: ').append('<a href="#">'+data.productType.nameEn+'</a>')
+                    // $("#productType").text('Category: ').append('<a href="#">'+data.productType.nameEn+'</a>')
                     // $("#description").text(data.description);
                     var productInfo = "<p>";
                     productInfo += "Specification:　"+data.specification+"<br />";
@@ -268,6 +254,18 @@
                     productInfo += "</p>";
                     $("#productInfoP").html(productInfo);
                     
+                    var productPicturesHtml = '';
+                    if (data.pictures != null && data.pictures.length > 0) {
+                        var imgs = data.pictures.split(",");
+                        for (var i = 0; i < imgs.length; i++) {
+                            productPicturesHtml += '<div class="spic"><img src="' + imgs[i] + '" /><a href="' + imgs[i] + '">Picture information</a></div>';
+                        }
+                        $("#slider").append(productPicturesHtml);
+                        $('#slider').slider({ speed: 500 })
+					} else {
+						productPicturesHtml += '<br/><h5>Currently no...</h5>';
+	                    $("#slider").append(productPicturesHtml);
+					}
                 },
                 'json'
             );
@@ -275,7 +273,8 @@
         	alert("请选择商品！");
         	location.href="shop.jsp";
 		}
-        
+
+        /* 
         // 关联产品
         $.post(contextPath+'/product/randList.json',
             {size: 12},
@@ -284,7 +283,7 @@
             	var relatedList = $(".single-product");
             	// console.log(relatedList.length);
                 for (var i = 0; i < relatedList.length; i++) {
-                    $(relatedList[i]).find(".photoUrlC").attr("src", data[i].picUrls);
+                    $(relatedList[i]).find(".photoUrlC").attr("src", data[i].picture);
                     $(relatedList[i]).find(".view-details-link").attr("href", "single-product.jsp?id="+data[i].id);
                     $(relatedList[i]).find(".nameC").attr("href", "single-product.jsp?id="+data[i].id).text(data[i].nameEn);
                     $(relatedList[i]).find("ins").text("$"+data[i].amount);
@@ -293,16 +292,17 @@
             },
             'json'
         );
-
+         */
+         
         // 关键词随机查询方法
         function getLeftList(keyword){
             $.post(contextPath+'/product/randList.json',
-                {keyWord: keyword, size: 6},
+                {keyWord: keyword, size: 4},
                 function(data){
-                    var html = '<h2 id="H2Products" class="sidebar-title">Products</h2>';
+                    var html = '<h2 id="H2Products" class="sidebar-title">Related Products</h2>';
                     for (var i = 0; i < data.length; i++) {
                         html += '<div class="thubmnail-recent">';
-                        html += '<img src="'+data[i].picUrls+'" class="recent-thumb" alt="" style="width:64px;height:55px;">';
+                        html += '<img src="'+data[i].picture+'" class="recent-thumb" alt="" style="width:64px;height:55px;">';
                        	html += '<h2><a href="single-product.jsp?id='+data[i].id+'">'+data[i].nameEn+'</a></h2>';
                    		html += '<div class="product-sidebar-price">';
                			// html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';

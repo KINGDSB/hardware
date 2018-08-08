@@ -3,7 +3,7 @@
   <head>
     <%@include file="common/commonFront.jsp"%>
   </head>
-  <body style="margin:0 auto;width: 80%">
+  <body style="margin:0 auto;width: 60%">
     <%@include file="header.jsp"%>
     <div class="slider-area">
         <!-- <div class="zigzag-bottom"></div> -->

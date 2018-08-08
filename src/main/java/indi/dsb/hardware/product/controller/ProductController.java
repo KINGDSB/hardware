@@ -206,8 +206,9 @@ public class ProductController extends AbstractController<Product, Long> {
         int id = ServletRequestUtils.getIntParameter(request, "id", 0);
         
         Product product = productService.getById(id);
-        product.setPicUrls(FileUtils.getFileUrls(product.getPicUrls()));
-        
+        product.setPicture(FileUtils.getFileUrls(product.getPicture()));
+        product.setPictures(FileUtils.getFileUrls(product.getPictures()));
+
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("product", product);
         return modelAndView;

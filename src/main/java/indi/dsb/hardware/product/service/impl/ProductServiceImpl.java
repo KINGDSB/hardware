@@ -1,5 +1,6 @@
 package indi.dsb.hardware.product.service.impl;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -60,7 +61,8 @@ public class ProductServiceImpl extends AbstractServiceImpl<Product,Long> implem
 
 		// 处理图片地址
 		for(Product res : list){
-            res.setPicUrls(FileUtils.getFileUrls(res.getPicUrls()));
+            res.setPicture(FileUtils.getFileUrls(res.getPicture()));
+            res.setPictures(FileUtils.getFileUrls(res.getPictures()));
         }
 		return new Page<Product>(0, total, total, list);
 	}
@@ -82,7 +84,8 @@ public class ProductServiceImpl extends AbstractServiceImpl<Product,Long> implem
 		List<Product> list = productDao.randList(keyword, size);
 		// 处理图片地址
 		for(Product res : list){
-            res.setPicUrls(FileUtils.getFileUrls(res.getPicUrls()));
+            res.setPicture(FileUtils.getFileUrls(res.getPicture()));
+            res.setPictures(FileUtils.getFileUrls(res.getPictures()));
         }
 		return list;
 	}

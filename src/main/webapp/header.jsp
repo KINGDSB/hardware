@@ -67,32 +67,30 @@
     </div>
 </div> <!-- End site branding area -->
 <div id="maId" class="mainmenu-area">
-    <div class="container">
-        <div class="row">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div> 
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li id="indexLi"><a href="index.jsp">Home</a></li>
-                    <li id="shopLi"><a href="shop.jsp">Shop page</a></li>
-                    <li id="newProductLi"><a href="newProduct.jsp">new Product</a></li>
-                    <!-- <li id="singleProductLi"><a href="single-product.jsp" style="cursor: not-allowed;">Single product</a></li> -->
-                    <li id="profileLi"><a href="profile.jsp">Company Profile</a></li>
-                    <li id="contactLi"><a href="contact.jsp">Contact us</a></li>
-                    <!-- 
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Others</a></li>
-                    <li><a href="#">Contact</a></li>
-                     -->
-                </ul>
-            </div>  
+    <div class="row">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" style="margin-left: 60px">
+                <li id="indexLi"><a href="index.jsp">Home</a></li>
+                <li id="shopLi"><a href="shop.jsp">Shop page</a></li>
+                <li id="newProductLi"><a href="newProduct.jsp">new Product</a></li>
+                <!-- <li id="singleProductLi"><a href="single-product.jsp" style="cursor: not-allowed;">Single product</a></li> -->
+                <li id="profileLi"><a href="profile.jsp">Company Profile</a></li>
+                <li id="contactLi"><a href="contact.jsp">Contact us</a></li>
+                <!-- 
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Others</a></li>
+                <li><a href="#">Contact</a></li>
+                 -->
+            </ul>
+        </div>  
     </div>
 </div> <!-- End mainmenu area -->

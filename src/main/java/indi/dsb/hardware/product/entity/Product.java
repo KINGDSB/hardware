@@ -33,8 +33,7 @@ public class Product extends AbstractEntity implements Serializable {
     private BigDecimal amountOld;// 促销前金额
     private BigDecimal amount;// 金额
     private String description;// 产品描述
-    @Column(name = "pic_urls")
-	private String picUrls;// 图片
+	private String picture;// 图片
     @Column(name = "new_product")
 	private Integer newProduct;// 是否是新产品 1:是 2:否
 	private Integer status;// 状态 1:未上架 2：上架中
@@ -46,6 +45,7 @@ public class Product extends AbstractEntity implements Serializable {
 	private String accessories;// 附件
 	private String fitting;// 配件
 	private String other;// 其他
+	private String pictures;// 详情图片
 
 	@Transient
 	private ProductType productType;
@@ -67,12 +67,6 @@ public class Product extends AbstractEntity implements Serializable {
     }
     public void setDescription(String description) {
         this.description = description;
-    }
-    public String getPicUrls() {
-        return picUrls;
-    }
-    public void setPicUrls(String picUrls) {
-        this.picUrls = picUrls;
     }
     public Integer getStatus() {
         return status;
@@ -157,6 +151,18 @@ public class Product extends AbstractEntity implements Serializable {
 	}
 	public void setOther(String other) {
 		this.other = other;
+	}
+	public String getPicture() {
+		return picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+	public String getPictures() {
+		return pictures;
+	}
+	public void setPictures(String pictures) {
+		this.pictures = pictures;
 	}
 
 }

@@ -120,7 +120,7 @@
             <div id="picUrlsDiv" class="col-md-12 form-horizontal border">
 	            <label class="col-md-2 form-label" for="uploadfile" style="text-align: right;">图片</label>
 	            <input id="uploadfile" name="files" class="file" type="file" multiple data-min-file-count="1">
-	            <input type="hidden" id="picUrls" name="picUrls">
+	            <input type="hidden" id="picture" name="picture">
             </div>
         </div>
     </div>

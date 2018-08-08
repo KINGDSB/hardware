@@ -772,8 +772,8 @@ text-transform: uppercase;}
 
 .related-products-wrapper .owl-nav {
   position: absolute;
-  right: 0;
-  top: -56px;
+  right: 80;
+  top: -40px;
 }
 
 
