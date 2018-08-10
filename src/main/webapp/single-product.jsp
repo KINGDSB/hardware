@@ -119,7 +119,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h3>Other Pictures:</h3>
+                        <h3>Product Pictures:</h3>
                         <!-- 
                         <div id="productPictures" class="related-products-wrapper"></div>
                          -->

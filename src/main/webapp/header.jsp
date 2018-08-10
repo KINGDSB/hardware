@@ -49,20 +49,19 @@
 <div class="site-branding-area">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6" style="margin: 10">
                 <div class="logo">
                     <!-- <h1><a href="index.jsp">e<span>Electronics</span></a></h1> -->
                     <img width="50%" src="http://47.254.38.242:8082/files/hardware/20180426/logo.png">
                 </div>
             </div>
-            
+            <!-- 
             <div class="col-sm-6">
-                <!-- 
                 <div class="shopping-item">
                     <a href="cart.html">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                 </div>
-                 -->
             </div>
+             -->
         </div>
     </div>
 </div> <!-- End site branding area -->
