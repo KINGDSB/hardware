@@ -5,230 +5,129 @@
   <link href="css/css.css" rel="stylesheet" type="text/css" />
   <script src="js/slider.js" type="text/javascript"></script> 
   </head>
-  <body style="margin:0 auto;width: 60%">
+  <body style="margin:0 auto;">
     <%@include file="header.jsp"%>
-    <div class="product-big-title-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-bit-title text-center">
-                        <h2>Product Detail</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="single-product-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <!-- 
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Search Products</h2>
-                        <input id="keywordInput" type="text" placeholder="Search products...">
-                        <input id="formSub" type="submit" value="Search">
-                    </div>
-                     -->
-                    <div id="searchList" class="single-sidebar">
-                        <h2 id="H2Products" class="sidebar-title">Related Products</h2>
-                        <div class="thubmnail-recent">
-                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
-                            </div>                             
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-8">
-                    <div class="product-content-right">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="product-images">
-                                    <div id="picUrl" class="product-main-img" style="border:2px solid #fc894e">
-                                        <img src="images/product-2.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <div class="product-inner">
-                                    <h2 id="productName" class="product-name" style="background-color: #fc894e">Sony Smart TV - 2015</h2>
-                                    <div class="product-inner-price">
-                                        <!-- <ins id="amount">$700.00</ins> <del id="amountOld">$800.00</del> -->
-                                    </div>    
-                                    <!-- <div class="product-inner-category">
-                                        <p id="productType">Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
-                                    </div>  -->
-                                    <div role="tabpanel">
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                                <p id="productInfoP"></p>
-                                                <!-- 
-                                                <h2>Product Description</h2>  
-                                                <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
-                                                 -->
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane fade" id="profile">
-                                                <h2>Reviews</h2>
-                                                <div class="submit-review">
-                                                    <p><label for="name">Name</label> <input name="name" type="text"></p>
-                                                    <p><label for="email">Email</label> <input name="email" type="email"></p>
-                                                    <div class="rating-chooser">
-                                                        <p>Your rating</p>
-
-                                                        <div class="rating-wrap-post">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                    <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
-                                                    <p><input type="submit" value="Submit"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <h3>Product Pictures:</h3>
-                        <!-- 
-                        <div id="productPictures" class="related-products-wrapper"></div>
-                         -->
-						<div id="slider">
-						</div>  
-                        <!-- 
-                        <div class="related-products-wrapper">
-                            <div id="relatedList" class="related-products-carousel">
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img class="photoUrlC" src="images/product-1.jpg" alt="" style="width: 236px;height:302px;">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a class="nameC" href="">Sony Smart TV - 2015</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$800.00</del>
-                                    </div> 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img class="photoUrlC" src="images/product-2.jpg" alt="" style="width: 236px;height:302px;">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a class="nameC" href="">Apple new mac book 2015 March :P</a></h2>
-                                    <div class="product-carousel-price">
-                                        <ins>$899.00</ins> <del>$999.00</del>
-                                    </div> 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img class="photoUrlC" src="images/product-3.jpg" alt="" style="width: 236px;height:302px;">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a class="nameC" href="">Apple new i phone 6</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$400.00</ins> <del>$425.00</del>
-                                    </div>                                 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img class="photoUrlC" src="images/product-4.jpg" alt="" style="width: 236px;height:302px;">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a class="nameC" href="">Sony playstation microsoft</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$200.00</ins> <del>$225.00</del>
-                                    </div>                            
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img class="photoUrlC" src="images/product-5.jpg" alt="" style="width: 236px;height:302px;">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a class="nameC" href="">Sony Smart Air Condtion</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$1200.00</ins> <del>$1355.00</del>
-                                    </div>                                 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img class="photoUrlC" src="images/product-6.jpg" alt="" style="width: 236px;height:302px;">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a class="nameC" href="">Samsung gallaxy note 4</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$400.00</ins>
-                                    </div>                            
-                                </div>    
-                            </div>
-                        </div>
-                         -->
-                    </div>                    
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="container" style="width: 75%;">
+	    <div class="product-big-title-area">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-12">
+	                    <div class="product-bit-title text-center">
+	                        <h2>Product Detail</h2>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    
+	    
+	    <div class="single-product-area">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-4">
+	                    <!-- 
+	                    <div class="single-sidebar">
+	                        <h2 class="sidebar-title">Search Products</h2>
+	                        <input id="keywordInput" type="text" placeholder="Search products...">
+	                        <input id="formSub" type="submit" value="Search">
+	                    </div>
+	                     -->
+	                    <div id="searchList" class="single-sidebar">
+	                        <h2 id="H2Products" class="sidebar-title">Related Products</h2>
+	                        <div class="thubmnail-recent">
+	                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
+	                            <h2><a href="">Sony Smart TV - 2015</a></h2>
+	                            <div class="product-sidebar-price">
+	                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
+	                            </div>                             
+	                        </div>
+	                        <div class="thubmnail-recent">
+	                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
+	                            <h2><a href="">Sony Smart TV - 2015</a></h2>
+	                            <div class="product-sidebar-price">
+	                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
+	                            </div>                             
+	                        </div>
+	                        <div class="thubmnail-recent">
+	                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
+	                            <h2><a href="">Sony Smart TV - 2015</a></h2>
+	                            <div class="product-sidebar-price">
+	                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
+	                            </div>                             
+	                        </div>
+	                    </div>
+	                </div>
+	                
+	                <div class="col-md-8">
+	                    <div class="product-content-right">
+	                        <div class="row">
+	                            <div class="col-sm-6">
+	                                <div class="product-images">
+	                                    <div id="picUrl" class="product-main-img" style="border:2px solid #fc894e">
+	                                        <img src="images/product-2.jpg" alt="">
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            
+	                            <div class="col-sm-6">
+	                                <div class="product-inner">
+	                                    <h2 id="productName" class="product-name" style="background-color: #fc894e">Sony Smart TV - 2015</h2>
+	                                    <div class="product-inner-price">
+	                                        <!-- <ins id="amount">$700.00</ins> <del id="amountOld">$800.00</del> -->
+	                                    </div>    
+	                                    <!-- <div class="product-inner-category">
+	                                        <p id="productType">Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
+	                                    </div>  -->
+	                                    <div role="tabpanel">
+	                                        <div class="tab-content">
+	                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+	                                                <p id="productInfoP"></p>
+	                                                <!-- 
+	                                                <h2>Product Description</h2>  
+	                                                <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+	                                                 -->
+	                                            </div>
+	                                            <div role="tabpanel" class="tab-pane fade" id="profile">
+	                                                <h2>Reviews</h2>
+	                                                <div class="submit-review">
+	                                                    <p><label for="name">Name</label> <input name="name" type="text"></p>
+	                                                    <p><label for="email">Email</label> <input name="email" type="email"></p>
+	                                                    <div class="rating-chooser">
+	                                                        <p>Your rating</p>
+	
+	                                                        <div class="rating-wrap-post">
+	                                                            <i class="fa fa-star"></i>
+	                                                            <i class="fa fa-star"></i>
+	                                                            <i class="fa fa-star"></i>
+	                                                            <i class="fa fa-star"></i>
+	                                                            <i class="fa fa-star"></i>
+	                                                        </div>
+	                                                    </div>
+	                                                    <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+	                                                    <p><input type="submit" value="Submit"></p>
+	                                                </div>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <h3>Product Pictures:</h3>
+	                        <!-- 
+	                        <div id="productPictures" class="related-products-wrapper"></div>
+	                         -->
+							<div id="slider">
+							</div>  
+	                    </div>                    
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
     <%@include file="footer.jsp"%>
     <script>
         // $("#singleProductLi").addClass("active");
-        $("#shopLi").addClass("active");
         
         // 获取商品信息
         var url = location.search;
@@ -297,7 +196,7 @@
         // 关键词随机查询方法
         function getLeftList(keyword){
             $.post(contextPath+'/product/randList.json',
-                {keyWord: keyword, size: 4},
+                {keyWord: keyword, size: 3},
                 function(data){
                     var html = '<h2 id="H2Products" class="sidebar-title">Related Products</h2>';
                     for (var i = 0; i < data.length; i++) {

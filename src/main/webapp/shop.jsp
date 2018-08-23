@@ -17,38 +17,40 @@
         }
     </style>
   </head>
-  <body style="margin:0 auto;width: 60%">
+  <body style="margin:0 auto;">
     <%@include file="header.jsp"%>
-    <div class="product-big-title-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-bit-title text-center">
-                        <h2>Shop</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="single-product-area">
-        <div class="container">
-            <div class="row">
-            <!-- 
-	            <div class="col-md-3">
-                    <h2 class="sidebar-title">Product Series</h2>
-                    <div id="treeview2" class=""></div>
+    <div class="container" style="width: 75%">
+	    <div class="product-big-title-area">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-12">
+	                    <div class="product-bit-title text-center">
+	                        <h2>Shop</h2>
+	                    </div>
+	                </div>
 	            </div>
-	             -->
-                <div id="productSeriesDiv" class="col-md-12">
-                    <div id="productSeriesList"></div>
-                </div>
-	            <div id="productDiv" class="col-md-12" style="display: none;">
-	                <div id="productList"></div>
-		            <div id="paginationId" class="m-style pagination" style="width: 100%;text-align: center;"></div>
+	        </div>
+	    </div>
+	    <div class="single-product-area">
+	        <div class="container">
+	            <div class="row">
+	            <!-- 
+		            <div class="col-md-3">
+	                    <h2 class="sidebar-title">Product Series</h2>
+	                    <div id="treeview2" class=""></div>
+		            </div>
+		             -->
+	                <div id="productSeriesDiv" class="col-md-12">
+	                    <div id="productSeriesList"></div>
+	                </div>
+		            <div id="productDiv" class="col-md-12" style="display: none;">
+		                <div id="productList"></div>
+			            <div id="paginationId" class="m-style pagination" style="width: 100%;text-align: center;"></div>
+		            </div>
 	            </div>
-            </div>
-        </div>
-    </div>
+	        </div>
+	    </div>
+	</div>
     <%@include file="footer.jsp"%>
     <script>
         $("#shopLi").addClass("active");

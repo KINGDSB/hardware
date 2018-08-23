@@ -2,10 +2,22 @@
 <!DOCTYPE html lang="en">
   <head>
     <%@include file="common/commonFront.jsp"%>
+	
+	
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/vm-carousel.css">
+<script src="js/jquery.vm-carousel.js"></script>
+<script src="js/modernizr.js"></script>
+<style type="text/css">
+      .vmc-centered{ padding: 10px 0; }
+      .vmc-centered img { transition: all 0.3s ease; }
+      .vmc-centered .vmc_active img { transform: scale(1.2); }
+      .vmc-viewport img {border-style:groove}
+</style>
   </head>
-  <body style="margin:0 auto;width: 60%">
+  <body style="margin:0 auto;">
     <%@include file="header.jsp"%>
-    <div class="slider-area">
+    <div class="slider-area container" style="width: 75%">
         <!-- <div class="zigzag-bottom"></div> -->
         <div id="slide-list" class="carousel carousel-fade slide" data-ride="carousel">
             <div class="slide-bulletz">
@@ -88,18 +100,33 @@
 
         </div>        
     </div> <!-- End slider area -->
-    <div class="row"style="margin-top: 1%;margin-bottom: 1%;">
+    <div style="margin-top: 1%;">
+        <div class="container" style="width: 58%">
+        <h2>Products:</h2>
+           <ul class="vmcarousel-centered vmc-centered">
+              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/02119.jpg" alt="" style="height:200;width:200" ></li>
+              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/06401.jpg" alt="" style="height:200;width:200" ></li>
+              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/05411.jpg" alt="" style="height:200;width:200" ></li>
+              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/02135.jpg" alt="" style="height:200;width:200" ></li>
+              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/06103.jpg" alt="" style="height:200;width:200" ></li>
+              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/ce2c7a70-fa1a-4690-88b1-151ef04ab216.jpg" alt="" style="height:200;width:200" ></li>
+              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/01107.jpg" alt="" style="height:200;width:200" ></li>
+              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/05411.jpg" alt="" style="height:200;width:200" ></li>
+              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/02135.jpg" alt="" style="height:200;width:200" ></li>
+           </ul>
+        </div>
+    </div> <!-- End promo area -->
+    <div class="row"style="background-color: #F2F2F2;width: 100%">
         <div class="col-sm-6">
             <div class="product-images">
-                <div id="picUrl" class="product-main-img" style="margin-right: 10%">
-                    <img src="http://47.254.38.242:8082/files/hardware/20180426/company.png" alt="" style="float: right;">
+                <div id="picUrl" class="product-main-img">
+                    <img src="http://47.254.38.242:8082/files/hardware/20180426/company.png" alt="" style="float: right;padding-right: 5%">
                 </div>
             </div>
         </div>
-        
-        <div class="col-sm-5"style="margin-top: 1%;>
-            <div class="product-inner">
-                <h2 class="product-name" style="background-color: #fc894e">Company Name XXX</h2>
+        <div class="col-sm-5" style="margin-top: 1%;">
+            <div class="product-inner" style="width: 70%;">
+                <h2 class="product-name">Artesano</h2>
                 <div class="product-inner-category">
                     <p id="productType">Company Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
                 </div> 
@@ -110,65 +137,38 @@
                             <h2>Company Description</h2>
                             <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="profile">
-                            <h2>Reviews</h2>
-                            <div class="submit-review">
-                                <p><label for="name">Name</label> <input name="name" type="text"></p>
-                                <p><label for="email">Email</label> <input name="email" type="email"></p>
-                                <div class="rating-chooser">
-                                    <p>Your rating</p>
-
-                                    <div class="rating-wrap-post">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
-                                <p><input type="submit" value="Submit"></p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 
             </div>
         </div>
     </div>
-    <div class="promo-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo" style="border: 1px solid #17a78b;">
-                        <i class="fa fa-refresh"></i>
-                        <p>30 Days return</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo" style="border: 1px solid #17a78b;">
-                        <i class="fa fa-truck"></i>
-                        <p>Free shipping</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo" style="border: 1px solid #17a78b;">
-                        <i class="fa fa-lock"></i>
-                        <p>Secure payments</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo" style="border: 1px solid #17a78b;">
-                        <i class="fa fa-gift"></i>
-                        <p>New products</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End promo area -->
     <%@include file="footer.jsp"%>
     <script>
-	    $("#indexLi").addClass("active");
-    </script>
+      $("#indexLi").addClass("active");
+ 
+      jQuery(function($) {
+		$('.vmcarousel-centered').vmcarousel({
+			centered : true,
+			start_item : 2,
+			autoplay : false,
+			infinite : false
+		});
+
+		$('.vmcarousel-centered-infitine').vmcarousel({
+			centered : true,
+			start_item : 1,
+			autoplay : false,
+			infinite : true
+		});
+
+		$('.vmcarousel-normal').vmcarousel({
+			centered : false,
+			start_item : 0,
+			autoplay : false,
+			infinite : false
+		});
+	});
+	</script>
   </body>
 </html>
