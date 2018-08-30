@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<div style="padding: 10px 0 10px;">
-			<div class="container" style="width:50%">
+			<div class="container" style="width:70%">
 	            <div class="row">
 			        <div class="col-sm-6">
 			            <div class="product-images">
@@ -30,21 +30,20 @@
 			        
 			        <div class="col-sm-6"style="margin-top: 1%;>
 			            <div class="product-inner">
-			                <h2 class="product-name" style="background-color: #fc894e">Company Name XXX</h2>
-			                <div class="product-inner-category">
-			                    <p>
-				                    <b>Address:</b> 广东省广州市天河区XXX <br /> 
-			                        <b>Postcode:</b> 000000<br /> 
-			                        <b>Telephone:</b> 020-00000000<br /> 
-			                        <b>Fax:</b> 020-00000000
-		                        </p> 
-			                </div> 
-			                
 			                <div role="tabpanel">
 			                    <div class="tab-content">
 			                        <div role="tabpanel" class="tab-pane fade in active" id="home">
-			                            <h2>Company Description</h2>
-			                            <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta.</p>
+                                        <h2>About Artesano</h2>
+			                            <p id="description">In 2008,The Olympic games were successfully held in Beijing, China. At this moment, ARTESANO began a new chapter in manufacturing: specializing in furniture and furniture hardware fittings.
+In the past 10 years, our founding belief is offering exceptional quality, at a competitive price, and a dedication to exceptional flexibility for our clients.
+</p><br />
+
+                                        <h2>Artesano’s team</h2>
+                                        <p id="description">has full export experience through a positive , thoughtful, hardworking, professional business team. Coming alongside our customers to develop the best market for products and maintain bright opportunities for years to come.
+In the past 10 years, our team has traveled worldwide and products are continuously adapting to the needs of our customers. At Artesano, we work with a vast array of factories and manufacturers to prove industry leading quality components to the most demanding clients worldwide. With our network of production facilities, not only can provide common components, but also specialty and custom components. It is our goal and privilege to come alongside Clients to build their business’s success and future.
+</p>
+                                        <h2>Integrity, Dedication to Superior Quality, Creative and Exceptional Customer Service</h2>
+                                    </div>
 			                        </div>
 			                    </div>
 			                </div>
@@ -54,10 +53,6 @@
 			   </div>
 			</div>
 		</div>
-        <div class="container">
-	        <iframe height="40%" width="100%" src="baidumap.html">
-	        </iframe>
-	    </div>
 	</div>
 	<%@include file="footer.jsp"%>
     <script>

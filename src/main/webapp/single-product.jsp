@@ -71,7 +71,7 @@
 	                            
 	                            <div class="col-sm-6">
 	                                <div class="product-inner">
-	                                    <h2 id="productName" class="product-name" style="background-color: #fc894e">Sony Smart TV - 2015</h2>
+	                                    <h2 id="productName" class="product-name">Sony Smart TV - 2015</h2>
 	                                    <div class="product-inner-price">
 	                                        <!-- <ins id="amount">$700.00</ins> <del id="amountOld">$800.00</del> -->
 	                                    </div>    

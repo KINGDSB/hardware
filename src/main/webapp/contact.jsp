@@ -32,13 +32,15 @@
 		<div style="padding: 80px 0 100px;">
 			<div class="container">
 	            <div class="row">
-		            <div class="col-md-4" id="contactP">
-		                <h2 class="divcss5-F00" style="width: 200px">Company Info</h2>
-			            <p> Name: artesano</p> 
-						<p> Address: 广东省广州市天河区XXX</p> 
-						<p> Postcode: 000000</p> 
-						<p> Telephone: 020-00000000</p> 
-						<p> Fax: 020-00000000</p> 
+		            <div class="col-md-10" id="contactP">
+		                <h3 class="divcss5-F00" style="width: 350px">ARTESANO INDUSTRIAL LIMITED</h3>
+			            <p> Do you have any questions or suggestions？ <br/>
+The Artesano team will be pleased to reply you as soon as possible. 
+</p><br/>
+                        <p> Tel: 0086-20-87200083</p>
+						<p> Email: info@artesano-ind.com</p>
+						<p> Website: <a href="http://www.artesano-ind.com">http://www.artesano-ind.com</a></p> 
+						<p> Add: No.115-116，A Tower, CaiRun international building, DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p>
 		            <!-- 
 		                <div class="col-md-3 col-sm-6">
 		                    <div class="single-promo" style="background-image: url('images/icon1.png'); width:200px; height:200px">
@@ -70,10 +72,11 @@
 		                </div>
 		                 -->
 		            </div>
-		            <div class="col-md-7" style="width:600;height:350;border:3px solid #33d882;">
-		               <h3>在百度地图上显示公司位置需要注册百度账号并配置公司的定位信息 可参考<a href="https://jingyan.baidu.com/article/870c6fc37966fdb03fe4beec.html" target="_blank">添加商铺定位</a></h3>
-		               <br>
-		               <h3>谷歌地图点<a href="https://support.google.com/business/answer/6174435?hl=zh-Hans" target="_blank">这里</a>配置公司定位信息(需翻墙)</h3>
+		            <div class="col-md-7">
+		            <!-- 
+			            <iframe height="60%" width="100%" src="baidumap.html">
+			            </iframe>
+			             -->
 		            </div>
 	            </div>
 			</div>

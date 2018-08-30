@@ -101,8 +101,9 @@
         </div>        
     </div> <!-- End slider area -->
     <div style="margin-top: 1%;">
-        <div class="container" style="width: 58%">
-        <h2>Products:</h2>
+        <div class="container" style="width: 60%" style="">
+        <h2>Products Series:</h2>
+        <!-- 
            <ul class="vmcarousel-centered vmc-centered">
               <li><img src="http://47.254.38.242:8082/files/hardware/20180426/02119.jpg" alt="" style="height:200;width:200" ></li>
               <li><img src="http://47.254.38.242:8082/files/hardware/20180426/06401.jpg" alt="" style="height:200;width:200" ></li>
@@ -114,10 +115,24 @@
               <li><img src="http://47.254.38.242:8082/files/hardware/20180426/05411.jpg" alt="" style="height:200;width:200" ></li>
               <li><img src="http://47.254.38.242:8082/files/hardware/20180426/02135.jpg" alt="" style="height:200;width:200" ></li>
            </ul>
+            -->
+            <div class="col-sm-3">
+                <a href="http://localhost:8081/hardware/single-product.jsp?id=11"><img src="http://47.254.38.242:8082/files/hardware/series/series-01.jpg" alt="" style="height:200;width:200" ></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="http://localhost:8081/hardware/single-product.jsp?id=33"><img src="http://47.254.38.242:8082/files/hardware/series/series-02.jpg" alt="" style="height:200;width:200" ></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="http://localhost:8081/hardware/single-product.jsp?id=5"><img src="http://47.254.38.242:8082/files/hardware/series/series-03.jpg" alt="" style="height:200;width:200" ></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="http://localhost:8081/hardware/single-product.jsp?id=19"><img src="http://47.254.38.242:8082/files/hardware/series/series-04.jpg" alt="" style="height:200;width:200" ></a>
+            </div>
         </div>
     </div> <!-- End promo area -->
+    <br/>
     <div class="row"style="background-color: #F2F2F2;width: 100%">
-        <div class="col-sm-6">
+        <div class="col-sm-6" style="padding-bottom: 10px;">
             <div class="product-images">
                 <div id="picUrl" class="product-main-img">
                     <img src="http://47.254.38.242:8082/files/hardware/20180426/company.png" alt="" style="float: right;padding-right: 5%">
@@ -126,27 +141,27 @@
         </div>
         <div class="col-sm-5" style="margin-top: 1%;">
             <div class="product-inner" style="width: 70%;">
-                <h2 class="product-name">Artesano</h2>
+                <h2>About Artesano</h2>
                 <div class="product-inner-category">
-                    <p id="productType">Company Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
+                    <p id="description">In 2008,The Olympic games were successfully held in Beijing, China. At this moment, ARTESANO began a new chapter in manufacturing: specializing in furniture and furniture hardware fittings.
+In the past 10 years, our founding belief is offering exceptional quality, at a competitive price, and a dedication to exceptional flexibility for our clients.
+</p>
                 </div> 
                 
                 <div role="tabpanel">
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane fade in active" id="home">
-                            <h2>Company Description</h2>
-                            <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                            <h2>Integrity, Dedication to Superior Quality, Creative and Exceptional Customer Service</h2>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
     <%@include file="footer.jsp"%>
     <script>
       $("#indexLi").addClass("active");
- 
+ /* 
       jQuery(function($) {
 		$('.vmcarousel-centered').vmcarousel({
 			centered : true,
@@ -169,6 +184,7 @@
 			infinite : false
 		});
 	});
+       */
 	</script>
   </body>
 </html>
