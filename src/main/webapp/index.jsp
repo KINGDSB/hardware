@@ -117,16 +117,16 @@
            </ul>
             -->
             <div class="col-sm-3">
-                <a href="http://localhost:8081/hardware/single-product.jsp?id=11"><img src="http://47.254.38.242:8082/files/hardware/series/series-01.jpg" alt="" style="height:200;width:200" ></a>
+                <a href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=1"><img src="http://47.254.38.242:8082/files/hardware/series/series-01.jpg" alt="" style="height:200;width:200" ></a>
             </div>
             <div class="col-sm-3">
-                <a href="http://localhost:8081/hardware/single-product.jsp?id=33"><img src="http://47.254.38.242:8082/files/hardware/series/series-02.jpg" alt="" style="height:200;width:200" ></a>
+                <a href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=2"><img src="http://47.254.38.242:8082/files/hardware/series/series-02.jpg" alt="" style="height:200;width:200" ></a>
             </div>
             <div class="col-sm-3">
-                <a href="http://localhost:8081/hardware/single-product.jsp?id=5"><img src="http://47.254.38.242:8082/files/hardware/series/series-03.jpg" alt="" style="height:200;width:200" ></a>
+                <a href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=3"><img src="http://47.254.38.242:8082/files/hardware/series/series-03.jpg" alt="" style="height:200;width:200" ></a>
             </div>
             <div class="col-sm-3">
-                <a href="http://localhost:8081/hardware/single-product.jsp?id=19"><img src="http://47.254.38.242:8082/files/hardware/series/series-04.jpg" alt="" style="height:200;width:200" ></a>
+                <a href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=4"><img src="http://47.254.38.242:8082/files/hardware/series/series-04.jpg" alt="" style="height:200;width:200" ></a>
             </div>
         </div>
     </div> <!-- End promo area -->
