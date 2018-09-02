@@ -19,22 +19,13 @@
   </head>
   <body style="margin:0 auto;">
     <%@include file="header.jsp"%>
-    <div class="container" style="width: 75%">
-	    <div class="product-big-title-area">
-	        <div class="container">
+    <div style="">
+        <div class="product-big-title-area" style="height: 300;background-position:center;">
+        </div>
+	    <div class="container" class="single-product-area">
+	        <div class="container" style="width:90%;padding-top: 20;">
 	            <div class="row">
-	                <div class="col-md-12">
-	                    <div class="product-bit-title text-center">
-	                        <h2>New Product</h2>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	    <div class="single-product-area">
-	        <div class="container">
-	            <div class="row">
-		            <div class="col-md-12">
+		            <div class="col-md-12" style="padding: 0">
 		                <div id="productList"></div>
 			            <div id="paginationId" class="m-style pagination" style="width: 100%;text-align: center;"></div>
 		            </div>
@@ -52,17 +43,17 @@
        			    var html = '';
        			    for (var i = 0; i < result.data.length; i++) {
                         html += '<div class="col-md-3 col-sm-6">';
-                        html += '<div class="single-shop-product">';
+                        html += '<div class="single-shop-product" style="background-color: #80808029;">';
                         html += '<div class="product-upper">';
-                        html += '<img src="'+result.data[i].picture+'" alt="'+result.data[i].picture+'" width="150" height="150">';
+                        html += '<a style="color: white" href="single-product.jsp?id='+result.data[i].id+'"><img src="'+result.data[i].picture+'" alt="'+result.data[i].picture+'" width="150" height="150"></a>';
                         html += '</div>';
-                        html += '<h2><a href="single-product.jsp?id='+result.data[i].id+'">'+result.data[i].nameEn+'</a></h2>';
+                        html += '<h2 style="text-align: center;background-color: #171c60;height: 30px;"><a style="color: white" href="single-product.jsp?id='+result.data[i].id+'">'+result.data[i].nameEn+'</a></h2>';
                         // html += '<div class="product-carousel-price">';
                         // html += '<ins>$'+result.data[i].amount+'</ins> <del>$'+result.data[i].amountOld+'</del>';
                         // html += '</div>';
-                        html += '<div class="product-option-shop">';
-                        html += '<a class="add_to_cart_button" href="single-product.jsp?id='+result.data[i].id+'">show detail</a>';
-                        html += '</div>';
+                        // html += '<div class="product-option-shop">';
+                        // html += '<a class="add_to_cart_button" href="single-product.jsp?id='+result.data[i].id+'">show detail</a>';
+                        // html += '</div>';
                         html += '</div>';
                         html += '</div>';
        			    }
@@ -94,7 +85,7 @@
        		);
         }
         
-        getList(0, 0, 8);
+        getList(0, 0, 12);
     </script>
   </body>
 </html>

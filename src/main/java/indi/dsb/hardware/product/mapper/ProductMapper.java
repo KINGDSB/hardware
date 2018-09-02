@@ -2,6 +2,7 @@ package indi.dsb.hardware.product.mapper;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -146,5 +147,21 @@ public interface ProductMapper extends Mapper<Product> {
 			+ "</if>" 
 			+ "</script>")
 	List<Product> randList(@Param("keyword") String keyword, @Param("size") Integer size);
+	
+	/**
+	 * <p>Title: randList</p> 
+	 * <p>Description: 随机获取列表</p> 
+	 * @date 2018-05-04 00:45:15 
+	 * @author dsb
+	 * @param keyword
+	 * @param size
+	 * @return
+	 */
+	@Select("<script>"
+			+ " SELECT t1.name_en AS 'nameEn', t2.columns_value AS 'columnsValue', t2.batch_number AS 'batchNumber' FROM f_product_columns t1 "
+			+ " LEFT JOIN f_product_columns_value t2 on t1.id = t2.columns_id "
+			+ " WHERE t1.product_id = #{productId} "
+			+ "</script>")
+	List<Map<String, Object>> getProductTable(@Param("productId") Integer productId);
     
 }

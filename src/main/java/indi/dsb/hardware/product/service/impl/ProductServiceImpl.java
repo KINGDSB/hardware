@@ -3,7 +3,10 @@ package indi.dsb.hardware.product.service.impl;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -88,6 +91,19 @@ public class ProductServiceImpl extends AbstractServiceImpl<Product,Long> implem
             res.setPictures(FileUtils.getFileUrls(res.getPictures()));
         }
 		return list;
+	}
+
+	@Override
+	public List<Map<Object, Object>> getProductTable(Integer productId) {
+		List<Map<String, Object>> list = productDao.getProductTable(productId);
+		return list.stream().collect(Collectors.groupingBy(map -> map.get("batchNumber"))).entrySet().stream().map(e -> {
+			Map<Object, Object> map = new HashMap<>();
+			List<Map<String, Object>> vl = (List) e.getValue();
+			vl.forEach(v -> {
+				map.put(v.get("nameEn"), v.get("columnsValue"));
+			});
+			return map;
+		}).collect(Collectors.toList());
 	}
 
 }

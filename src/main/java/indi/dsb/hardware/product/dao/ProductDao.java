@@ -2,6 +2,7 @@ package indi.dsb.hardware.product.dao;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import indi.dsb.hardware.common.abstracts.AbstractDAO;
 import indi.dsb.hardware.product.entity.Product;
@@ -73,5 +74,6 @@ public interface ProductDao extends AbstractDAO<Product,Long> {
 	 * @return
 	 */
     List<Product> randList(String keyword,int size);
-    
+
+	List<Map<String, Object>> getProductTable(Integer productId);
 }

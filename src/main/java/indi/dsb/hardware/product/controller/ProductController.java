@@ -4,7 +4,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,8 +37,10 @@ import indi.dsb.hardware.common.utils.DateUtil;
 import indi.dsb.hardware.common.utils.FileUtils;
 import indi.dsb.hardware.common.utils.Response;
 import indi.dsb.hardware.product.entity.Product;
+import indi.dsb.hardware.product.entity.ProductProperties;
 import indi.dsb.hardware.product.entity.ProductSeries;
 import indi.dsb.hardware.product.entity.ProductSeriesTreeView;
+import indi.dsb.hardware.product.service.ProductPropertiesService;
 import indi.dsb.hardware.product.service.ProductSeriesService;
 import indi.dsb.hardware.product.service.ProductService;
 import indi.dsb.hardware.sys.service.SysResourceService;
@@ -59,6 +64,8 @@ public class ProductController extends AbstractController<Product, Long> {
     private ProductSeriesService productSeriesService;
     @Autowired
     private SysResourceService sysResourceService;
+    @Autowired
+    private ProductPropertiesService productPropertiesService;
 
     @Override
     public AbstractService getService() {
@@ -209,6 +216,17 @@ public class ProductController extends AbstractController<Product, Long> {
         product.setPicture(FileUtils.getFileUrls(product.getPicture()));
         product.setPictures(FileUtils.getFileUrls(product.getPictures()));
 
+        List<ProductProperties> list = productPropertiesService.getByProductId(id);
+        product.setProductProperties(list);
+        
+//        List<Map<Object, Object>> paramTable = productService.getProductTable(id);
+//        product.setParamTable(paramTable);
+//        Set keys = new HashSet();
+//        if (!paramTable.isEmpty()) {
+//        	keys.addAll(paramTable.get(0).keySet());
+//		}
+//        product.setParamKeys(keys);
+        
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("product", product);
         return modelAndView;

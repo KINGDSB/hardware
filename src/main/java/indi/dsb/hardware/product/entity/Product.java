@@ -2,6 +2,9 @@ package indi.dsb.hardware.product.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,6 +52,15 @@ public class Product extends AbstractEntity implements Serializable {
 
 	@Transient
 	private ProductType productType;
+
+	@Transient
+	private List<ProductProperties> productProperties;
+
+	@Transient
+	private Set<Object> paramKeys; // 参数keys
+
+	@Transient
+	private List<Map<Object, Object>> paramTable; // 参数表格
 	
     public Long getId() {
         return id;
@@ -163,6 +175,24 @@ public class Product extends AbstractEntity implements Serializable {
 	}
 	public void setPictures(String pictures) {
 		this.pictures = pictures;
+	}
+	public List<ProductProperties> getProductProperties() {
+		return productProperties;
+	}
+	public void setProductProperties(List<ProductProperties> productProperties) {
+		this.productProperties = productProperties;
+	}
+	public List<Map<Object, Object>> getParamTable() {
+		return paramTable;
+	}
+	public void setParamTable(List<Map<Object, Object>> paramTable) {
+		this.paramTable = paramTable;
+	}
+	public Set<Object> getParamKeys() {
+		return paramKeys;
+	}
+	public void setParamKeys(Set<Object> paramKeys) {
+		this.paramKeys = paramKeys;
 	}
 
 }

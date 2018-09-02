@@ -2,6 +2,7 @@ package indi.dsb.hardware.product.service;
 
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.domain.PageRequest;
 
@@ -48,5 +49,6 @@ public interface ProductService extends AbstractService<Product,Long> {
 	 * @return
 	 */
     List<Product> randList(String keyword,int size);
-    
+
+	List<Map<Object, Object>> getProductTable(Integer productId);
 }

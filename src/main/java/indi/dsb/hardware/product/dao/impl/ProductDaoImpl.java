@@ -2,6 +2,7 @@ package indi.dsb.hardware.product.dao.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -53,6 +54,11 @@ public class ProductDaoImpl extends AbstractDAOImpl<Product,Long> implements Pro
 	@Override
 	public List<Product> randList(String keyword, int size) {
 		return productMapper.randList(keyword, size);
+	}
+
+	@Override
+	public List<Map<String, Object>> getProductTable(Integer productId) {
+		return productMapper.getProductTable(productId);
 	}
 
 }

@@ -17,30 +17,21 @@
 </head>
 <body style="margin:0 auto;">
 	<%@include file="header.jsp"%>
-    <div class="container" style="width: 75%">
-		<div class="product-big-title-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="product-bit-title text-center">
-							<h2>Contact us</h2>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div style="padding: 80px 0 100px;">
-			<div class="container">
+    <div style="">
+        <div class="product-big-title-area" style="height: 300;background-position:center;">
+        </div>
+		<div class="container" style="padding: 10px 0 150px;">
+			<div class="container" style="width:90%;">
 	            <div class="row">
 		            <div class="col-md-10" id="contactP">
+		                <br />
 		                <h3 class="divcss5-F00" style="width: 350px">ARTESANO INDUSTRIAL LIMITED</h3>
-			            <p> Do you have any questions or suggestions？ <br/>
-The Artesano team will be pleased to reply you as soon as possible. 
-</p><br/>
                         <p> Tel: 0086-20-87200083</p>
 						<p> Email: info@artesano-ind.com</p>
-						<p> Website: <a href="http://www.artesano-ind.com">http://www.artesano-ind.com</a></p> 
+						<p> Website: http://www.artesano-ind.com</p> 
 						<p> Add: No.115-116，A Tower, CaiRun international building, DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p>
+                        <br />
+                        <p>THANKS YOUR VISIT, WISH YOU HAVE A GOOD TIME.</p>
 		            <!-- 
 		                <div class="col-md-3 col-sm-6">
 		                    <div class="single-promo" style="background-image: url('images/icon1.png'); width:200px; height:200px">

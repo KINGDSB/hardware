@@ -2,79 +2,73 @@
 <!DOCTYPE html lang="en">
   <head>
     <%@include file="common/commonFront.jsp"%>
-  <link href="css/css.css" rel="stylesheet" type="text/css" />
-  <script src="js/slider.js" type="text/javascript"></script> 
+    <link href="css/css.css" rel="stylesheet" type="text/css" />
+    <script src="js/slider.js" type="text/javascript"></script> 
   </head>
   <body style="margin:0 auto;">
     <%@include file="header.jsp"%>
-    <div class="container" style="width: 75%;">
-	    <div class="product-big-title-area">
-	        <div class="container">
+    <div style="">
+        <div class="product-big-title-area" style="height: 300;background-position:center;">
+        </div>
+        <div class="container" class="single-product-area" style="padding: 10px 0 150px;">
+            <div class="container" style="width:90%;">
 	            <div class="row">
-	                <div class="col-md-12">
-	                    <div class="product-bit-title text-center">
-	                        <h2>Product Detail</h2>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	    
-	    
-	    <div class="single-product-area">
-	        <div class="container">
-	            <div class="row">
+	                <!-- 
 	                <div class="col-md-4">
-	                    <!-- 
 	                    <div class="single-sidebar">
 	                        <h2 class="sidebar-title">Search Products</h2>
 	                        <input id="keywordInput" type="text" placeholder="Search products...">
 	                        <input id="formSub" type="submit" value="Search">
 	                    </div>
-	                     -->
 	                    <div id="searchList" class="single-sidebar">
 	                        <h2 id="H2Products" class="sidebar-title">Related Products</h2>
 	                        <div class="thubmnail-recent">
 	                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
 	                            <h2><a href="">Sony Smart TV - 2015</a></h2>
 	                            <div class="product-sidebar-price">
-	                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
+	                                <ins>$700.00</ins> <del>$800.00</del>
 	                            </div>                             
 	                        </div>
 	                        <div class="thubmnail-recent">
 	                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
 	                            <h2><a href="">Sony Smart TV - 2015</a></h2>
 	                            <div class="product-sidebar-price">
-	                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
+	                                <ins>$700.00</ins> <del>$800.00</del>
 	                            </div>                             
 	                        </div>
 	                        <div class="thubmnail-recent">
 	                            <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
 	                            <h2><a href="">Sony Smart TV - 2015</a></h2>
 	                            <div class="product-sidebar-price">
-	                                <!-- <ins>$700.00</ins> <del>$800.00</del> -->
+	                                <ins>$700.00</ins> <del>$800.00</del>
 	                            </div>                             
 	                        </div>
 	                    </div>
 	                </div>
-	                
-	                <div class="col-md-8">
+	                 -->
+	                <div class="col-md-12">
 	                    <div class="product-content-right">
 	                        <div class="row">
-	                            <div class="col-sm-6">
+	                            <div class="col-sm-4">
 	                                <div class="product-images">
 	                                    <div id="picUrl" class="product-main-img" style="border:2px solid #fc894e">
 	                                        <img src="images/product-2.jpg" alt="">
 	                                    </div>
 	                                </div>
+	                                <!-- 
+		                            <h3>Product Pictures:</h3>
+		                            <div id="slider">
+	                                </div>  
+	                                 -->
 	                            </div>
 	                            
-	                            <div class="col-sm-6">
+	                            <div class="col-sm-4">
 	                                <div class="product-inner">
 	                                    <h2 id="productName" class="product-name">Sony Smart TV - 2015</h2>
-	                                    <div class="product-inner-price">
-	                                        <!-- <ins id="amount">$700.00</ins> <del id="amountOld">$800.00</del> -->
-	                                    </div>    
+	                                    
+	                                    <!-- <div class="product-inner-price">
+	                                        <ins id="amount">$700.00</ins> <del id="amountOld">$800.00</del>
+	                                    </div>  -->   
 	                                    <!-- <div class="product-inner-category">
 	                                        <p id="productType">Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
 	                                    </div>  -->
@@ -112,13 +106,10 @@
 	                                    
 	                                </div>
 	                            </div>
+                                <div class="col-sm-4">
+                                    
+                                </div>
 	                        </div>
-	                        <h3>Product Pictures:</h3>
-	                        <!-- 
-	                        <div id="productPictures" class="related-products-wrapper"></div>
-	                         -->
-							<div id="slider">
-							</div>  
 	                    </div>                    
 	                </div>
 	            </div>
@@ -138,11 +129,12 @@
                     console.log(data);
                     $("#picUrl").empty().append('<img src="'+data.picture+'" alt="">');
                     $("#productName").text(data.nameEn);
-                    $("#amount").text("$"+data.amount);
-                    $("#amountOld").text("$"+data.amountOld);
+                    // $("#amount").text("$"+data.amount);
+                    // $("#amountOld").text("$"+data.amountOld);
                     // $("#productType").text('Category: ').append('<a href="#">'+data.productType.nameEn+'</a>')
                     // $("#description").text(data.description);
-                    var productInfo = "<p>";
+                    var productInfo = "<p style='font-size: 15px'>";
+                    
                     productInfo += "Specification:　"+data.specification+"<br />";
                     productInfo += "Packing Quantity:　"+data.packingQuantity+"<br />";
                     productInfo += "Material:　"+data.material+"<br />";
@@ -150,9 +142,13 @@
                     productInfo += "Fitting:　"+data.fitting+"<br />";
                     productInfo += "Description:　"+data.description+"<br />";
                     productInfo += "Other:　"+data.other+"<br />";
+                    
+                    /* for(var j = 0,len = data.productProperties; j < data.productProperties.length; j++){
+                        productInfo += data.productProperties[j].paramNameEn+":　"+data.productProperties[j].paramValue+"<br />";
+                   	} */
                     productInfo += "</p>";
                     $("#productInfoP").html(productInfo);
-                    
+                    /* 
                     var productPicturesHtml = '';
                     if (data.pictures != null && data.pictures.length > 0) {
                         var imgs = data.pictures.split(",");
@@ -164,7 +160,7 @@
 					} else {
 						productPicturesHtml += '<br/><h5>Currently no...</h5>';
 	                    $("#slider").append(productPicturesHtml);
-					}
+					} */
                 },
                 'json'
             );
@@ -193,6 +189,7 @@
         );
          */
          
+         /* 
         // 关键词随机查询方法
         function getLeftList(keyword){
             $.post(contextPath+'/product/randList.json',
@@ -204,7 +201,7 @@
                         html += '<img src="'+data[i].picture+'" class="recent-thumb" alt="" style="width:64px;height:55px;">';
                        	html += '<h2><a href="single-product.jsp?id='+data[i].id+'">'+data[i].nameEn+'</a></h2>';
                    		html += '<div class="product-sidebar-price">';
-               			// html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';
+               			html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';
            				html += '</div>';
            				html += '</div>';
                     }
@@ -220,6 +217,7 @@
         $("#formSub").click(function(){
         	getLeftList($("#keywordInput").val());
         })
+         */
         </script>
   </body>
 </html>

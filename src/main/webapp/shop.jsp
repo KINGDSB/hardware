@@ -19,20 +19,11 @@
   </head>
   <body style="margin:0 auto;">
     <%@include file="header.jsp"%>
-    <div class="container" style="width: 75%">
-	    <div class="product-big-title-area">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-md-12">
-	                    <div class="product-bit-title text-center">
-	                        <h2>Product Series</h2>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	    <div class="single-product-area">
-	        <div class="container">
+    <div style="">
+        <div class="product-big-title-area" style="height: 300;background-position:center;">
+        </div>
+        <div class="container" class="single-product-area">
+            <div class="container" style="width:90%;padding-top: 20;">
 	            <div class="row">
 	                <div id="productSeriesDiv" class="col-md-12">
 	                    <div id="productSeriesList"></div>
@@ -76,7 +67,7 @@
             	   console.log(result);
                     var html = '';
                     for (var i = 0; i < result.length; i++) {
-                        html += '<div class="col-md-3 col-sm-6">';
+                        html += '<div class="col-md-3" style="padding-right: 0;">';
                         html += '<div class="single-shop-product">';
                         html += '<div class="product-upper">';
                         html += '<img src="'+result[i].photo+'" alt="'+result[i].photo+'" width="150" height="150">';

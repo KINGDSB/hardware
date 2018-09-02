@@ -36,8 +36,10 @@
             </button>
         </div>
         <div class="navbar-collapse collapse" style="border-bottom: solid 10px #171c60;">
-            <img width="50%" style="height:60px; width:auto; float:left;padding-left: 15%;" src="http://47.254.38.242:8082/files/hardware/20180426/logo.png" >
             <ul class="nav navbar-nav" style="margin-left: 60px">
+                <li>　　　　　　　　　　　　</li>
+                <li><img style="height:60px; width:auto; float:left;inline-size: auto;" src="http://47.254.38.242:8082/files/hardware/20180426/logo.png"></li>
+                <li>　　</li>
                 <li id="indexLi"><a href="index.jsp">Home</a></li>
                 <li id="profileLi"><a href="profile.jsp">ABOUT ARTESANO</a></li>
                 <li id="shopLi"><a href="shop.jsp">Main Product</a></li>
