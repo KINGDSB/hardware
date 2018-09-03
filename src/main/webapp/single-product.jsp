@@ -134,14 +134,15 @@
                     // $("#productType").text('Category: ').append('<a href="#">'+data.productType.nameEn+'</a>')
                     // $("#description").text(data.description);
                     var productInfo = "<p style='font-size: 15px'>";
-                    
+                    /* 
                     productInfo += "Specification:　"+data.specification+"<br />";
                     productInfo += "Packing Quantity:　"+data.packingQuantity+"<br />";
                     productInfo += "Material:　"+data.material+"<br />";
                     productInfo += "Accessories:　"+data.accessories+"<br />";
                     productInfo += "Fitting:　"+data.fitting+"<br />";
-                    productInfo += "Description:　"+data.description+"<br />";
-                    productInfo += "Other:　"+data.other+"<br />";
+                     */
+                    productInfo += "Description:　<br />"+data.description+"<br />";
+                    //productInfo += "Other:　"+data.other+"<br />";
                     
                     /* for(var j = 0,len = data.productProperties; j < data.productProperties.length; j++){
                         productInfo += data.productProperties[j].paramNameEn+":　"+data.productProperties[j].paramValue+"<br />";
