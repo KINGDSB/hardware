@@ -132,8 +132,19 @@
 
     <div class="col-md-12 form_me">
         <div style="padding: 0 15px;">
-            <label class="form-label col-md-2" style="text-align: right;">商品描述</label>
+            <label class="form-label col-md-2" style="text-align: right;">产品参数</label>
             <textarea id="description" name="description" class="form-control1 col-md-10" rows="3" style="height: 80px;"></textarea>
+        </div>
+    </div>
+
+     <!--  <div>
+          <label class="form-label col-lg-3">产品类型</label>
+          <select id="typeSelectSub" name="type" class="form-control1 col-lg-8"></select>
+      </div> -->
+    <div class="col-md-12 form_me">
+        <div style="padding: 0 15px;">
+            <label class="form-label col-md-2" style="text-align: right;">表格数据</label>
+            <textarea id="other" name="other" class="form-control1 col-md-10" rows="3" style="height: 80px;"></textarea>
         </div>
     </div>
 </form>

@@ -79,10 +79,10 @@
                     <div class="col-sm-4">
                         <h3>Model&Specifications</h3><br/>
                         <table border="2" style="width: 100%;text-align: center;">
-                            <thead style="background-color: #656cb0;">
+                            <thead id="tableHead" style="background-color: #656cb0;">
                                 <tr><td>Item No</td><td>Size(mm)</td></tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tableBody">
                                 <tr><td>1101.214</td><td>214*214</td></tr>
                                 <tr><td>1101.246</td><td>246*246</td></tr>
                                 <tr><td>1101.278</td><td>278*278</td></tr>
@@ -136,6 +136,17 @@
                     } */
                     productInfo += "";
                     $("#pinfo").append(productInfo);
+                    
+                    var heads="Item No||Size(mm)"
+                    for (var i=0;i<props.length;i++ ) {
+                        if (undefined != props[i] && null != props[i] && '' != props[i]) {
+                            var items = props[i].split(":");
+                            // productInfo += "<p><span style='font-size: 18px;background-color: #171c60;color: white;' >"+items[0]+"</span>&nbsp;<span style='font-size: 18px;background-color: #656CB0;color: white;' >"+items[1]+"</span><p/>";
+                            productInfo += "<div class='row' style='margin-bottom: 2px'><div class='col-sm-5' style='background-color: #171c60;'><span style='font-size: 18px;color: white;' >"+items[0]+"</span></div><div class='col-sm-6' style='background-color: #656CB0;float: right'><span style='font-size: 18px;color: white;' >"+items[1]+"</span></div></div>";
+                        }
+                    } 
+                    $("#tableHead").append(a);
+                    
                     // $("#productInfoP").html(productInfo);
                     /* 
                     var productPicturesHtml = '';
