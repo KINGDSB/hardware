@@ -118,7 +118,7 @@ public class ProductController extends AbstractController<Product, Long> {
             product.setCreatedDate(createdDate);
         }
 
-        Sort sort = new Sort(Direction.DESC, Arrays.asList(new String[] { "t1.created_date" }));
+        Sort sort = new Sort(Direction.ASC, Arrays.asList(new String[] { "t1.name_en" }));
         PageRequest pageRequest = null;
         if (index > 0) {
         	pageRequest = new PageRequest((index - 1) * length, length, sort);
@@ -278,7 +278,10 @@ public class ProductController extends AbstractController<Product, Long> {
      */
     @RequestMapping(value = "/getProductSeriesList")
     public ModelAndView getProductSeriesList() {
-        List<ProductSeries> list = productSeriesService.selectAll();
+//        List<ProductSeries> list = productSeriesService.selectAll();
+		Example example = new Example(ProductSeries.class);
+		example.createCriteria().andEqualTo("isDeleted", 0);
+		List<ProductSeries> list = productSeriesService.selectByExample(example);
 		// 处理图片地址
 		for(ProductSeries res : list){
             res.setPhoto(FileUtils.getFileUrls(res.getPhoto()));

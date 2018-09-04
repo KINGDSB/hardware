@@ -105,14 +105,19 @@
                     <option value="2" selected="selected">已上线</option>
                 </select>
             </div>
+            <!-- 
             <div>
-                <label class="form-label col-lg-3">促销前金额</label>
-                <input class="form-control1 col-lg-8" id="amountOld" name="amountOld" type="text" />
+                <label class="form-label col-lg-3">产品参数:</label>
             </div>
             <div>
-                <label class="form-label col-lg-3">当前金额</label>
-                <input class="form-control1 col-lg-8" id="amount" name="amount" type="text" />
+                <label class="form-label col-lg-3">名称</label>
+                <input class="form-control1 col-lg-8" id="parameterName" name="parameterName" type="text" />
             </div>
+            <div>
+                <label class="form-label col-lg-3">值</label>
+                <input class="form-control1 col-lg-8" id="parameterValue" name="parameterValue" type="text" />
+            </div>
+             -->
         </div>
 
         <%--右边--%>
