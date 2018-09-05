@@ -21,6 +21,7 @@
 <script src="${ctxPath}/static/layer/layer.js"></script>
 
 <script type="text/javascript" src="${ctxPath}/js/product/list.js"></script>
+
 <div id="search_div">
 	<div class="col-lg-12">
 		<div class="col-lg-2">
@@ -79,8 +80,7 @@
                     <th>产品名称英文</th>
                     <th>类型中文</th>
                     <th>产品描述</th>
-                    <th>促销前金额</th>
-                    <th>当前金额</th>
+                    <th>产品表格</th>
                     <th>状态</th>
                     <th>创建日期</th>
 				</tr>
@@ -91,3 +91,20 @@
 <!-- /.col-lg-12 -->
 
 <div id="inputDiv"></div>
+<style>
+	table{
+	  table-layout:fixed;
+	}
+    div#col {
+        width: 100%;
+        height: 40px;
+        margin-top: 30px;
+    }
+    tr{
+        white-space:nowrap;
+    }
+    td:hover{
+       overflow: visible;
+       white-space: normal;
+    }
+</style>

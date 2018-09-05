@@ -137,10 +137,6 @@
         </div>
     </div>
 
-     <!--  <div>
-          <label class="form-label col-lg-3">产品类型</label>
-          <select id="typeSelectSub" name="type" class="form-control1 col-lg-8"></select>
-      </div> -->
     <div class="col-md-12 form_me">
         <div style="padding: 0 15px;">
             <label class="form-label col-md-2" style="text-align: right;">表格数据</label>

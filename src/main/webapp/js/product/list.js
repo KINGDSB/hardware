@@ -56,9 +56,21 @@ $(function() {
             { data: "nameCn" },
             { data: "nameEn" },
             { data: "productType.nameCn" },
-            { data: "description" },
-            { data: "amountOld" },
-            { data: "amount" },
+            // { data: "description" },
+		    { data: "description", render: function(data) {
+		    	if (null!=data) {
+				    var reg = new RegExp( '<br/>' , "g" )
+				    return data.replace( reg , '' );
+				}
+		    	return "";
+		    }},
+		    { data: "other", render: function(data) {
+		    	if (null!=data) {
+				    var reg = new RegExp( '<br/>' , "g" )
+				    return data.replace( reg , '' );
+				}
+		    	return "";
+		    }},
 		    { data: "status", render: function(data) {
 		          if (2 == data) return '上架中';
 		          return '未上架';

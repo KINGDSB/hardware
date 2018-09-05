@@ -161,8 +161,7 @@ public class ProductController extends AbstractController<Product, Long> {
 		oProduct.setNameEn(product.getNameEn());
 		oProduct.setType(product.getType());
 		oProduct.setStatus(product.getStatus());
-		oProduct.setAmount(product.getAmount());
-		oProduct.setAmountOld(product.getAmountOld());
+		oProduct.setOther(product.getOther());
 		oProduct.setDescription(product.getDescription());
 
 		productService.update(oProduct);
