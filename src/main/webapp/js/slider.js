@@ -143,13 +143,16 @@
                         var p = $(this).find('div');
                         var img = p.find('img').attr('src');
                         var preview = $('.preview');
-                        var l = $('.image-slider').width() / 2 - preview.outerWidth() / 2;
+//                        var l = $('.image-slider').width() / 2 - preview.outerWidth() / 2;
+                        console.log("window.innerWidth:"+window.innerWidth)
+                        console.log("preview.outerWidth:"+preview.outerWidth())
+                        var l = window.innerWidth / 2 - preview.outerWidth() / 2;
                         var t = (p.offset().top - preview.height());
                         t -= t / 2;
-                        preview.css({
+                        /*preview.css({
                             left: l,
-                            top: t
-                        });
+                            top: t,
+                        });*/
                         var text = p.find('a').html();
                         preview.find('img').attr('src', img).addClass(cls);
                         preview.find('.label').html(text);

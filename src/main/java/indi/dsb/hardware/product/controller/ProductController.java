@@ -163,6 +163,13 @@ public class ProductController extends AbstractController<Product, Long> {
 		oProduct.setStatus(product.getStatus());
 		oProduct.setOther(product.getOther());
 		oProduct.setDescription(product.getDescription());
+		oProduct.setMaterial(product.getMaterial());
+		if (StringUtils.isNotBlank(product.getPicture())) {
+			oProduct.setPicture(product.getPicture());
+		}
+		if (StringUtils.isNotBlank(product.getPictures())) {
+			oProduct.setPictures(product.getPictures());
+		}
 
 		productService.update(oProduct);
 		return new Response(ResponseCode.SUCCESS).toJson();
@@ -250,7 +257,9 @@ public class ProductController extends AbstractController<Product, Long> {
     @RequestMapping(value = "/productSeriesTree")
     public ModelAndView productSeriesTree() {
 
-        List<ProductSeries> list = productSeriesService.selectAll();
+		Example example = new Example(ProductSeries.class);
+		example.createCriteria().andEqualTo("isDeleted", 0);
+		List<ProductSeries> list = productSeriesService.selectByExample(example);
         // 排序
         Collections.sort(list, new Comparator<ProductSeries>(){
             @Override

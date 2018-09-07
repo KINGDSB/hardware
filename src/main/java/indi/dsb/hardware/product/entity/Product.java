@@ -35,7 +35,7 @@ public class Product extends AbstractEntity implements Serializable {
     @Column(name = "amount_old")
     private BigDecimal amountOld;// 促销前金额
     private BigDecimal amount;// 金额
-    private String description;// 产品描述
+    private String description;// 产品描述 用来放产品文字说明了
 	private String picture;// 图片
     @Column(name = "new_product")
 	private Integer newProduct;// 是否是新产品 1:是 2:否
@@ -44,10 +44,10 @@ public class Product extends AbstractEntity implements Serializable {
 	private String specification;// 规格
     @Column(name = "packing_quantity")
 	private String packingQuantity;// 包装量
-	private String material;// 材质
+	private String material;// 材质 用来放标题了
 	private String accessories;// 附件
 	private String fitting;// 配件
-	private String other;// 其他
+	private String other;// 其他 用来放表格数据了
 	private String pictures;// 详情图片
 
 	@Transient

@@ -105,6 +105,10 @@
                     <option value="2" selected="selected">已上线</option>
                 </select>
             </div>
+            <div>
+                <label class="form-label col-lg-3">产品标题</label>
+                <input class="form-control1 col-lg-8" id="material" name="material" type="text" />
+            </div>
             <!-- 
             <div>
                 <label class="form-label col-lg-3">产品参数:</label>
@@ -123,9 +127,15 @@
         <%--右边--%>
         <div class="col-md-6 form_me">
             <div id="picUrlsDiv" class="col-md-12 form-horizontal border">
-	            <label class="col-md-2 form-label" for="uploadfile" style="text-align: right;">图片</label>
+	            <label class="col-md-2 form-label" for="uploadfile" style="text-align: right;">产品图</label>
 	            <input id="uploadfile" name="files" class="file" type="file" multiple data-min-file-count="1">
 	            <input type="hidden" id="picture" name="picture">
+            </div>
+            
+            <div id="picsUrlsDiv" class="col-md-12 form-horizontal border">
+                <label class="col-md-2 form-label" for="uploadfile" style="text-align: right;">细节图</label>
+                <input id="uploadPics" name="files" class="file" type="file" multiple data-min-file-count="1">
+                <input type="hidden" id="pictures" name="pictures">
             </div>
         </div>
     </div>

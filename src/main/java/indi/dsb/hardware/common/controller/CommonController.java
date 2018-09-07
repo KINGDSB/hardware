@@ -84,7 +84,7 @@ public class CommonController {
                     File newFile = new File(saveFilePath + "//" + newFileName);
                     // 将内存中的数据写入磁盘
                     file.transferTo(newFile);
-                    urls.append("/" + nowDateStr + "/" + newFileName + "|");
+                    urls.append("/" + nowDateStr + "/" + newFileName + ",");
                 }
             }
             
