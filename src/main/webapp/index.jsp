@@ -4,7 +4,7 @@
     <%@include file="common/commonFront.jsp"%>
 	
 	
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="css/vm-carousel.css">
 <script src="js/jquery.vm-carousel.js"></script>
 <script src="js/modernizr.js"></script>

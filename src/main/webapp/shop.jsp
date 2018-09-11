@@ -19,19 +19,17 @@
   </head>
   <body style="margin:0 auto;">
     <%@include file="header.jsp"%>
-    <div style="">
-        <div class="product-big-title-area" style="height: 300;background-position:center;">
-        </div>
-        <div class="container" class="single-product-area">
-            <div class="container" style="width:90%;padding-top: 20;">
-	            <div class="row">
-	                <div id="productSeriesDiv" class="col-md-12">
-	                    <div id="productSeriesList"></div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+    <div class="product-big-title-area" style="height: 300;background-position:center;">
+    </div>
+    <div class="container" class="single-product-area">
+        <div class="container" style="width:90%;padding-top: 20;">
+         <div class="row">
+             <div id="productSeriesDiv" class="col-md-12">
+                 <div id="productSeriesList"></div>
+             </div>
+         </div>
+     </div>
+ </div>
     <%@include file="footer.jsp"%>
     <script>
         $("#shopLi").addClass("active");
