@@ -26,10 +26,10 @@
 		            <div class="col-md-10" id="contactP">
 		                <br />
 		                <h3 class="divcss5-F00" style="width: 350px">ARTESANO INDUSTRIAL LIMITED</h3>
-                        <p> Tel: 0086-20-87200083</p>
+                        <p> Tel: 020-8621-1986</p>
 						<p> Email: info@artesano-ind.com</p>
 						<p> Website: www.artesano-ind.com</p> 
-						<p> Add: No.115-116，A Tower, CaiRun international building, DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p>
+						<p> Add: No.1115-1116，A Tower, CaiRun international building, DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p>
                         <br />
                         <p>THANKS YOUR VISIT, WISH YOU HAVE A GOOD TIME.</p>
 		            <!-- 
