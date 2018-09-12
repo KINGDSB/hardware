@@ -75,6 +75,8 @@
 	<%@include file="footer.jsp"%>
 	<script>
         $("#profileLi").addClass("active");
+        // 清空系列产品页码
+        window.localStorage.setItem("pageNumber",0);
     </script>
 </body>
 </html>

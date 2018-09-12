@@ -128,6 +128,8 @@
                     //emptyIcon: '',    //没有子节点的节点图标
                     onNodeSelected: function (event, data) {
                         // alert(data.id);
+                        // 清空系列产品页码
+                        window.localStorage.setItem("pageNumber",0);
                     	location.href="/hardware/seriesProduct.jsp?id="+data.id;
                     }
                 });

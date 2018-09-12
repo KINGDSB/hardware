@@ -135,25 +135,25 @@
 	            -->
 				<div class="col-md-3" style="padding: 0;">
 					<a
-						href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=1"><img
+						href="/hardware/seriesProduct.jsp?id=1"><img
 						src="http://47.254.38.242:8082/files/hardware/series/series-01.jpg"
 						alt="" style="height: 250; width: 80%;"></a>
 				</div>
 				<div class="col-md-3" style="padding: 0;">
 					<a
-						href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=2"><img
+						href="/hardware/seriesProduct.jsp?id=2"><img
 						src="http://47.254.38.242:8082/files/hardware/series/series-02.jpg"
 						alt="" style="height: 250; width: 80%;"></a>
 				</div>
 				<div class="col-md-3" style="padding: 0;">
 					<a
-						href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=3"><img
+						href="/hardware/seriesProduct.jsp?id=3"><img
 						src="http://47.254.38.242:8082/files/hardware/series/series-03.jpg"
 						alt="" style="height: 250; width: 80%;"></a>
 				</div>
 				<div class="col-md-3" style="padding: 0;">
 					<a
-						href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=4"><img
+						href="/hardware/seriesProduct.jsp?id=4"><img
 						src="http://47.254.38.242:8082/files/hardware/series/series-04.jpg"
 						alt="" style="height: 250; width: 80%;"></a>
 				</div>
@@ -200,6 +200,8 @@
 	<%@include file="footer.jsp"%>
 	<script>
       $("#indexLi").addClass("active");
+      // 清空系列产品页码
+      window.localStorage.setItem("pageNumber",0);
  /* 
       jQuery(function($) {
 		$('.vmcarousel-centered').vmcarousel({

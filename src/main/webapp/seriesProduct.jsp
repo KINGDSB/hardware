@@ -23,20 +23,18 @@
 	<div style="">
 		<div class="product-big-title-area"
 			style="height: 300; background-position: center;"></div>
-		<div class="container" class="single-product-area">
-			<div class="container" style="width: 90%; padding-top: 20;">
-				<div class="row">
-					<!-- 
-		            <div class="col-md-3">
+		<div class="container" style="width: 70%; padding-top: 20;">
+			<div class="row">
+	            <div class="col-md-3">
+	                <div id="seriesDiv">
 	                    <h2 class="sidebar-title">Product Series</h2>
 	                    <div id="treeview2" class=""></div>
-		            </div>
-		             -->
-					<div id="productDiv" class="col-md-12">
-						<div id="productList"></div>
-						<div id="paginationId" class="m-style pagination"
-							style="width: 100%; text-align: center;"></div>
-					</div>
+                    </div>
+	            </div>
+				<div id="productDiv" class="col-md-9">
+					<div id="productList"></div>
+					<div id="paginationId" class="m-style pagination"
+						style="width: 100%; text-align: center;"></div>
 				</div>
 			</div>
 		</div>
@@ -44,6 +42,12 @@
 	<%@include file="footer.jsp"%>
 	<script>
 		$("#shopLi").addClass("active");
+		
+		var pageNumber = window.localStorage.getItem("pageNumber");
+		if (pageNumber == undefined) {
+			pageNumber = 0;
+		}
+		console.log(pageNumber);
 
 		function getParamString(name) {
 			var paramUrl = window.location.search.substr(1);
@@ -56,6 +60,33 @@
 			return params[name];
 		}
 
+        $.ajax({
+            type: "Post",
+            url: contextPath+'/product/productSeriesTree.json',
+            dataType: "json",
+            success: function (result) {
+                $('#treeview2').treeview({
+                    levels: 1,
+                    highlightSelected: true,    //是否高亮选中
+                    data: result,         // 数据源
+                    //nodeIcon: 'glyphicon glyphicon-user',    //节点上的图标
+                    //nodeIcon: 'glyphicon glyphicon-globe',
+                    //emptyIcon: '',    //没有子节点的节点图标
+                    onNodeSelected: function (event, data) {
+                        // alert(data.id);
+				        // 清空系列产品页码
+				        window.localStorage.setItem("pageNumber",0);
+                        location.href="/hardware/seriesProduct.jsp?id="+data.id;
+                    }
+                });
+                $(".icon").css("display", "none");
+            },
+            error: function () {
+                //alert("树形结构加载失败！");
+                console.log("树形结构加载失败！")
+            }
+        });
+        
 		function getList(type, start, length) {
 			$
 					.post(
@@ -110,10 +141,12 @@
 														prevContent : '上页',
 														nextContent : '下页',
 														callback : function(api) {
+															window.localStorage.setItem("pageNumber",api.getCurrent());
+															console.log("getCurrent:"+api.getCurrent())
+															console.log(window.localStorage.getItem("pageNumber"))
 															getList(
 																	type,
-																	api
-																			.getCurrent(),
+																	api.getCurrent(),
 																	length)
 														}
 													});
@@ -125,7 +158,7 @@
 							}, 'json');
 		}
 
-		getList(getParamString('id'), 0, 16);
+		getList(getParamString('id'), pageNumber, 16);
 	</script>
 </body>
 </html>

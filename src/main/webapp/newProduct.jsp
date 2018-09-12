@@ -38,6 +38,8 @@
 	<%@include file="footer.jsp"%>
 	<script>
 		$("#newProductLi").addClass("active");
+	     // 清空系列产品页码
+	     window.localStorage.setItem("pageNumber",0);
 		function getList(type, start, length) {
 			$
 					.post(
