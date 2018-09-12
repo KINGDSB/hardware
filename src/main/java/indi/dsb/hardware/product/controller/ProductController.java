@@ -4,10 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -296,6 +293,28 @@ public class ProductController extends AbstractController<Product, Long> {
         }
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject(list);
+        return modelAndView;
+    }
+    
+    /**
+     * <p>Title: getProductSeriesList</p> 
+     * <p>Description: 获取产品系列列表</p> 
+     * @date 2018-08-01 20:55:56 
+     * @author dsb
+     * @return
+     */
+    @RequestMapping(value = "/getIdByName")
+    public ModelAndView getIdByName(HttpServletRequest request) {
+        String name = ServletRequestUtils.getStringParameter(request, "name", null);
+		Example example = new Example(Product.class);
+		example.createCriteria().andEqualTo("isDeleted", 0).andEqualTo("nameEn", name);
+		List<Product> list = productService.selectByExample(example);
+        ModelAndView modelAndView = new ModelAndView();
+        Long id = 0L;
+		if (!list.isEmpty()) {
+			id = list.get(0).getId();
+		}
+        modelAndView.addObject(id);
         return modelAndView;
     }
 }

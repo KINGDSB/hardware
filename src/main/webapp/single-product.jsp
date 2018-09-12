@@ -84,7 +84,7 @@
 		                                        <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
 		                                         -->
 											</div>
-											<table border="2" style="width: 100%; text-align: center;">
+											<table border="2" style="width: 100%; text-align: center;border-collapse:collapse">
 												<thead id="tableHead" style="background-color: #656cb0;">
 													<!-- <tr><td>Item No</td><td>Size(mm)</td></tr> -->
 												</thead>
@@ -177,34 +177,35 @@
                     $("#productInfoP").append(data.description);
                     
                     var tableInfos = data.other;
-                    var tableRows = tableInfos.split("<br/>");
-                    
-                    var tableHeadRows = tableRows[0].split(":");
-                    var tableHeadHtml = "<tr>";
-                    for (var i=0;i<tableHeadRows.length;i++ ) {
-                        if (undefined != tableHeadRows[i] && null != tableHeadRows[i] && '' != tableHeadRows[i]) {
-                        	tableHeadHtml += "<td>"+tableHeadRows[i]+"</td>";
-                        }
-                    }
-                    tableHeadHtml += "</tr>";
-                    //console.log(tableHeadHtml);
-                    $("#tableHead").append(tableHeadHtml);
-                    
-                    var tableBodyHtml = "";
-                    for (var i=1;i<tableRows.length;i++ ) {
-                        if (undefined != tableRows[i] && null != tableRows[i] && '' != tableRows[i]) {
-                        	tableBodyHtml += "<tr>";
-                            var tableCols = tableRows[i].split(":");
-                            for (var j=0;j<tableCols.length;j++ ) {
-                                if (undefined != tableCols[j] && null != tableCols[j] && '' != tableCols[j]) {
-                                	tableBodyHtml += "<td>"+tableCols[j]+"</td>";
-                                }
+                    if (undefined != tableInfos && null != tableInfos && '' != tableInfos) {
+                    	tableInfos = tableInfos.substring(0, tableInfos.lastIndexOf("<br/>"));
+                    	var tableRows = tableInfos.split("<br/>");
+                        var tableHeadRows = tableRows[0].split(":");
+                        var tableHeadHtml = "<tr>";
+                        for (var i=0;i<tableHeadRows.length;i++) {
+                            if (undefined != tableHeadRows[i] && null != tableHeadRows[i] && '' != tableHeadRows[i]) {
+                                tableHeadHtml += "<td>"+tableHeadRows[i]+"</td>";
                             }
-                            tableBodyHtml += "</tr>";
                         }
-                    } 
-                    //console.log(tableBodyHtml);
-                    $("#tableBody").append(tableBodyHtml);
+                        tableHeadHtml += "</tr>";
+                        $("#tableHead").append(tableHeadHtml);
+                        
+                        var tableBodyHtml = "";
+                        for (var i=1;i<tableRows.length;i++ ) {
+                            if (undefined != tableRows[i] && null != tableRows[i] && '' != tableRows[i] && 0 != tableRows[i].length) {
+                                tableBodyHtml += "<tr>";
+                                var tableCols = tableRows[i].split(":");
+                                for (var j=0;j<tableCols.length;j++ ) {
+                                    if (undefined != tableCols[j] && null != tableCols[j] && '' != tableCols[j]) {
+                                        tableBodyHtml += "<td>"+tableCols[j]+"</td>";
+                                    }
+                                }
+                                tableBodyHtml += "</tr>";
+                            }
+                        } 
+                        //console.log(tableBodyHtml);
+                        $("#tableBody").append(tableBodyHtml);
+					}
                     
                     var productPicturesHtml = '';
                     if (data.pictures != null && data.pictures.length > 0) {
