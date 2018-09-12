@@ -1,45 +1,58 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html lang="en">
-  <head>
-    <%@include file="common/commonFront.jsp"%>
-	
-	
+<head>
+<%@include file="common/commonFront.jsp"%>
+
+
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="css/vm-carousel.css">
 <script src="js/jquery.vm-carousel.js"></script>
 <script src="js/modernizr.js"></script>
 <style type="text/css">
-      .vmc-centered{ padding: 10px 0; }
-      .vmc-centered img { transition: all 0.3s ease; }
-      .vmc-centered .vmc_active img { transform: scale(1.2); }
-      .vmc-viewport img {border-style:groove}
+.vmc-centered {
+	padding: 10px 0;
+}
+
+.vmc-centered img {
+	transition: all 0.3s ease;
+}
+
+.vmc-centered .vmc_active img {
+	transform: scale(1.2);
+}
+
+.vmc-viewport img {
+	border-style: groove
+}
 </style>
-  </head>
-  <body style="margin:0 auto;">
-    <%@include file="header.jsp"%>
-    <div class="slider-area">
-        <!-- <div class="zigzag-bottom"></div> -->
-        <div id="slide-list" class="carousel carousel-fade slide" data-ride="carousel">
-            <div class="slide-bulletz">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ol class="carousel-indicators slide-indicators">
-                                <li data-target="#slide-list" data-slide-to="0" class="active"></li>
-                                <li data-target="#slide-list" data-slide-to="1"></li>
-                                <li data-target="#slide-list" data-slide-to="2"></li>
-                            </ol>                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <div class="single-slide">
-                        <div class="slide-bg" style="background-image: url(${staticData eq null? 'images/slide-11.jpg': staticData["indexInfoImg1"].dataValueEn})"></div>
-                        <div class="slide-text-wrapper">
-                            <div class="slide-text">
-                                <%-- <div class="container">
+</head>
+<body style="margin: 0 auto;">
+	<%@include file="header.jsp"%>
+	<div class="slider-area">
+		<!-- <div class="zigzag-bottom"></div> -->
+		<div id="slide-list" class="carousel carousel-fade slide"
+			data-ride="carousel">
+			<div class="slide-bulletz">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<ol class="carousel-indicators slide-indicators">
+								<li data-target="#slide-list" data-slide-to="0" class="active"></li>
+								<li data-target="#slide-list" data-slide-to="1"></li>
+								<li data-target="#slide-list" data-slide-to="2"></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<div class="single-slide">
+						<div class="slide-bg"
+							style="background-image: url(${staticData eq null? 'images/slide-11.jpg': staticData["indexInfoImg1"].dataValueEn})"></div>
+						<div class="slide-text-wrapper">
+							<div class="slide-text">
+								<%-- <div class="container">
                                     <div class="row">
                                         <div class="col-md-6 col-md-offset-6">
                                             <div class="slide-content">
@@ -52,16 +65,17 @@
                                         </div>
                                     </div>
                                 </div> --%>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-slide">
-                        <div class="slide-bg" style="background-image: url(${staticData eq null? 'images/slide-22.jpg': staticData["indexInfoImg2"].dataValueEn})"></div>
-                        <div class="slide-text-wrapper">
-                            <div class="slide-text">
-                                <%-- <div class="container">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="single-slide">
+						<div class="slide-bg"
+							style="background-image: url(${staticData eq null? 'images/slide-22.jpg': staticData["indexInfoImg2"].dataValueEn})"></div>
+						<div class="slide-text-wrapper">
+							<div class="slide-text">
+								<%-- <div class="container">
                                     <div class="row">
                                         <div class="col-md-6 col-md-offset-6">
                                             <div class="slide-content">
@@ -72,16 +86,17 @@
                                         </div>
                                     </div>
                                 </div> --%>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-slide">
-                        <div class="slide-bg" style="background-image: url(${staticData eq null? 'images/slide-33.jpg': staticData["indexInfoImg3"].dataValueEn})"></div>
-                        <div class="slide-text-wrapper">
-                            <div class="slide-text">
-                                <%-- <div class="container">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="single-slide">
+						<div class="slide-bg"
+							style="background-image: url(${staticData eq null? 'images/slide-33.jpg': staticData["indexInfoImg3"].dataValueEn})"></div>
+						<div class="slide-text-wrapper">
+							<div class="slide-text">
+								<%-- <div class="container">
                                     <div class="row">
                                         <div class="col-md-6 col-md-offset-6">
                                             <div class="slide-content">
@@ -92,19 +107,20 @@
                                         </div>
                                     </div>
                                 </div> --%>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        </div>        
-    </div> <!-- End slider area -->
-    <div class="container">
-	    <div style="margin-top: 2%;">
-	        <div class="container" style="padding: 1;width: 100%;">
-	        <!-- <h2>Products Series:</h2> -->
-	        <!-- 
+		</div>
+	</div>
+	<!-- End slider area -->
+	<div class="container">
+		<div style="margin-top: 2%;">
+			<div class="container" style="padding: 1; width: 100%;">
+				<!-- <h2>Products Series:</h2> -->
+				<!-- 
 	           <ul class="vmcarousel-centered vmc-centered">
 	              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/02119.jpg" alt="" style="height:200;width:200" ></li>
 	              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/06401.jpg" alt="" style="height:200;width:200" ></li>
@@ -117,51 +133,72 @@
 	              <li><img src="http://47.254.38.242:8082/files/hardware/20180426/02135.jpg" alt="" style="height:200;width:200" ></li>
 	           </ul>
 	            -->
-	            <div class="col-md-3" style="padding: 0;">
-	                <a href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=1"><img src="http://47.254.38.242:8082/files/hardware/series/series-01.jpg" alt="" style="height: 250;width: 80%;" ></a>
-	            </div>
-	            <div class="col-md-3" style="padding: 0;">
-	                <a href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=2"><img src="http://47.254.38.242:8082/files/hardware/series/series-02.jpg" alt="" style="height: 250;width: 80%;" ></a>
-	            </div>
-	            <div class="col-md-3" style="padding: 0;">
-	                <a href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=3"><img src="http://47.254.38.242:8082/files/hardware/series/series-03.jpg" alt="" style="height: 250;width: 80%;" ></a>
-	            </div>
-	            <div class="col-md-3" style="padding: 0;">
-	                <a href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=4"><img src="http://47.254.38.242:8082/files/hardware/series/series-04.jpg" alt="" style="height: 250;width: 80%;" ></a>
-	            </div>
-	        </div>
-	    </div> <!-- End promo area -->
-	    <br/>
-	    <div class="row"style="background-color: #F2F2F2;width: 100%;margin: 0px;padding-bottom: 10px;height: 300px;">
-	        <div class="col-sm-6" style="padding: 0">
-	            <div class="product-images">
-	                <div id="picUrl" class="product-main-img" style="">
-	                    <img src="http://47.254.38.242:8082/files/hardware/20180426/companyPic.jpg" alt="" style="float: right;width: 100%;height: 260px;">
-	                </div>
-	            </div>
-	        </div>
-	        <div class="col-sm-5" style="margin-top: 1%;">
-	            <div class="product-inner" style="">
-	                <h2>About Artesano</h2>
-	                <div class="product-inner-category">
-	                    <p id="description" style="font-size: 15px">In 2008,The Olympic games were successfully held in Beijing, China. At this moment, ARTESANO began a new chapter in manufacturing: specializing in furniture and furniture hardware fittings.
-	In the past 10 years, our founding belief is offering exceptional quality, at a competitive price, and a dedication to exceptional flexibility for our clients.
-	</p>
-	                </div> 
-	                
-	                <div role="tabpanel">
-	                    <div class="tab-content">
-	                        <div role="tabpanel" class="tab-pane fade in active" id="home">
-	                            <h2>Integrity, Dedication to Superior Quality, Creative and Exceptional Customer Service</h2>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
+				<div class="col-md-3" style="padding: 0;">
+					<a
+						href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=1"><img
+						src="http://47.254.38.242:8082/files/hardware/series/series-01.jpg"
+						alt="" style="height: 250; width: 80%;"></a>
+				</div>
+				<div class="col-md-3" style="padding: 0;">
+					<a
+						href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=2"><img
+						src="http://47.254.38.242:8082/files/hardware/series/series-02.jpg"
+						alt="" style="height: 250; width: 80%;"></a>
+				</div>
+				<div class="col-md-3" style="padding: 0;">
+					<a
+						href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=3"><img
+						src="http://47.254.38.242:8082/files/hardware/series/series-03.jpg"
+						alt="" style="height: 250; width: 80%;"></a>
+				</div>
+				<div class="col-md-3" style="padding: 0;">
+					<a
+						href="http://www.artesano-ind.com:8081/hardware/seriesProduct.jsp?id=4"><img
+						src="http://47.254.38.242:8082/files/hardware/series/series-04.jpg"
+						alt="" style="height: 250; width: 80%;"></a>
+				</div>
+			</div>
+		</div>
+		<!-- End promo area -->
+		<br />
+		<div class="row"
+			style="background-color: #F2F2F2; width: 100%; margin: 0px; padding-bottom: 10px; height: 300px;">
+			<div class="col-sm-6" style="padding: 0">
+				<div class="product-images">
+					<div id="picUrl" class="product-main-img" style="">
+						<img
+							src="http://47.254.38.242:8082/files/hardware/20180426/companyPic.jpg"
+							alt="" style="float: right; width: 100%; height: 260px;">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-5" style="margin-top: 1%;">
+				<div class="product-inner" style="">
+					<h2>About Artesano</h2>
+					<div class="product-inner-category">
+						<p id="description" style="font-size: 15px">In 2008,The
+							Olympic games were successfully held in Beijing, China. At this
+							moment, ARTESANO began a new chapter in manufacturing:
+							specializing in furniture and furniture hardware fittings. In the
+							past 10 years, our founding belief is offering exceptional
+							quality, at a competitive price, and a dedication to exceptional
+							flexibility for our clients.</p>
+					</div>
+
+					<div role="tabpanel">
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane fade in active" id="home">
+								<h2>Integrity, Dedication to Superior Quality, Creative and
+									Exceptional Customer Service</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-    <%@include file="footer.jsp"%>
-    <script>
+	<%@include file="footer.jsp"%>
+	<script>
       $("#indexLi").addClass("active");
  /* 
       jQuery(function($) {
@@ -188,5 +225,5 @@
 	});
        */
 	</script>
-  </body>
+</body>
 </html>

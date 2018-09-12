@@ -1,37 +1,38 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html lang="en">
-  <head>
-    <%@include file="common/commonFront.jsp"%>
-    <script src="static/jquery.pagination.js"></script>
-    <link rel="stylesheet" href="css/pagination.css">
-    <script src="static/tree/js/bootstrap-treeview.js"></script>
-    <link rel="stylesheet" href="static/tree/css/bootstrap-treeview.css">
-    <style type="text/css">
-        .product-upper{
-            width:200px;
-            height:200px;
-        }
-        .product-upper img{
-            width:100%;
-            height:100%;
-        }
-    </style>
-  </head>
-  <body style="margin:0 auto;">
-    <%@include file="header.jsp"%>
-    <div class="product-big-title-area" style="height: 300;background-position:center;">
-    </div>
-    <div class="container" class="single-product-area">
-        <div class="container" style="width:90%;padding-top: 20;">
-         <div class="row">
-             <div id="productSeriesDiv" class="col-md-12">
-                 <div id="productSeriesList"></div>
-             </div>
-         </div>
-     </div>
- </div>
-    <%@include file="footer.jsp"%>
-    <script>
+<head>
+<%@include file="common/commonFront.jsp"%>
+<script src="static/jquery.pagination.js"></script>
+<link rel="stylesheet" href="css/pagination.css">
+<script src="static/tree/js/bootstrap-treeview.js"></script>
+<link rel="stylesheet" href="static/tree/css/bootstrap-treeview.css">
+<style type="text/css">
+.product-upper {
+	width: 200px;
+	height: 200px;
+}
+
+.product-upper img {
+	width: 100%;
+	height: 100%;
+}
+</style>
+</head>
+<body style="margin: 0 auto;">
+	<%@include file="header.jsp"%>
+	<div class="product-big-title-area"
+		style="height: 300; background-position: center;"></div>
+	<div class="container" class="single-product-area">
+		<div class="container" style="width: 90%; padding-top: 20;">
+			<div class="row">
+				<div id="productSeriesDiv" class="col-md-12">
+					<div id="productSeriesList"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%@include file="footer.jsp"%>
+	<script>
         $("#shopLi").addClass("active");
         /* 
         $.ajax({
@@ -86,5 +87,5 @@
             location.href="/hardware/seriesProduct.jsp?id="+id;
         }
     </script>
-  </body>
+</body>
 </html>
