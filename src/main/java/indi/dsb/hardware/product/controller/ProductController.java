@@ -285,7 +285,7 @@ public class ProductController extends AbstractController<Product, Long> {
     public ModelAndView getProductSeriesList() {
 //        List<ProductSeries> list = productSeriesService.selectAll();
 		Example example = new Example(ProductSeries.class);
-		example.createCriteria().andEqualTo("isDeleted", 0);
+		example.createCriteria().andEqualTo("isDeleted", 0).andEqualTo("level", 1);
 		List<ProductSeries> list = productSeriesService.selectByExample(example);
 		// 处理图片地址
 		for(ProductSeries res : list){

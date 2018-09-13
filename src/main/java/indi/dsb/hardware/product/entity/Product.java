@@ -31,7 +31,7 @@ public class Product extends AbstractEntity implements Serializable {
     private String nameCn;// 中文名称
     @Column(name = "name_en")
     private String nameEn;// 英文名称
-	private Integer type;// 类型 关联产品类型表
+	private Integer type;// 类型 实际对应的是 series系列
     @Column(name = "amount_old")
     private BigDecimal amountOld;// 促销前金额
     private BigDecimal amount;// 金额

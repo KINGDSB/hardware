@@ -66,8 +66,9 @@
             dataType: "json",
             success: function (result) {
                 $('#treeview2').treeview({
-                    levels: 1,
+                    levels: 2,
                     highlightSelected: true,    //是否高亮选中
+                    collapsed: false,
                     data: result,         // 数据源
                     //nodeIcon: 'glyphicon glyphicon-user',    //节点上的图标
                     //nodeIcon: 'glyphicon glyphicon-globe',
@@ -79,7 +80,8 @@
                         location.href="/hardware/seriesProduct.jsp?id="+data.id;
                     }
                 });
-                $(".icon").css("display", "none");
+                $('#treeview2').treeview('collapseAll');
+                //$(".icon").css("display", "none");
             },
             error: function () {
                 //alert("树形结构加载失败！");

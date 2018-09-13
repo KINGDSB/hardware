@@ -15,95 +15,93 @@
 			<h2 id="titleH"
 				style="position: relative; bottom: -95%; background-color: #171c60; color: white; left: 20%; width: 60%;">title</h2>
 		</div>
-		<div class="container" style="padding: 30px 0 10px;">
-			<div class="container" style="width: 90%;">
-				<div class="row" style="text-align: center;">
-					<!-- 
-                    <div class="col-md-4">
-                        <div class="single-sidebar">
-                            <h2 class="sidebar-title">Search Products</h2>
-                            <input id="keywordInput" type="text" placeholder="Search products...">
-                            <input id="formSub" type="submit" value="Search">
-                        </div>
-                        <div id="searchList" class="single-sidebar">
-                            <h2 id="H2Products" class="sidebar-title">Related Products</h2>
-                            <div class="thubmnail-recent">
-                                <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                                <h2><a href="">Sony Smart TV - 2015</a></h2>
-                                <div class="product-sidebar-price">
-                                    <ins>$700.00</ins> <del>$800.00</del>
-                                </div>                             
-                            </div>
-                            <div class="thubmnail-recent">
-                                <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                                <h2><a href="">Sony Smart TV - 2015</a></h2>
-                                <div class="product-sidebar-price">
-                                    <ins>$700.00</ins> <del>$800.00</del>
-                                </div>                             
-                            </div>
-                            <div class="thubmnail-recent">
-                                <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
-                                <h2><a href="">Sony Smart TV - 2015</a></h2>
-                                <div class="product-sidebar-price">
-                                    <ins>$700.00</ins> <del>$800.00</del>
-                                </div>                             
-                            </div>
-                        </div>
-                    </div>
-                     -->
-					<div class="col-sm-3">
-						<h2 class="sidebar-title" style="margin-bottom: 10px">Product
-							Series</h2>
-						<div id="treeview2" class="" style="text-align: left;"></div>
-					</div>
-					<div class="col-sm-9">
-						<div class="row">
-							<div class="col-sm-5">
-								<!-- <h3>Product Picture</h3> -->
-								<div class="product-images">
-									<div id="picUrl" class="product-main-img">
-										<img
-											src="http://47.254.38.242:8082/files/hardware/20180426/logo.png"
-											alt="">
-									</div>
+		<div class="container" style="width: 60%; padding: 30 0 10;">
+			<div class="row" style="text-align: center;">
+				<!-- 
+	                  <div class="col-md-4">
+	                      <div class="single-sidebar">
+	                          <h2 class="sidebar-title">Search Products</h2>
+	                          <input id="keywordInput" type="text" placeholder="Search products...">
+	                          <input id="formSub" type="submit" value="Search">
+	                      </div>
+	                      <div id="searchList" class="single-sidebar">
+	                          <h2 id="H2Products" class="sidebar-title">Related Products</h2>
+	                          <div class="thubmnail-recent">
+	                              <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
+	                              <h2><a href="">Sony Smart TV - 2015</a></h2>
+	                              <div class="product-sidebar-price">
+	                                  <ins>$700.00</ins> <del>$800.00</del>
+	                              </div>                             
+	                          </div>
+	                          <div class="thubmnail-recent">
+	                              <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
+	                              <h2><a href="">Sony Smart TV - 2015</a></h2>
+	                              <div class="product-sidebar-price">
+	                                  <ins>$700.00</ins> <del>$800.00</del>
+	                              </div>                             
+	                          </div>
+	                          <div class="thubmnail-recent">
+	                              <img src="images/product-thumb-1.jpg" class="recent-thumb" alt="">
+	                              <h2><a href="">Sony Smart TV - 2015</a></h2>
+	                              <div class="product-sidebar-price">
+	                                  <ins>$700.00</ins> <del>$800.00</del>
+	                              </div>                             
+	                          </div>
+	                      </div>
+	                  </div>
+	                   -->
+				<div class="col-sm-3">
+					<h2 class="sidebar-title" style="margin-bottom: 10px">Product
+						Series</h2>
+					<div id="treeview2" class="" style="text-align: left;"></div>
+				</div>
+				<div class="col-sm-9">
+					<div class="row">
+						<div class="col-sm-5">
+							<!-- <h3>Product Picture</h3> -->
+							<div class="product-images">
+								<div id="picUrl" class="product-main-img">
+									<img
+										src="http://47.254.38.242:8082/files/hardware/20180426/logo.png"
+										alt="">
 								</div>
 							</div>
-
-							<div class="col-sm-7">
-								<!-- <h3>Commodity display</h3> -->
-								<div class="product-inner">
-									<!-- <h2 id="productName" class="product-name">Sony Smart TV - 2015</h2> -->
-									<div role="tabpanel">
-										<div class="tab-content">
-											<div id="pinfo" role="tabpanel"
-												class="tab-pane fade in active" style="padding-bottom: 5px">
-												<p id="productInfoP"
-													style="text-align: left; font-size: 14px"></p>
-												<!-- 
-		                                        <h2>Product Description</h2>  
-		                                        <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
-		                                         -->
-											</div>
-											<table border="2" style="width: 100%; text-align: center;border-collapse:collapse">
-												<thead id="tableHead" style="background-color: #656cb0;">
-													<!-- <tr><td>Item No</td><td>Size(mm)</td></tr> -->
-												</thead>
-												<tbody id="tableBody">
-													<!-- <tr><td>1101.214</td><td>214*214</td></tr>
-		                                            <tr><td>1101.246</td><td>246*246</td></tr>
-		                                            <tr><td>1101.278</td><td>278*278</td></tr>
-		                                            <tr><td>1101.214</td><td>214*214</td></tr>
-		                                            <tr><td>1101.214</td><td>214*214</td></tr> -->
-												</tbody>
-											</table>
+						</div>
+	
+						<div class="col-sm-7">
+							<!-- <h3>Commodity display</h3> -->
+							<div class="product-inner">
+								<!-- <h2 id="productName" class="product-name">Sony Smart TV - 2015</h2> -->
+								<div role="tabpanel">
+									<div class="tab-content">
+										<div id="pinfo" role="tabpanel"
+											class="tab-pane fade in active" style="padding-bottom: 5px">
+											<p id="productInfoP"
+												style="text-align: left; font-size: 14px"></p>
+											<!-- 
+	                                        <h2>Product Description</h2>  
+	                                        <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+	                                         -->
 										</div>
+										<table border="2" style="width: 100%; text-align: center;border-collapse:collapse">
+											<thead id="tableHead" style="background-color: #656cb0;">
+												<!-- <tr><td>Item No</td><td>Size(mm)</td></tr> -->
+											</thead>
+											<tbody id="tableBody">
+												<!-- <tr><td>1101.214</td><td>214*214</td></tr>
+	                                            <tr><td>1101.246</td><td>246*246</td></tr>
+	                                            <tr><td>1101.278</td><td>278*278</td></tr>
+	                                            <tr><td>1101.214</td><td>214*214</td></tr>
+	                                            <tr><td>1101.214</td><td>214*214</td></tr> -->
+											</tbody>
+										</table>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12">
-								<h2 style="text-align: left;">Details Picture:</h2>
-								<div id="slider"></div>
-							</div>
+						</div>
+						<div class="col-sm-12">
+							<h2 style="text-align: left;">Details Picture:</h2>
+							<div id="slider"></div>
 						</div>
 					</div>
 				</div>
@@ -133,7 +131,8 @@
                     	location.href="/hardware/seriesProduct.jsp?id="+data.id;
                     }
                 });
-                $(".icon").css("display", "none");
+                $('#treeview2').treeview('collapseAll');
+                //$(".icon").css("display", "none");
             },
             error: function () {
                 //alert("树形结构加载失败！");
