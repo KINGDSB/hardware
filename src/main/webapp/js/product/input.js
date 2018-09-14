@@ -119,7 +119,7 @@ $(function(){
         	console.log(pics)
             if (pics.length > 0) {
             	for (var i = 0; i < pics.length; i++) {
-                	$("#picsUrlsDiv").append('<a class="attachment" href="'+pics[i]+'" target="_blank"><img src="'+pics[i]+'" style="max-width: 100%;max-height: 100%;"></a>');
+                	$("#picsImgsDiv").append('<a class="attachment detailsPic" href="'+pics[i]+'" target="_blank"><img src="'+pics[i]+'" style="max-width: 100%;max-height: 100%;"></a>');
 				}
             }
 		}
@@ -195,5 +195,10 @@ $(function(){
                 alertModal("系统繁忙，请稍后在访问！", "错误提示");
             });
         }
+    });
+    
+    $("#clearBtn").click(function(){
+    	$("#picsImgsDiv").empty();
+    	$("#pictures").val("");
     });
 });

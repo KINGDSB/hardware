@@ -24,6 +24,7 @@
 
 <div id="search_div">
 	<div class="col-lg-12">
+	    <!-- 
 		<div class="col-lg-2">
 			<div class="form-group">
 		        <input type="text" name="nameCn" class="form-control queryClass" placeholder="中文名称">
@@ -34,6 +35,7 @@
                 <input type="text" name="nameEn" class="form-control queryClass" placeholder="英文名称">
             </div>
         </div>
+         -->
         <div class="col-lg-2">
             <div class="form-group">
                 <select id="typeSelect" name="type" class="form-control queryClass"></select>

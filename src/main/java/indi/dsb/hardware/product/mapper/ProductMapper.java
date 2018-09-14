@@ -55,7 +55,7 @@ public interface ProductMapper extends Mapper<Product> {
 			+ "	AND DATE_FORMAT(t1.created_date, '%Y-%m-%d') = DATE_FORMAT(#{createdDate}, '%Y-%m-%d')" 
 			+ "</if>"
 			+ "<if test='keyword != null'>" 
-			+ "	AND t1.description LIKE concat('%', #{keyword}, '%')" 
+			+ "	AND (t1.description LIKE concat('%', #{keyword}, '%') OR t1.name_cn LIKE concat('%', #{keyword}, '%') OR t1.name_en LIKE concat('%', #{keyword}, '%')) " 
 			+ "</if>"
 			+ "<if test='sort == null'>" 
 			+ " ORDER BY t1.created_date DESC" 
@@ -99,7 +99,7 @@ public interface ProductMapper extends Mapper<Product> {
 			+ "	AND DATE_FORMAT(t1.created_date, '%Y-%m-%d') = DATE_FORMAT(#{createdDate}, '%Y-%m-%d')" 
 			+ "</if>"
 			+ "<if test='keyword != null'>" 
-			+ "	AND t1.description LIKE concat('%', #{keyword}, '%')" 
+			+ "	AND (t1.description LIKE concat('%', #{keyword}, '%') OR t1.name_cn LIKE concat('%', #{keyword}, '%') OR t1.name_en LIKE concat('%', #{keyword}, '%')) " 
 			+ "</if>"
 			+ "</script>")
 	int findListCount(@Param("status") Integer status, @Param("type") Integer type, @Param("newProduct") Integer newProduct,

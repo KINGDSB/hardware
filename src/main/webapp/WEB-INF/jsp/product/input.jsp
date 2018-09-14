@@ -135,7 +135,11 @@
             <div id="picsUrlsDiv" class="col-md-12 form-horizontal border">
                 <label class="col-md-2 form-label" for="uploadfile" style="text-align: right;">细节图</label>
                 <input id="uploadPics" name="files" class="file" type="file" multiple data-min-file-count="1">
+                <button id="clearBtn">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
                 <input type="hidden" id="pictures" name="pictures">
+                <div id="picsImgsDiv" ></div>
             </div>
         </div>
     </div>

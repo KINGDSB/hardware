@@ -164,9 +164,10 @@ public class ProductController extends AbstractController<Product, Long> {
 		if (StringUtils.isNotBlank(product.getPicture())) {
 			oProduct.setPicture(product.getPicture());
 		}
-		if (StringUtils.isNotBlank(product.getPictures())) {
-			oProduct.setPictures(product.getPictures());
-		}
+//		if (StringUtils.isNotBlank(product.getPictures())) {
+//			oProduct.setPictures(product.getPictures());
+//		}
+		oProduct.setPictures(product.getPictures());
 
 		productService.update(oProduct);
 		return new Response(ResponseCode.SUCCESS).toJson();
