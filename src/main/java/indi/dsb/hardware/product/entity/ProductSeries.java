@@ -29,6 +29,8 @@ public class ProductSeries extends AbstractEntity implements Serializable {
 	private String nameCn;// 产品类型名称
     @Column(name = "name_en")
     private String nameEn;// 产品类型名称
+    @Column(name = "name_es")
+    private String nameEs;// 产品类型西班牙语
     private String photo;// 系列图片
     @Column(name = "parent_id")
     private Long parentId;// 父级id
@@ -90,5 +92,13 @@ public class ProductSeries extends AbstractEntity implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+	public String getNameEs() {
+		return nameEs;
+	}
+
+	public void setNameEs(String nameEs) {
+		this.nameEs = nameEs;
+	}
 
 }

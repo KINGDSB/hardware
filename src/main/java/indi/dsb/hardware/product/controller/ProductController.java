@@ -253,8 +253,10 @@ public class ProductController extends AbstractController<Product, Long> {
      * @return
      */
     @RequestMapping(value = "/productSeriesTree")
-    public ModelAndView productSeriesTree() {
+    public ModelAndView productSeriesTree(HttpServletRequest request) {
 
+        int pageLanguage = ServletRequestUtils.getIntParameter(request, "pageLanguage", 1);
+        
 		Example example = new Example(ProductSeries.class);
 		example.createCriteria().andEqualTo("isDeleted", 0);
 		List<ProductSeries> list = productSeriesService.selectByExample(example);
@@ -267,6 +269,13 @@ public class ProductController extends AbstractController<Product, Long> {
                 return id1 - id2;
             }
         });
+        
+        if (2 == pageLanguage) {
+			// 切换西班牙语
+        	list.stream().forEach(map -> {
+        		map.setNameEn(map.getNameEs());
+        	});
+		}
         
         ModelAndView modelAndView = new ModelAndView();
         ProductSeriesTreeView treeView = ProductSeriesTreeView.buildResourceTree(list, Collections.emptyList());

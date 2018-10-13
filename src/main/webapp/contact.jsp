@@ -23,48 +23,7 @@
 		<div class="container" style="padding: 10px 0 150px;">
 			<div class="container" style="width: 90%;">
 				<div class="row">
-					<div class="col-md-10" id="contactP">
-						<br />
-						<h3 class="divcss5-F00" style="width: 350px">ARTESANO
-							INDUSTRIAL LIMITED</h3>
-						<p>Tel: 020-8621-1986</p>
-						<p>Email: info@artesano-ind.com</p>
-						<p>Website: www.artesano-ind.com</p>
-						<p>Add: No.1115-1116，A Tower, CaiRun international building,
-							DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p>
-						<br />
-						<p>THANKS YOUR VISIT, WISH YOU HAVE A GOOD TIME.</p>
-						<!-- 
-		                <div class="col-md-3 col-sm-6">
-		                    <div class="single-promo" style="background-image: url('images/icon1.png'); width:200px; height:200px">
-		                        <p>Phone Number:</p>
-		                        <p>135XXXXXXXX</p>
-		                        <p>135XXXXXXXX</p>
-		                        <p>020-xxxxxxxx</p>
-		                    </div>
-		                </div>
-		                <div class="col-md-3 col-sm-6">
-		                    <div class="single-promo" style="background-image: url('images/icon2.png'); width:200px; height:200px">
-		                        <p>Maintain Address:</p>
-		                        <p>中国广东省广州市XXXXXXXX</p>
-		                    </div>
-		                </div>
-		                <div class="col-md-3 col-sm-6">
-		                    <div class="single-promo" style="background-image: url('images/FAQ.png'); width:200px; height:200px">
-		                        <p>FQA:</p>
-		                        <p>........</p>
-		                        <p>........</p>
-		                    </div>
-		                </div>
-		                <div class="col-md-3 col-sm-6">
-		                    <div class="single-promo" style="background-image: url('images/icon4.png'); width:200px; height:200px">
-		                        <p>Other Question:</p>
-		                        <p>........</p>
-		                        <p>........</p>
-		                    </div>
-		                </div>
-		                 -->
-					</div>
+                    <div class="col-md-10" id="contactP"></div>
 					<div class="col-md-7">
 						<!-- 
 			            <iframe height="60%" width="100%" src="baidumap.html">
@@ -80,6 +39,12 @@
         $("#contactLi").addClass("active");
         // 清空系列产品页码
         window.localStorage.setItem("pageNumber",0);
+        
+        if (pageLanguage == 1) {
+            $("#contactP").append('<br /><h3 class="divcss5-F00" style="width: 350px">ARTESANO INDUSTRIAL LIMITED</h3><p>Tel: 020-8621-1986</p><p>Email: info@artesano-ind.com</p><p>Website: www.artesano-ind.com</p><p>Add: No.1115-1116，A Tower, CaiRun international building, DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p><br /><p>THANKS YOUR VISIT, WISH YOU HAVE A GOOD TIME.</p>');
+        } else {
+            $("#contactP").append('<br /><h3 class="divcss5-F00" style="width: 350px">ARTESANO INDUSTRIAL LIMITED</h3><p>Tel: 020-8621-1986</p><p>Correo electrónico: info@artesano-ind.com</p><p>Web: www.artesano-ind.com</p><p>Add: No.1115-1116，A Tower, CaiRun international building, DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p><br /><p>GRACIAS A SU VISITA, DESEA QUE USTED TIENE UN BUEN MOMENTO.</p>');
+        }
     </script>
 </body>
 </html>

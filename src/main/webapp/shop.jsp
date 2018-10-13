@@ -81,7 +81,13 @@
                         html += '<div class="product-upper">';
                         html += '<img src="'+result[i].photo+'" alt="'+result[i].photo+'" width="150" height="150">';
                         html += '</div>';
-                        html += '<h2><a href="javascript:;" onclick="showSeries('+result[i].id+')">'+result[i].nameEn+'</a></h2>';
+                        html += '<h2><a href="javascript:;" style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;line-height: 30px;max-height: 25px;-webkit-line-clamp: 1;-webkit-box-orient: vertical;" onclick="showSeries('+result[i].id+')">';
+                        if (1==pageLanguage) {
+                            html += result[i].nameEn;
+						} else {
+                            html += result[i].nameEs;
+						}
+                        html += '</a></h2>';
                         html += '</div>';
                         html += '</div>';
                     }
