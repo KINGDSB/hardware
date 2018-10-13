@@ -181,7 +181,11 @@
                     productInfo += "";
                     $("#pinfo").append(productInfo);
                      */
-                    $("#productInfoP").append(data.description);
+                     if (pageLanguage == 1) {
+                         $("#productInfoP").append(data.description);
+                   	} else {
+                        $("#productInfoP").append(data.descriptionEs);
+                   	}
                     
                     var tableInfos = data.other;
                     if (undefined != tableInfos && null != tableInfos && '' != tableInfos) {

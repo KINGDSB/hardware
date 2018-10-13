@@ -153,6 +153,13 @@
 
     <div class="col-md-12 form_me">
         <div style="padding: 0 15px;">
+            <label class="form-label col-md-2" style="text-align: right;">产品参数西班牙语</label>
+            <textarea id="descriptionEs" name="descriptionEs" class="form-control1 col-md-10" rows="3" style="height: 80px;"></textarea>
+        </div>
+    </div>
+
+    <div class="col-md-12 form_me">
+        <div style="padding: 0 15px;">
             <label class="form-label col-md-2" style="text-align: right;">表格数据</label>
             <textarea id="other" name="other" class="form-control1 col-md-10" rows="3" style="height: 80px;"></textarea>
         </div>

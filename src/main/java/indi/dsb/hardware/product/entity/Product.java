@@ -36,6 +36,8 @@ public class Product extends AbstractEntity implements Serializable {
     private BigDecimal amountOld;// 促销前金额
     private BigDecimal amount;// 金额
     private String description;// 产品描述 用来放产品文字说明了
+    @Column(name = "description_es")
+    private String descriptionEs;// 产品描述 用来放产品文字说明了 西班牙语
 	private String picture;// 图片
     @Column(name = "new_product")
 	private Integer newProduct;// 是否是新产品 1:是 2:否
@@ -80,7 +82,13 @@ public class Product extends AbstractEntity implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
-    public Integer getStatus() {
+    public String getDescriptionEs() {
+		return descriptionEs;
+	}
+	public void setDescriptionEs(String descriptionEs) {
+		this.descriptionEs = descriptionEs;
+	}
+	public Integer getStatus() {
         return status;
     }
     public void setStatus(Integer status) {
