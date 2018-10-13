@@ -120,7 +120,7 @@
         
         $.ajax({
             type: "Post",
-            url: contextPath+'/product/productSeriesTree.json?pageLanguage'+pageLanguage,
+            url: contextPath+'/product/productSeriesTree.json?pageLanguage='+pageLanguage,
             dataType: "json",
             success: function (result) {
                 $('#treeview2').treeview({
