@@ -16,13 +16,21 @@
 	width: 100%;
 	height: 100%;
 }
+.bar6 input { border: 2px solid #171c60; border-radius: 5px; background: transparent; top: 0; right: 0; height: 45;width: 200px;}
 </style>
 </head>
 <body style="margin: 0 auto;">
 	<%@include file="header.jsp"%>
 	<div style="">
 		<div class="product-big-title-area"
-			style="height: 300; background-position: center;"></div>
+			style="height: 300; background-position: center;">
+           <div class="search bar6" style="float: right;width: 20%;height: 45;position: absolute;vertical-align: middle;top: 100;right: 20;"> 
+             <input id="searchInp" type="text" placeholder="search product no" style="background-color: white;" data-trigger="manual" data-placement="bottom" data-content="Product does not exist!"/> 
+             <button id="searchBtn" type="button" class="btn btn-primary btn-lg" data-loading-text="Loading..." style="height: 45;font-size: 20;background-color: #171c60;">
+              <span class="glyphicon glyphicon-search"></span>
+             </button> 
+           </div> 
+        </div>
 		<div class="container" class="single-product-area">
 			<div class="container" style="width: 90%; padding-top: 20;">
 				<div class="row">
@@ -111,6 +119,33 @@
 		}
 
 		getList(0, 0, 12);
+		
+
+        $("#searchBtn").click(function(){
+            var name = $("#searchInp").val();
+            if (name != null && name != '') {
+                $("#searchBtn").button('loading');
+                $.get(contextPath+'/product/getIdByName.json?name='+name,
+                        function(result){
+                            console.log(result);
+                            $("#searchBtn").button('reset');
+                            if (result!=0) {
+                                location.href="/hardware/single-product.jsp?id="+result;
+                            } else {
+                                $("#searchInp").popover('show');
+                                //2秒后消失提示框
+                                setTimeout(function () {$("#searchInp").popover('hide');}, 2000);
+                            }
+                        },
+                        'json'
+                    );
+            } else {
+                $("#searchInp").attr('data-content', 'product no is null!');
+                $("#searchInp").popover('show');
+                //2秒后消失提示框
+                setTimeout(function () {$("#searchInp").popover('hide');}, 2000);
+            }
+        });
 	</script>
 </body>
 </html>

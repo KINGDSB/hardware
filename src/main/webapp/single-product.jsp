@@ -12,6 +12,12 @@
 	<div style="">
 		<div class="product-big-title-area"
 			style="height: 300; background-position: center; text-align: center;">
+           <div class="search bar6" style="float: right;width: 20%;height: 45;position: absolute;vertical-align: middle;top: 100;right: 20;"> 
+             <input id="searchInp" type="text" placeholder="search product no" style="background-color: white;" data-trigger="manual" data-placement="bottom" data-content="Product does not exist!"/> 
+             <button id="searchBtn" type="button" class="btn btn-primary btn-lg" data-loading-text="Loading..." style="height: 45;font-size: 20;background-color: #171c60;">
+              <span class="glyphicon glyphicon-search"></span>
+             </button> 
+           </div> 
 			<h2 id="titleH"
 				style="position: relative; bottom: -95%; background-color: #171c60; color: white; left: 20%; width: 60%;">title</h2>
 		</div>
@@ -277,6 +283,31 @@
             getLeftList($("#keywordInput").val());
         })
          */
+         $("#searchBtn").click(function(){
+             var name = $("#searchInp").val();
+             if (name != null && name != '') {
+                 $("#searchBtn").button('loading');
+                 $.get(contextPath+'/product/getIdByName.json?name='+name,
+                         function(result){
+                             console.log(result);
+                             $("#searchBtn").button('reset');
+                             if (result!=0) {
+                                 location.href="/hardware/single-product.jsp?id="+result;
+                             } else {
+                                 $("#searchInp").popover('show');
+                                 //2秒后消失提示框
+                                 setTimeout(function () {$("#searchInp").popover('hide');}, 2000);
+                             }
+                         },
+                         'json'
+                     );
+             } else {
+                 $("#searchInp").attr('data-content', 'product no is null!');
+                 $("#searchInp").popover('show');
+                 //2秒后消失提示框
+                 setTimeout(function () {$("#searchInp").popover('hide');}, 2000);
+             }
+         });
     </script>
 	<style type="text/css">
 #maId-sticky-wrapper {
@@ -292,6 +323,7 @@
 body {
 	font-size: 14px;
 }
+.bar6 input { border: 2px solid #171c60; border-radius: 5px; background: transparent; top: 0; right: 0; height: 45;width: 200px;}
 </style>
 </body>
 </html>
