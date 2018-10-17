@@ -174,7 +174,7 @@
 			</div>
 			<div class="col-sm-5" style="margin-top: 1%;">
 				<div class="product-inner" style="">
-					<h2>About Artesano</h2>
+					<h2 id="infoTitle">About Artesano</h2>
 					<div class="product-inner-category">
 						<p id="description" style="font-size: 15px">In 2008,The
 							Olympic games were successfully held in Beijing, China. At this
@@ -187,8 +187,8 @@
 
 					<div role="tabpanel">
 						<div class="tab-content">
-							<div role="tabpanel" class="tab-pane fade in active" id="home">
-								<h2>Integrity, Dedication to Superior Quality, Creative and
+							<div role="tabpanel" class="tab-pane fade in active" >
+								<h2 id="infoText2" >Integrity, Dedication to Superior Quality, Creative and
 									Exceptional Customer Service</h2>
 							</div>
 						</div>
@@ -202,6 +202,16 @@
       $("#indexLi").addClass("active");
       // 清空系列产品页码
       window.localStorage.setItem("pageNumber",0);
+      
+      if (pageLanguage == 1) {
+          $("#infoTitle").text("About Artesano");
+          $("#description").text("In 2008,The Olympic games were successfully held in Beijing, China. At this moment, ARTESANO began a new chapter in manufacturing: specializing in furniture and furniture hardware fittings. In the past 10 years, our founding belief is offering exceptional quality, at a competitive price, and a dedication to exceptional flexibility for our clients.");
+          $("#infoText2").text("Integrity, Dedication to Superior Quality, Creative and Exceptional Customer Service");
+      } else {
+          $("#infoTitle").text("Sobre Artesano");
+          $("#description").text("En 2008, los olímpicos se celebraron con éxito en Beijing, China. En este momento, ARTESANO comenzó un nuevo capítulo en la fabricación: especializarse en herrajes para muebles y profesional  para los accesorios de muebles . En los últimos 10 años, nuestra creencia fundamental es ofrecer una calidad excepcional, a un precio competitivo y una dedicación a la flexibilidad excepcional para nuestros clientes.Grupo de artesano.");
+          $("#infoText2").text("Integridad, dedicación a la calidad superior,  creativo y servicio al cliente excepcional.");
+      }
  /* 
       jQuery(function($) {
 		$('.vmcarousel-centered').vmcarousel({
