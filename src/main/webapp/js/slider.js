@@ -106,6 +106,7 @@
                     var w = $('.outer:eq(0)', slidercontents).outerWidth() + parseFloat($('.outer:eq(0)', slidercontents).css('margin-left')) + parseFloat($('.outer:eq(0)', slidercontents).css('margin-right'));
                     var width = (total + 1) * w;
                     var maxScroll = width - $('.image-slider-contents').outerWidth();
+                    console.log("#####width:"+width)
                     wrapper.css({
                         width: width
                     });

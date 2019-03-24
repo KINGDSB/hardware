@@ -22,24 +22,23 @@ import indi.dsb.hardware.common.ResponseCode;
 import indi.dsb.hardware.common.abstracts.AbstractController;
 import indi.dsb.hardware.common.abstracts.AbstractService;
 import indi.dsb.hardware.common.utils.Response;
-import indi.dsb.hardware.product.entity.ProductType;
-import indi.dsb.hardware.product.service.ProductTypeService;
+import indi.dsb.hardware.product.entity.ProductSeries;
+import indi.dsb.hardware.product.service.ProductSeriesService;
 import indi.dsb.hardware.sys.entity.SysUser;
 import indi.dsb.hardware.sys.service.SysResourceService;
 import tk.mybatis.mapper.entity.Example;
 
-@Deprecated
 @Controller
-@RequestMapping(value = "productType")
-public class ProductTypeController extends AbstractController<ProductType, Long> {
+@RequestMapping(value = "productSeries")
+public class ProductSeriesController extends AbstractController<ProductSeries, Long> {
 	@Autowired
-	private ProductTypeService productTypeService;
+	private ProductSeriesService productSeriesService ;
 	@Autowired
 	private SysResourceService sysResourceService;
 
 	@Override
-	public AbstractService<ProductType, Long> getService() {
-		return productTypeService;
+	public AbstractService<ProductSeries, Long> getService() {
+		return productSeriesService;
 	}
 
 	@Override
@@ -48,7 +47,7 @@ public class ProductTypeController extends AbstractController<ProductType, Long>
 	}
 
 	@RequestMapping(value = "/list")
-	@Log(module = "产品类型管理", method = "产品类型列表")
+	@Log(module = "产品系列管理", method = "产品系列列表")
 	public ModelAndView find(HttpServletRequest request, HttpServletResponse response) {
 		int start = ServletRequestUtils.getIntParameter(request, "start", 0);
 		int length = ServletRequestUtils.getIntParameter(request, "length", 10);
@@ -58,14 +57,14 @@ public class ProductTypeController extends AbstractController<ProductType, Long>
 
 		RowBounds rowBounds = new RowBounds(start, length);
 
-		Example example = new Example(ProductType.class);
+		Example example = new Example(ProductSeries.class);
 		if (!StringUtils.isBlank(nameCn))
 			example.createCriteria().andLike("nameCn", "%"+nameCn+"%");
 		if (!StringUtils.isBlank(nameEn))
 			example.createCriteria().andLike("nameEn", "%"+nameEn+"%");
 
 		example.createCriteria().andEqualTo("isDeleted", false);
-		Page<ProductType> res = productTypeService.selectPage(rowBounds, example);
+		Page<ProductSeries> res = productSeriesService.selectPage(rowBounds, example);
 		res.setDraw(draw);
 
 		ModelAndView modelAndView = new ModelAndView();
@@ -75,44 +74,43 @@ public class ProductTypeController extends AbstractController<ProductType, Long>
 	}
 
 	@RequestMapping(value = "remove")
-	@Log(module = "产品类型管理", method = "删除产品类型")
-	public @ResponseBody
-    String remove(@RequestParam("id") Long id) {
+	@Log(module = "产品系列管理", method = "删除产品类型")
+	public @ResponseBody String remove(@RequestParam("id") Long id) {
 		if (id == null)
 			return new Response(ResponseCode.REQUEST_ERROR).toJson();
 		Example example = new Example(SysUser.class);
 		example.createCriteria().andEqualTo("id", id);
 
-		List<ProductType> selectByExample = productTypeService.selectByExample(example);
+		List<ProductSeries> selectByExample = productSeriesService.selectByExample(example);
 		if (selectByExample.size() > 0) {
-			ProductType productType = selectByExample.get(0);
-			productType.setIsDeleted(true);
-			productTypeService.update(productType);
+			ProductSeries productSeries = selectByExample.get(0);
+			productSeries.setIsDeleted(true);
+			productSeriesService.update(productSeries);
 		}
 		return new Response(ResponseCode.SUCCESS).toJson();
 	}
 
 	@RequestMapping(value = "create")
-	@Log(module = "产品类型管理", method = "添加产品类型")
+	@Log(module = "产品系列管理", method = "添加产品系列")
 	public @ResponseBody
-    String create(@RequestBody ProductType productType) {
-		productTypeService.insert(productType);
+    String create(@RequestBody ProductSeries productSeries) {
+		productSeriesService.insert(productSeries);
 		return new Response(ResponseCode.SUCCESS).toJson();
 	}
 
 	@RequestMapping(value = "edit")
 	@Log(module = "产品类型管理", method = "编辑产品类型")
 	public @ResponseBody
-    String edit(@RequestBody ProductType productType) {
-		Long id = productType.getId();
-		Example example = new Example(ProductType.class);
+    String edit(@RequestBody ProductSeries productSeries) {
+		Long id = productSeries.getId();
+		Example example = new Example(ProductSeries.class);
 		example.createCriteria().andEqualTo("id", id);
-		ProductType oProductType = productTypeService.selectByExample(example).get(0);
+		ProductSeries oProductType = productSeriesService.selectByExample(example).get(0);
 
-		oProductType.setNameCn(productType.getNameCn());
-		oProductType.setNameEn(productType.getNameEn());
+		oProductType.setNameCn(productSeries.getNameCn());
+		oProductType.setNameEn(productSeries.getNameEn());
 
-		productTypeService.update(oProductType);
+		productSeriesService.update(oProductType);
 		return new Response(ResponseCode.SUCCESS).toJson();
 	}
 	
@@ -120,9 +118,9 @@ public class ProductTypeController extends AbstractController<ProductType, Long>
     @Log(module = "产品类型管理", method = "获取产品类型下拉列表")
     public ModelAndView getSelect(HttpServletRequest request, HttpServletResponse response) {
 
-        Example example = new Example(ProductType.class);
+        Example example = new Example(ProductSeries.class);
         example.createCriteria().andEqualTo("isDeleted", false);
-        List<ProductType> list = productTypeService.selectByExample(example);
+        List<ProductSeries> list = productSeriesService.selectByExample(example);
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("option", list);

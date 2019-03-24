@@ -14,7 +14,7 @@ $(function(){
             name: 'id',
             value: data.id
         }).appendTo(inputForm);
-        inputForm.attr("action", "productType/edit");
+        inputForm.attr("action", "productSeries/edit");
         inputForm.find(".form-control").each(function(e) {
             if(this.name == 'createdDate'){
                 var createdDate = data[this.name] ? new Date(data[this.name]).Format("yyyy-MM-dd") : '';
@@ -24,7 +24,7 @@ $(function(){
             }
         });
     } else if (action == 'create'){
-        inputForm.attr("action", "productType/create");
+        inputForm.attr("action", "productSeries/create");
     }
 
     inputForm.formValidation({

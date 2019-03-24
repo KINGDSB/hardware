@@ -187,7 +187,9 @@ $(function(){
                 if (res == 200) {
                     $('#formModal').modal("hide");
                         alertModal("保存成功！", null, function(){
-                        table.ajax.reload();
+//                        table.ajax.reload();
+//                        table.ajax.fnDraw(false);
+                        table.ajax.reload(null, false);
                     });
                 }
             }, function(resp) {

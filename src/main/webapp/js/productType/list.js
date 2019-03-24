@@ -21,7 +21,7 @@ $(function() {
         processing: true,
         serverSide: true,
         ajax: {
-            url: "productType/list.json",
+            url: "productSeries/list.json",
             type: "POST",
             data: function( reqData) {
             	$("#search_div").find("input").each(function() {
@@ -43,7 +43,13 @@ $(function() {
             } },
             { data: "id" },
             { data: "nameCn" },
-            { data: "nameEn" },
+            { data: "nameEn" },		    
+            { data: "parentId", render: function(data) {
+		    	if (0 == data) {
+				    return "一级类目";
+				}
+		    	return "二级类目";
+		    }},
 		    { data: "createdDate", render: function(data) {
 		          if (!data) return '';
 		          return !data || new Date(data).Format("yyyy-MM-dd");
@@ -82,7 +88,7 @@ $(function() {
     // Delete a record
     var delCallback = function() {
         var selected = table.rows({ selected: true }).data()[0];
-        ap.ajaxPost("productType/remove", "id=" + selected['id'], function(resp) {
+        ap.ajaxPost("productSeries/remove", "id=" + selected['id'], function(resp) {
             var res = resp.code;
             if (res == 200) {
                 alertModal("删除成功！", null, function(){
