@@ -43,7 +43,8 @@ $(function() {
             } },
             { data: "id" },
             { data: "nameCn" },
-            { data: "nameEn" },		    
+            { data: "nameEn" },	
+            { data: "nameEs" },		    
             { data: "parentId", render: function(data) {
 		    	if (0 == data) {
 				    return "一级类目";

@@ -55,3 +55,7 @@
 <script type="text/javascript">
 var contextPath = "${ctxPath}";
 </script>
+
+<!-- 看图插件 magnify  -->
+<link rel="stylesheet" href="css/jquery.magnify.min.css">
+<script src="js/jquery.magnify.min.js"></script>

@@ -6,6 +6,38 @@
 <link rel="stylesheet" href="static/tree/css/bootstrap-treeview.css">
 <link href="css/css.css" rel="stylesheet" type="text/css" />
 <script src="js/slider.js" type="text/javascript"></script>
+<style>
+.magnify-modal {
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+}
+
+.magnify-header .magnify-toolbar {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.magnify-stage {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-width: 0;
+}
+
+.magnify-footer .magnify-toolbar {
+  background-color: rgba(0, 0, 0, .5);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.magnify-header,
+.magnify-footer {
+  pointer-events: none;
+}
+
+.magnify-button {
+  pointer-events: auto;
+}
+</style>
 </head>
 <body style="margin: 0 auto;">
 	<%@include file="header.jsp"%>
@@ -153,34 +185,11 @@
                 function(data){
                     // alert(data);
                     console.log(data);
-                    $("#picUrl").empty().append('<img src="'+data.picture+'" alt="" style="width: 100%;border: 2px solid #171c60;">');
+                    
+                    $("#picUrl").empty().append('<a data-magnify="gallery" href="'+data.picture+'"><img width="200" src="'+data.picture+'" style="width: 100%;border: 2px solid #171c60;"></a>');
                     $("#productName").text(data.nameEn);
                     $("#titleH").text(data.material);
-                    // $("#amount").text("$"+data.amount);
-                    // $("#amountOld").text("$"+data.amountOld);
-                    // $("#productType").text('Category: ').append('<a href="#">'+data.productType.nameEn+'</a>')
-                    // $("#description").text(data.description);
                     var productInfo = "";
-                    /* 
-                    productInfo += "Specification:　"+data.specification+"<br />";
-                    productInfo += "Packing Quantity:　"+data.packingQuantity+"<br />";
-                    productInfo += "Material:　"+data.material+"<br />";
-                    productInfo += "Accessories:　"+data.accessories+"<br />";
-                    productInfo += "Fitting:　"+data.fitting+"<br />";
-                     */
-                    // productInfo += "Description:　<br />"+data.description+"<br />";
-                    /* 
-                    var props = data.description.split("<br/>");
-                    for (var i=0;i<props.length;i++ ) {
-                    	if (undefined != props[i] && null != props[i] && '' != props[i]) {
-                            var items = props[i].split(":");
-                            // productInfo += "<p><span style='font-size: 18px;background-color: #171c60;color: white;' >"+items[0]+"</span>&nbsp;<span style='font-size: 18px;background-color: #656CB0;color: white;' >"+items[1]+"</span><p/>";
-                            productInfo += "<div class='row' style='margin-bottom: 2px'><div class='col-sm-5' style='background-color: #171c60;'><span style='font-size: 18px;color: white;' >"+items[0]+"</span></div><div class='col-sm-6' style='background-color: #656CB0;float: right'><span style='font-size: 18px;color: white;' >"+items[1]+"</span></div></div>";
-                    	}
-                    } 
-                    productInfo += "";
-                    $("#pinfo").append(productInfo);
-                     */
                      if (pageLanguage == 1) {
                          $("#productInfoP").append(data.description);
                    	} else {
@@ -222,7 +231,10 @@
                     if (data.pictures != null && data.pictures.length > 0) {
                         var imgs = data.pictures.split(",");
                         for (var i = 0; i < imgs.length; i++) {
-                            productPicturesHtml += '<div class="spic"><img src="' + imgs[i] + '" /><a href="' + imgs[i] + '">Picture information</a></div>';
+                        	
+                        	//'<a data-magnify="gallery" href="'+imgs[i]+'"><img width="200" src="'+imgs[i]+'" style="width: 100%;border: 2px solid #171c60;"></a>'
+
+                            productPicturesHtml += '<div class="spic"><img src="' + imgs[i] + '" /></div>';
                         }
                         $("#slider").append(productPicturesHtml);
                         $('#slider').slider({ speed: 500 })
@@ -230,6 +242,22 @@
                         productPicturesHtml += '<br/><h2>Currently no...</h2>';
                         $("#slider").append(productPicturesHtml);
                     }
+                    
+                    $('[data-magnify]').magnify({
+                        headToolbar: [
+                          'close'
+                        ],
+                        footToolbar: [
+                          'zoomIn',
+                          'zoomOut',
+                          'prev',
+                          'fullscreen',
+                          'next',
+                          'actualSize',
+                          'rotateRight'
+                        ],
+                        title: false
+                    });
                 },
                 'json'
             );
@@ -238,55 +266,6 @@
             location.href="shop.jsp";
         }
 
-        /* 
-        // 关联产品
-        $.post(contextPath+'/product/randList.json',
-            {size: 12},
-            function(data){
-                // console.log(data);
-                var relatedList = $(".single-product");
-                // console.log(relatedList.length);
-                for (var i = 0; i < relatedList.length; i++) {
-                    $(relatedList[i]).find(".photoUrlC").attr("src", data[i].picture);
-                    $(relatedList[i]).find(".view-details-link").attr("href", "single-product.jsp?id="+data[i].id);
-                    $(relatedList[i]).find(".nameC").attr("href", "single-product.jsp?id="+data[i].id).text(data[i].nameEn);
-                    $(relatedList[i]).find("ins").text("$"+data[i].amount);
-                    $(relatedList[i]).find("del").text("$"+data[i].amountOld);
-                }
-            },
-            'json'
-        );
-         */
-         
-         /* 
-        // 关键词随机查询方法
-        function getLeftList(keyword){
-            $.post(contextPath+'/product/randList.json',
-                {keyWord: keyword, size: 3},
-                function(data){
-                    var html = '<h2 id="H2Products" class="sidebar-title">Related Products</h2>';
-                    for (var i = 0; i < data.length; i++) {
-                        html += '<div class="thubmnail-recent">';
-                        html += '<img src="'+data[i].picture+'" class="recent-thumb" alt="" style="width:64px;height:55px;">';
-                        html += '<h2><a href="single-product.jsp?id='+data[i].id+'">'+data[i].nameEn+'</a></h2>';
-                        html += '<div class="product-sidebar-price">';
-                        html += '<ins>$'+data[i].amount+'</ins> <del>$'+data[i].amountOld+'</del>';
-                        html += '</div>';
-                        html += '</div>';
-                    }
-                    $("#searchList").empty();
-                    $("#searchList").append(html);
-                },
-                'json'
-            );
-        }
-        
-        getLeftList('');
-        
-        $("#formSub").click(function(){
-            getLeftList($("#keywordInput").val());
-        })
-         */
          $("#searchBtn").click(function(){
              var name = $("#searchInp").val();
              if (name != null && name != '') {

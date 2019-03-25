@@ -32,6 +32,13 @@
 <!-- 模态框（Modal） -->
 
 <form role="form" class="form-horizontal" id="inputForm" method="post">
+
+    <div class="form-group">
+        <label for="parentId" class="col-lg-3 control-label">父级类型：</label>
+        <div class="col-lg-8">
+            <select class="form-control" id="typeSelectSub" name="parentId" maxlength="25"></select>
+        </div>
+    </div>
     <div class="form-group">
         <label for="nameCn" class="col-lg-3 control-label">中文名称：</label>
         <div class="col-lg-8">
@@ -42,6 +49,19 @@
         <label for="nameEn" class="col-lg-3 control-label">英文名称：</label>
         <div class="col-lg-8">
             <input class="form-control" id="nameEn" name="nameEn" type="text" placeholder="英文名称">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nameEs" class="col-lg-3 control-label">西班牙语名称：</label>
+        <div class="col-lg-8">
+            <input class="form-control" id="nameEn" name="nameEs" type="text" placeholder="西班牙语名称">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="photo" class="col-lg-3 control-label">类型图片：</label>
+        <div id="picUrlsDiv" class="col-lg-8">
+            <input id="uploadfile" name="files" class="file" type="file" multiple data-min-file-count="1">
+            <input type="hidden" id="photo" name="photo">
         </div>
     </div>
 </form>

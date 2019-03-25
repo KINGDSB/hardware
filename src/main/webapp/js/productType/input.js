@@ -1,7 +1,43 @@
+function initData(){
+	$.ajaxSettings.async = false;
+	// 获取project下拉列表框
+	$.post("productType/getSelect.json",function(result){
+        $("#typeSelectSub").append("<option value='0'>无父级类型</option>");
+		for (var int = 0; int < result.length; int++) {
+			$("#typeSelectSub").append("<option value='"+result[int].id+"'>"+result[int].nameCn+"</option>");
+		}
+	});
+	$.ajaxSettings.async = true;
+}
+
 $(function(){
+	
+	initData();
+	
     $('#formModal').modal({
         backdrop: "static",
         show: true
+    });
+    
+    $('#uploadfile').fileinput({
+    	language: 'zh',
+        uploadUrl: 'uploadFiles', //上传的地址
+        allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
+        uploadAsync: true, //默认异步上传
+        showUpload:true, //是否显示上传按钮
+        showRemove :true, //显示移除按钮
+        showPreview :true, //是否显示预览
+        showCaption:false,//是否显示标题
+        dropZoneEnabled: false,//是否显示拖拽区域
+        maxFileCount:1, //表示允许同时上传的最大文件个数
+        enctype:'multipart/form-data',
+        validateInitialCount:true
+    }).on("filebatchselected", function(event, files) {
+        $(this).fileinput("upload");
+    }).on("fileuploaded", function(event, data, previewId, index) {
+        if (200 == data.response.code) {
+        	$("#photo").val(data.response.desc);
+		}
     });
 
     var data = table.rows({ selected: true }).data()[0];
@@ -23,6 +59,9 @@ $(function(){
                 $(this).val(data[this.name]);
             }
         });
+        if (null != data.photo) {
+        	$("#picUrlsDiv").append('<a class="attachment" href="'+data.photo+'" target="_blank"><img src="'+data.photo+'" width="200px" style="max-width: 100%;max-height: 100%;"></a>');
+		}
     } else if (action == 'create'){
         inputForm.attr("action", "productSeries/create");
     }
@@ -57,7 +96,6 @@ $(function(){
                 l.stop();
                 console.log(resp);
                 var res = resp.code;
-                console.log(res);
                 if (res == 200) {
                     $('#formModal').modal("hide");
                     alertModal("保存成功！", "提示", function(){
@@ -66,10 +104,10 @@ $(function(){
                 }
             }, function(resp) {
                 l.stop();
-                console.log(resp);
+                // console.log(resp);
                 alertModal("系统繁忙，请稍后在访问！", "错误提示");
             });
         }
-        console.log(inputForm.data('formValidation').isValid());
+        // console.log(inputForm.data('formValidation').isValid());
     });
 });

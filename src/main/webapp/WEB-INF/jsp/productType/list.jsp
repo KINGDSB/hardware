@@ -57,7 +57,8 @@
 					<th style="width: 10px"></th>
                     <th>编号</th>
                     <th>类型名称中文</th>
-					<th>类型名称英文</th>
+                    <th>类型名称英文</th>
+                    <th>类型名称西班牙语</th>
 					<th>类目级别</th>
 					<th>创建日期</th>
 				</tr>

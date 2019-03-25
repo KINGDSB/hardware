@@ -21,6 +21,7 @@ import indi.dsb.hardware.common.Page;
 import indi.dsb.hardware.common.ResponseCode;
 import indi.dsb.hardware.common.abstracts.AbstractController;
 import indi.dsb.hardware.common.abstracts.AbstractService;
+import indi.dsb.hardware.common.utils.FileUtils;
 import indi.dsb.hardware.common.utils.Response;
 import indi.dsb.hardware.product.entity.ProductSeries;
 import indi.dsb.hardware.product.service.ProductSeriesService;
@@ -65,8 +66,9 @@ public class ProductSeriesController extends AbstractController<ProductSeries, L
 
 		example.createCriteria().andEqualTo("isDeleted", false);
 		Page<ProductSeries> res = productSeriesService.selectPage(rowBounds, example);
+		res.getData().forEach(data -> data.setPhoto(FileUtils.getFileUrls(data.getPhoto())));
 		res.setDraw(draw);
-
+		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("list", res);
 
@@ -109,6 +111,14 @@ public class ProductSeriesController extends AbstractController<ProductSeries, L
 
 		oProductType.setNameCn(productSeries.getNameCn());
 		oProductType.setNameEn(productSeries.getNameEn());
+		oProductType.setNameEs(productSeries.getNameEs());
+
+		if (StringUtils.isNotBlank(productSeries.getPhoto())) {
+			oProductType.setPhoto(productSeries.getPhoto());
+		}
+		if (null != productSeries.getParentId() && 0 < productSeries.getParentId()) {
+			oProductType.setParentId(productSeries.getParentId());
+		}
 
 		productSeriesService.update(oProductType);
 		return new Response(ResponseCode.SUCCESS).toJson();
