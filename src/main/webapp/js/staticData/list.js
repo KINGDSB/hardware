@@ -111,4 +111,12 @@ $(function() {
     $("#search").on('click', function() {
         table.ajax.reload();
     });
+
+    // 修改首页图片
+    $('#editor_indexImg').on('click', function (e) {
+        ap.ajaxGet("staticData/indexImg", {action: "edit"}, function(data) {
+            $("#formModalLabel").html("修改首页图片");
+            $("#formBody").html(data);
+        });
+    } );
 });

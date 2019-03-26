@@ -42,4 +42,14 @@ public class SysStaticDataServiceImpl extends AbstractServiceImpl<SysStaticData,
         return staticDataMap;
     }
 
+	@Override
+	public List<SysStaticData> getIndexImg() {
+        Example example = new Example(SysStaticData.class);
+        example.createCriteria().andLike("dataKey", "%indexInfoImg%");
+        example.createCriteria().andEqualTo("isDeleted", false);
+        example.setOrderByClause(" id ");
+        List<SysStaticData> list = selectByExample(example);
+		return list;
+	}
+
 }

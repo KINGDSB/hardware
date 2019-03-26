@@ -1,6 +1,7 @@
 package indi.dsb.hardware.sys.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.alibaba.fastjson.JSONObject;
 
 import indi.dsb.hardware.common.Log;
 import indi.dsb.hardware.common.Page;
@@ -113,6 +116,42 @@ public class SysStaticDataController extends AbstractController<SysStaticData, L
         oData.setDataValueEn(sysStaticData.getDataValueEn());
         sysStaticDataService.update(oData);
         return new Response(ResponseCode.SUCCESS).toJson();
+    }
+    
+    @RequestMapping(value = "/getIndeximg")
+    @Log(module = "数据管理", method = "获取首页图片")
+    public @ResponseBody String getIndeximg(HttpServletRequest request, HttpServletResponse response) {
+
+        List<SysStaticData> res = sysStaticDataService.getIndexImg();
+
+        return new Response(ResponseCode.SUCCESS, res).toJson();
+    }
+
+    @RequestMapping(value = "saveIndeximg")
+    @Log(module = "数据管理", method = "保存首页图片")
+    public @ResponseBody String saveIndeximg(@RequestBody Map<String, Object> param) {
+    	
+    	List<String> imgs = (List<String>) param.get("indexInfoImg");
+
+        List<SysStaticData> res = sysStaticDataService.getIndexImg();
+        for (int i = 0; i < res.size(); i++) {
+			if (!res.get(i).getDataValueEn().equals(imgs.get(i))) {
+				res.get(i).setDataValueEn(imgs.get(i));
+				res.get(i).setDataValueCn(imgs.get(i));
+		        sysStaticDataService.update(res.get(i));
+			}
+		}
+        
+        return new Response(ResponseCode.SUCCESS).toJson();
+    }
+
+    @RequestMapping(value = "/indexImg")
+    public ModelAndView indexImg(HttpServletRequest request) {
+        String action = ServletRequestUtils.getStringParameter(request, "action", null);
+
+        ModelAndView modelAndView = new ModelAndView(getControllerMapping(request.getRequestURI(), request.getContextPath()) + "indexImg");
+        modelAndView.addObject("action", action);
+        return modelAndView;
     }
     
     @Override

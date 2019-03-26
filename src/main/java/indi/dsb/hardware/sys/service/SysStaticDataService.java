@@ -1,5 +1,6 @@
 package indi.dsb.hardware.sys.service;
 
+import java.util.List;
 import java.util.Map;
 
 import indi.dsb.hardware.common.abstracts.AbstractService;
@@ -11,5 +12,7 @@ import indi.dsb.hardware.sys.entity.SysStaticData;
 public interface SysStaticDataService extends AbstractService<SysStaticData, Long> {
     
     Map<String, SysStaticData> getStaticData();
+
+    List<SysStaticData> getIndexImg();
     
 }

@@ -92,6 +92,9 @@ $(function(){
         if (inputForm.data('formValidation').isValid()) {
             var l = Ladda.create(this);
             l.start();
+            
+
+            console.log(inputForm);
             ap.ajaxSubmit(inputForm, function(resp) {
                 l.stop();
                 console.log(resp);

@@ -49,7 +49,7 @@
 				<div class="item active">
 					<div class="single-slide">
 						<div class="slide-bg"
-							style="background-image: url(${staticData eq null? 'images/slide-11.jpg': staticData["indexInfoImg1"].dataValueEn})"></div>
+							style="background-image: url(${staticData eq null? 'http://47.254.38.242:8082/files/hardware/20190228/slide-11.jpg': staticData["indexInfoImg1"].dataValueEn})"></div>
 						<div class="slide-text-wrapper">
 							<div class="slide-text">
 								<%-- <div class="container">
@@ -72,7 +72,7 @@
 				<div class="item">
 					<div class="single-slide">
 						<div class="slide-bg"
-							style="background-image: url(${staticData eq null? 'images/slide-22.jpg': staticData["indexInfoImg2"].dataValueEn})"></div>
+							style="background-image: url(${staticData eq null? 'http://47.254.38.242:8082/files/hardware/20190228/slide-22.jpg': staticData["indexInfoImg2"].dataValueEn})"></div>
 						<div class="slide-text-wrapper">
 							<div class="slide-text">
 								<%-- <div class="container">
@@ -93,7 +93,7 @@
 				<div class="item">
 					<div class="single-slide">
 						<div class="slide-bg"
-							style="background-image: url(${staticData eq null? 'images/slide-33.jpg': staticData["indexInfoImg3"].dataValueEn})"></div>
+							style="background-image: url(${staticData eq null? 'http://47.254.38.242:8082/files/hardware/20190228/slide-33.jpg': staticData["indexInfoImg3"].dataValueEn})"></div>
 						<div class="slide-text-wrapper">
 							<div class="slide-text">
 								<%-- <div class="container">

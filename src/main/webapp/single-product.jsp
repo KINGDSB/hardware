@@ -233,31 +233,21 @@
                         for (var i = 0; i < imgs.length; i++) {
                         	
                         	//'<a data-magnify="gallery" href="'+imgs[i]+'"><img width="200" src="'+imgs[i]+'" style="width: 100%;border: 2px solid #171c60;"></a>'
-
-                            productPicturesHtml += '<div class="spic"><img src="' + imgs[i] + '" /></div>';
+                            //productPicturesHtml += '<div class="spic"><img src="' + imgs[i] + '" /></div>';
+                            
+                            if (i < 5) {
+                                productPicturesHtml += '<div class="spic"><a data-magnify="gallery" href="'+imgs[i]+'"><img src="' + imgs[i] + '" /></a></div>';
+							} else {
+	                            productPicturesHtml += '<div class="spic" style="display: none;"><a data-magnify="gallery" href="'+imgs[i]+'"><img src="' + imgs[i] + '" /></a></div>';
+							}
+                            
                         }
                         $("#slider").append(productPicturesHtml);
-                        $('#slider').slider({ speed: 500 })
+                        // $('#slider').slider({ speed: 500 })
                     } else {
                         productPicturesHtml += '<br/><h2>Currently no...</h2>';
                         $("#slider").append(productPicturesHtml);
                     }
-                    
-                    $('[data-magnify]').magnify({
-                        headToolbar: [
-                          'close'
-                        ],
-                        footToolbar: [
-                          'zoomIn',
-                          'zoomOut',
-                          'prev',
-                          'fullscreen',
-                          'next',
-                          'actualSize',
-                          'rotateRight'
-                        ],
-                        title: false
-                    });
                 },
                 'json'
             );
@@ -290,6 +280,22 @@
                  //2秒后消失提示框
                  setTimeout(function () {$("#searchInp").popover('hide');}, 2000);
              }
+         });
+
+         $('[data-magnify]').magnify({
+             headToolbar: [
+               'close'
+             ],
+             footToolbar: [
+               'zoomIn',
+               'zoomOut',
+               'prev',
+               'fullscreen',
+               'next',
+               'actualSize',
+               'rotateRight'
+             ],
+             title: false
          });
     </script>
 	<style type="text/css">
