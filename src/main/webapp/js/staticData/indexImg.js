@@ -48,7 +48,7 @@ $(function(){
         $(this).fileinput("upload");
     }).on("fileuploaded", function(event, data, previewId, index) {
         if (200 == data.response.code) {
-        	$("#indexInfoImg1").val(data.response.desc);
+        	$("#indexInfoImg1").val('http://47.254.38.242:8082/files/hardware'+data.response.desc);
 		}
     });
 
@@ -69,7 +69,7 @@ $(function(){
         $(this).fileinput("upload");
     }).on("fileuploaded", function(event, data, previewId, index) {
         if (200 == data.response.code) {
-        	$("#indexInfoImg2").val(data.response.desc);
+        	$("#indexInfoImg2").val('http://47.254.38.242:8082/files/hardware'+data.response.desc);
 		}
     });
 
@@ -90,7 +90,7 @@ $(function(){
         $(this).fileinput("upload");
     }).on("fileuploaded", function(event, data, previewId, index) {
         if (200 == data.response.code) {
-        	$("#indexInfoImg3").val(data.response.desc);
+        	$("#indexInfoImg3").val('http://47.254.38.242:8082/files/hardware'+data.response.desc);
 		}
     });
 

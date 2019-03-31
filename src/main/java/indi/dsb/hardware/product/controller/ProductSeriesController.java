@@ -96,6 +96,12 @@ public class ProductSeriesController extends AbstractController<ProductSeries, L
 	@Log(module = "产品系列管理", method = "添加产品系列")
 	public @ResponseBody
     String create(@RequestBody ProductSeries productSeries) {
+		if (0 == productSeries.getParentId()) {
+			productSeries.setLevel(1);
+		} else {
+			ProductSeries parent = productSeriesService.get(productSeries.getParentId());
+			productSeries.setLevel(parent.getLevel()+1);
+		}
 		productSeriesService.insert(productSeries);
 		return new Response(ResponseCode.SUCCESS).toJson();
 	}
