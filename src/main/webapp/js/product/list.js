@@ -3,7 +3,7 @@ var table;
 $(function() {
 	
 	// 产品类型
-	$.post("productType/getSelect.json",function(result){
+	$.post("productSeries/getSelect.json",function(result){
         $("#typeSelect").append("<option value=''>产品类型</option>");
 		for (var int = 0; int < result.length; int++) {
 			$("#typeSelect").append("<option value='"+result[int].id+"'>"+result[int].nameCn+"</option>");

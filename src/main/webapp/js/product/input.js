@@ -6,7 +6,7 @@
 function initData(){
 	$.ajaxSettings.async = false;
 	// 获取project下拉列表框
-	$.post("productType/getSelect.json",function(result){
+	$.post("productSeries/getSelect.json",function(result){
         $("#typeSelectSub").append("<option value=''>请选择</option>");
 		for (var int = 0; int < result.length; int++) {
 			$("#typeSelectSub").append("<option value='"+result[int].id+"'>"+result[int].nameCn+"</option>");
