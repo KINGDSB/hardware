@@ -28,6 +28,7 @@ import indi.dsb.hardware.product.service.ProductSeriesService;
 import indi.dsb.hardware.sys.entity.SysUser;
 import indi.dsb.hardware.sys.service.SysResourceService;
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.entity.Example.Criteria;
 
 @Controller
 @RequestMapping(value = "productSeries")
@@ -59,12 +60,15 @@ public class ProductSeriesController extends AbstractController<ProductSeries, L
 		RowBounds rowBounds = new RowBounds(start, length);
 
 		Example example = new Example(ProductSeries.class);
-		if (!StringUtils.isBlank(nameCn))
-			example.createCriteria().andLike("nameCn", "%"+nameCn+"%");
-		if (!StringUtils.isBlank(nameEn))
-			example.createCriteria().andLike("nameEn", "%"+nameEn+"%");
-
-		example.createCriteria().andEqualTo("isDeleted", false);
+        Criteria criteria = example.createCriteria();
+		if (!StringUtils.isBlank(nameCn)){
+		    criteria.andLike("nameCn", "%"+nameCn+"%");
+		}
+		if (!StringUtils.isBlank(nameEn)){
+		    criteria.andLike("nameEn", "%"+nameEn+"%");
+		}
+		
+		criteria.andEqualTo("isDeleted", false);
 		Page<ProductSeries> res = productSeriesService.selectPage(rowBounds, example);
 		res.getData().forEach(data -> data.setPhoto(FileUtils.getFileUrls(data.getPhoto())));
 		res.setDraw(draw);
