@@ -32,7 +32,7 @@ public interface ProductMapper extends Mapper<Product> {
 	 */
 	@Select("<script>"
 			+ " SELECT " 
-			+ " t1.id, t1.name_cn AS 'nameCn', t1.name_en AS 'nameEn', "
+			+ " t1.id, t1.name_cn AS 'nameCn', t1.name_en AS 'nameEn', t1.new_product AS 'newProduct', "
 			+ " t1.picture, t1.pictures, t1.description, t1.description_es AS 'descriptionEs', "
 			+ " t1.amount_old AS 'amountOld', t1.amount, t1.other, t1.type, t1.material, "
 			+ " t2.id AS 'productType.id', t2.name_cn AS 'productType.nameCn', t2.name_en AS 'productType.nameEn', "
@@ -106,7 +106,7 @@ public interface ProductMapper extends Mapper<Product> {
 			@Param("createdDate") Date createdDate, @Param("keyword") String keyword);
 	
     @Select(" SELECT "
-        + " t1.id, t1.name_cn AS 'nameCn', t1.name_en AS 'nameEn', "
+        + " t1.id, t1.name_cn AS 'nameCn', t1.name_en AS 'nameEn', t1.new_product AS 'newProduct', "
         + " t1.picture, t1.pictures, t1.description, t1.description_es AS 'descriptionEs', t1.specification, "
         + " t1.packing_quantity AS 'packingQuantity', t1.material, t1.accessories, "
         + " t1.fitting, t1.other, t1.amount_old AS 'amountOld', t1.amount, t1.type, "
@@ -130,7 +130,7 @@ public interface ProductMapper extends Mapper<Product> {
 	 */
 	@Select("<script>"
 			+ " SELECT " 
-			+ " t1.id, t1.name_cn AS 'nameCn', t1.name_en AS 'nameEn', "
+			+ " t1.id, t1.name_cn AS 'nameCn', t1.name_en AS 'nameEn', t1.new_product AS 'newProduct', "
 			+ " t1.picture, t1.pictures, t1.description, t1.description_es AS 'descriptionEs', "
 			+ " t1.amount_old AS 'amountOld', t1.amount, t1.type, t1.material, "
 			+ " t2.id AS 'productType.id', t2.name_cn AS 'productType.nameCn', t2.name_en AS 'productType.nameEn', "
