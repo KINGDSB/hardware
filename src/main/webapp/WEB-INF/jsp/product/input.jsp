@@ -106,6 +106,13 @@
                 </select>
             </div>
             <div>
+                <label class="form-label col-lg-3">是否是新产品</label>
+                <select id="newProductSelectSub" name="newProduct" class="form-control1 col-lg-8">
+                    <option value="1" selected="selected">是</option>
+                    <option value="2">否</option>
+                </select>
+            </div>
+            <div>
                 <label class="form-label col-lg-3">产品标题</label>
                 <input class="form-control1 col-lg-8" id="material" name="material" type="text" />
             </div>

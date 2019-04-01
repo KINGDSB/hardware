@@ -161,7 +161,12 @@ public class ProductController extends AbstractController<Product, Long> {
 		oProduct.setOther(product.getOther());
 		oProduct.setDescription(product.getDescription());
 		oProduct.setDescriptionEs(product.getDescriptionEs());
-		oProduct.setMaterial(product.getMaterial());
+        oProduct.setMaterial(product.getMaterial());
+        if (null == product.getNewProduct()) {
+            oProduct.setNewProduct(2);
+        } else {
+            oProduct.setNewProduct(product.getNewProduct());
+        }
 		if (StringUtils.isNotBlank(product.getPicture())) {
 			oProduct.setPicture(product.getPicture());
 		}
