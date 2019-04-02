@@ -167,7 +167,7 @@
 				<div class="product-images">
 					<div id="picUrl" class="product-main-img" style="">
 						<img
-							src="http://47.254.38.242:8082/files/hardware/20180426/companyPic.jpg"
+							src="${staticData eq null? 'http://47.254.38.242:8082/files/hardware/20180426/companyPic.jpg': staticData["indexImg4"].dataValueEn}"
 							alt="" style="float: right; width: 100%; height: 260px;">
 					</div>
 				</div>

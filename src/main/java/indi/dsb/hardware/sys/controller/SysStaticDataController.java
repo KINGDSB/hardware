@@ -31,6 +31,7 @@ import indi.dsb.hardware.sys.entity.SysStaticData;
 import indi.dsb.hardware.sys.service.SysResourceService;
 import indi.dsb.hardware.sys.service.SysStaticDataService;
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.entity.Example.Criteria;
 
 @Controller
 @RequestMapping(value = "staticData")
@@ -54,14 +55,15 @@ public class SysStaticDataController extends AbstractController<SysStaticData, L
         RowBounds rowBounds = new RowBounds(start, length);
 
         Example example = new Example(SysStaticData.class);
+        Criteria criteria = example.createCriteria();
         if (StringUtils.isNotBlank(description)){
-            example.createCriteria().andLike("description", "%"+description+"%");
+        	criteria.andLike("description", "%"+description+"%");
         }
         if (StringUtils.isNotBlank(dataKey)){
-            example.createCriteria().andLike("dataKey", "%"+dataKey+"%");
+        	criteria.andLike("dataKey", "%"+dataKey+"%");
         }
 
-        example.createCriteria().andEqualTo("isDeleted", false);
+        criteria.andEqualTo("isDeleted", false);
         example.setOrderByClause(" created_date desc");
         Page<SysStaticData> res = sysStaticDataService.selectPage(rowBounds, example);
         res.setDraw(draw);

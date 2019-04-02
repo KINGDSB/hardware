@@ -20,29 +20,29 @@
 					<div class="product-images">
 						<div id="picUrl" class="product-main-img">
 							<img
-								src="http://47.254.38.242:8082/files/hardware/20180426/companyPic3.jpg"
+								src="${staticData eq null? 'http://47.254.38.242:8082/files/hardware/20180426/companyPic3.jpg': staticData["profileImg1"].dataValueEn}"
 								alt="" style="height: 500" width="100%">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<img
-								src="http://47.254.38.242:8082/files/hardware/20180426/companyPic.jpg"
+								src="${staticData eq null? 'http://47.254.38.242:8082/files/hardware/20180426/companyPic.jpg': staticData["profileImg2"].dataValueEn}"
 								alt="" style="height: 200; width: 80%;">
 						</div>
 						<div class="col-md-3">
 							<img
-								src="http://47.254.38.242:8082/files/hardware/20180426/companyPic2.jpg"
+								src="${staticData eq null? 'http://47.254.38.242:8082/files/hardware/20180426/companyPic2.jpg': staticData["profileImg3"].dataValueEn}"
 								alt="" style="height: 200; width: 80%;">
 						</div>
 						<div class="col-md-3">
 							<img
-								src="http://47.254.38.242:8082/files/hardware/20180426/companyPic2.jpg"
+								src="${staticData eq null? 'http://47.254.38.242:8082/files/hardware/20180426/companyPic2.jpg': staticData["profileImg4"].dataValueEn}"
 								alt="" style="height: 200; width: 80%;">
 						</div>
 						<div class="col-md-3">
 							<img
-								src="http://47.254.38.242:8082/files/hardware/20180426/companyPic2.jpg"
+								src="${staticData eq null? 'http://47.254.38.242:8082/files/hardware/20180426/companyPic2.jpg': staticData["profileImg5"].dataValueEn}"
 								alt="" style="height: 200; width: 80%;">
 						</div>
 					</div>

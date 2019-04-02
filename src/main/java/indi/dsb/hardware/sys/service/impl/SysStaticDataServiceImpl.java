@@ -13,6 +13,7 @@ import indi.dsb.hardware.sys.dao.SysStaticDataDAO;
 import indi.dsb.hardware.sys.entity.SysStaticData;
 import indi.dsb.hardware.sys.service.SysStaticDataService;
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.entity.Example.Criteria;
 
 /**
  * Created by ryan on 2016-03-01.
@@ -45,8 +46,9 @@ public class SysStaticDataServiceImpl extends AbstractServiceImpl<SysStaticData,
 	@Override
 	public List<SysStaticData> getIndexImg() {
         Example example = new Example(SysStaticData.class);
-        example.createCriteria().andLike("dataKey", "%indexInfoImg%");
-        example.createCriteria().andEqualTo("isDeleted", false);
+        Criteria criteria = example.createCriteria();
+        criteria.andLike("dataKey", "%img%");
+        criteria.andEqualTo("isDeleted", false);
         example.setOrderByClause(" id ");
         List<SysStaticData> list = selectByExample(example);
 		return list;
