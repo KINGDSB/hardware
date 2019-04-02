@@ -135,26 +135,26 @@
 	            -->
 				<div class="col-md-3" style="padding: 0;">
 					<a
-						href="/hardware/seriesProduct.jsp?id=1"><img
-						src="http://47.254.38.242:8082/files/hardware/series/series-01.jpg"
+						href="/hardware/seriesProduct.jsp?id=1"><img id="seriesImg1"
+						src="http://47.254.38.242:8082/files/hardware/20190402/a556d3fd-f891-4b64-ae5b-88fa78a710dd.jpg"
 						alt="" style="height: 250; width: 80%;"></a>
 				</div>
 				<div class="col-md-3" style="padding: 0;">
 					<a
-						href="/hardware/seriesProduct.jsp?id=2"><img
-						src="http://47.254.38.242:8082/files/hardware/series/series-02.jpg"
+						href="/hardware/seriesProduct.jsp?id=2"><img id="seriesImg2"
+						src="http://47.254.38.242:8082/files/hardware/20190402/c5471317-3104-4a19-9b7e-63658b073951.jpg"
 						alt="" style="height: 250; width: 80%;"></a>
 				</div>
 				<div class="col-md-3" style="padding: 0;">
 					<a
-						href="/hardware/seriesProduct.jsp?id=3"><img
-						src="http://47.254.38.242:8082/files/hardware/series/series-03.jpg"
+						href="/hardware/seriesProduct.jsp?id=3"><img id="seriesImg3"
+						src="http://47.254.38.242:8082/files/hardware/20190402/619192ca-6a2c-40a1-a0f2-2bedeb086892.jpg"
 						alt="" style="height: 250; width: 80%;"></a>
 				</div>
 				<div class="col-md-3" style="padding: 0;">
 					<a
-						href="/hardware/seriesProduct.jsp?id=4"><img
-						src="http://47.254.38.242:8082/files/hardware/series/series-04.jpg"
+						href="/hardware/seriesProduct.jsp?id=4"><img id="seriesImg4"
+						src="http://47.254.38.242:8082/files/hardware/20190402/9f1430bb-7829-4130-aa34-0d0778aafcf4.jpg"
 						alt="" style="height: 250; width: 80%;"></a>
 				</div>
 			</div>
@@ -212,6 +212,18 @@
           $("#description").text("En 2008, los olímpicos se celebraron con éxito en Beijing, China. En este momento, ARTESANO comenzó un nuevo capítulo en la fabricación: especializarse en herrajes para muebles y profesional  para los accesorios de muebles . En los últimos 10 años, nuestra creencia fundamental es ofrecer una calidad excepcional, a un precio competitivo y una dedicación a la flexibilidad excepcional para nuestros clientes.Grupo de artesano.");
           $("#infoText2").text("Integridad, dedicación a la calidad superior,  creativo y servicio al cliente excepcional.");
       }
+      
+      $.get(contextPath+'/productSeries/list.json?start=0&length=4', function(result){
+    	  $("#seriesImg1").attr("src", result.data[0].photo);
+    	  $("#seriesImg2").attr("src", result.data[1].photo);
+    	  $("#seriesImg3").attr("src", result.data[2].photo);
+    	  $("#seriesImg4").attr("src", result.data[3].photo);
+    	  /* 
+          for (var i = 0; i < result.data.length; i++) {
+              $("#typeSelectSub").append("<option value='"+result[i].id+"'>"+result[i].nameCn+"</option>");
+          }
+           */
+      });
  /* 
       jQuery(function($) {
 		$('.vmcarousel-centered').vmcarousel({
