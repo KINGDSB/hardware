@@ -41,7 +41,7 @@
         window.localStorage.setItem("pageNumber",0);
         
         if (pageLanguage == 1) {
-            $("#contactP").append('<br /><h3 class="divcss5-F00" style="width: 350px">ARTESANO INDUSTRIAL CO., LIMITED</h3><p>Tel: 020-8621-1986</p><p>Email: info@artesano-ind.com</p><p>Website: www.artesano-ind.com</p><p>Add: No.1115-1116，A Tower, CaiRun international building, DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p><br /><p>THANKS FOR YOUR VISIT，WISH YOU A GOOD TIME.</p>');
+            $("#contactP").append('<br /><h3 class="divcss5-F00" style="width: 400px">ARTESANO INDUSTRIAL CO., LIMITED</h3><p>Tel: 020-8621-1986</p><p>Email: info@artesano-ind.com</p><p>Website: www.artesano-ind.com</p><p>Add: No.1115-1116，A Tower, CaiRun international building, DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p><br /><p>THANKS FOR YOUR VISIT，WISH YOU A GOOD TIME.</p>');
         } else {
             $("#contactP").append('<br /><h3 class="divcss5-F00" style="width: 350px">ARTESANO INDUSTRIAL LIMITED</h3><p>Tel: 020-8621-1986</p><p>Correo electrónico: info@artesano-ind.com</p><p>Web: www.artesano-ind.com</p><p>Add: No.1115-1116，A Tower, CaiRun international building, DongGuanZhuang Road No.2, TianHe District, Guangzhou, China.</p><br /><p>GRACIAS A SU VISITA, DESEA QUE USTED TIENE UN BUEN MOMENTO.</p>');
         }
